@@ -9,6 +9,18 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.16.4"
+    "@astrojs/react": "^4.4.2",
+    "@fontsource-variable/caveat": "^5.2.8",
+    "@fontsource/google-sans-flex": "^5.2.1",
+    "@tailwindcss/vite": "^4.1.17",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "astro": "^5.16.4",
+    "framer-motion": "^12.23.25",
+    "lottie-react": "^2.4.1",
+    "lucide-react": "^0.556.0",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "tailwindcss": "^4.1.17"
   }
 }

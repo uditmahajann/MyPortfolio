@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@layer base {
+    body {
+        @apply antialiased bg-zinc-950 text-zinc-300
+    }
+}
+
+@theme {
+
+    --font-caveat: 'Caveat Variable', cursive;
+    --font-google: 'Google Sans Flex', sans-serif;
+    --font-poppins: 'Poppins', sans-serif;
+    --font-raleway: 'Raleway Variable', sans-serif;
+    --font-outfit: 'Outfit Variable', sans-serif;
+    --font-lora: 'Lora Variable', serif;
+
+    --color-primary: #3057E3;
+    --color-primarydark: #193CB8;
+    --color-primarylight: #e0ecff;
+    --color-secondary: #E7022E;
+    --color-secondarydark: #C50227;
+    --color-secondarylight: #fef2f2;
+}

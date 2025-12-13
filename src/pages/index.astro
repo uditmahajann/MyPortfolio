@@ -1,11 +1,54 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import WorkHero from "../components/workpage/WorkHero";
+import FeaturedWork from "../components/workpage/FeaturedWork";
+import About from "../components/workpage/About";
+import Services from "../components/workpage/Services";
+import Testimonials from "../components/workpage/Testimonials";
+import Philosphy from "../components/workpage/Philosphy";
+import FlippingCards from "../components/workpage/FlippingCards";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+
+const sample = [
+  {
+      id: "1",
+      frontSrc: "/Images/Front.png",
+      backSrc: "/Images/Back.png",
+      hoverText: "Flip for the full story",
+    },
+    {
+      id: "2",
+      frontSrc: "/Images/Front.png",
+      backSrc: "/Images/Back.png",
+      hoverText: "Peek inside my process",
+    },
+    {
+      id: "3",
+      frontSrc: "/Images/Front.png",
+      backSrc: "/Images/Back.png",
+      hoverText: "Wanna see the magic?",
+    },
+    {
+      id: "4",
+      frontSrc: "/Images/Front.png",
+      backSrc: "/Images/Back.png",
+      hoverText: "Flip to see how I build",
+    },
+];
+
+
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title="Udit's Portfolio"
+  description="From MVP to full-scale apps, Krityam builds high-performance digital products for startups and enterprises. We help businesses build MVPs, scale apps, and deliver full-stack digital experiences with speed and precision."
+  pubDate={new Date()}
+  >
+  <WorkHero client:load />
+  <FlippingCards cards={sample} client:load />
+  <FeaturedWork client:load />
+  <Philosphy client:load/>
+  <Services client:only />
+  <About client:load />
+  <Testimonials client:load />
 </Layout>
