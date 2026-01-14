@@ -1,21 +1,13 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import PlayHero from "../../components/playpage/PlayHero";
 
 ---
 
 <Layout
-  title="Krityam | Build Fast. Scale Smart. Launch Better."
-  description="From MVP to full-scale apps, Krityam builds high-performance digital products for startups and enterprises. We help businesses build MVPs, scale apps, and deliver full-stack digital experiences with speed and precision."
+  title="Udit Mahajan — Product Designer & Developer | Product Design, UX & Visual Systems"
+  description="My journey into design, how I think about products, and what I value while working with teams and founders. A curated selection of product design, UX, and visual work focused on clarity, emotion, and real-world impact."
   pubDate={new Date()}
   >
-	<section class="mx-auto max-w-6xl px-4 py-16">
-    <h1 class="text-3xl font-semibold tracking-tight sm:text-4xl">
-      Play
-    </h1>
-    <p class="mt-3 max-w-xl text-sm text-slate-300">
-      Selected product design and illustration projects that shipped, moved
-      metrics, and made users happy.
-    </p>
-    {/* We’ll replace this with the real hero + featured projects next. */}
-  </section>
+  <PlayHero client:only="react" />
 </Layout>

@@ -1,0 +1,47 @@
+---
+import ProjectHero from "../../components/projectpage/ProjectHero";
+import ProjectSection from "../../components/projectpage/ProjectSection";
+import StickyScreens from "../../components/projectpage/StickyScreens";
+import ImpactStats from "../../components/projectpage/ImpactStats";
+import NextProject from "../../components/projectpage/NextProject";
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Udit Mahajan — Product Designer & Developer | Product Design, UX & Visual Systems"
+  description="My journey into design, how I think about products, and what I value while working with teams and founders. A curated selection of product design, UX, and visual work focused on clarity, emotion, and real-world impact."
+  pubDate={new Date()}
+  >
+  <ProjectHero client:load/>
+  <ProjectSection
+    eyebrow="Why this exists"
+    title="Running apps track distance. Few understand motivation."
+    body="Rise began with a simple question — why does consistency feel so hard even when the data looks good?"
+    client:load
+  />
+
+  <ProjectSection
+    centered
+    title="Running isn’t about streaks. It’s about momentum."
+    body="The entire product was designed around emotional continuity — not daily pressure, not competition."
+    client:load
+  />
+
+  <StickyScreens client:load/>
+
+  <ProjectSection
+    title="Designing calm, not dopamine"
+    body="Every visual decision was intentional. No aggressive gradients. No loud success states. Just clarity, pacing, and reassurance."
+    client:load
+  />
+
+  <ImpactStats />
+
+  <ProjectSection
+    title="What this project taught me"
+    body="Motivation doesn’t need to shout. Sometimes the best experiences simply stay out of the way."
+    client:load
+  />
+
+  <NextProject />
+</Layout>

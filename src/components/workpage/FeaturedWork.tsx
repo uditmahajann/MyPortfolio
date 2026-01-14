@@ -27,7 +27,7 @@ const CASE_STUDIES: CaseStudy[] = [
     role: "Product design · UX · UI · Interaction",
     result:
       "Helped runners understand their progress emotionally, not just numerically.",
-    href: "#",
+    href: "/project",
     image: "/Images/Sample.png",
     tags: ["Mobile", "Sports", "Behaviours"],
   },

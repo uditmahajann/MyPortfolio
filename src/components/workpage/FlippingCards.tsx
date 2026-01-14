@@ -69,7 +69,7 @@ export default function FlippingCards({ cards }: { cards: CardItem[] }) {
   return (
     <section
       id="play-cards"
-      className="relative mx-auto max-w-7xl px-5 lg:px-10 -top-30"
+      className="relative mx-auto max-w-7xl px-5 lg:px-10 -top-10"
       // track mouse globally inside the section so the pill can follow
       onMouseMove={(e) =>
         setCursor((c) => ({

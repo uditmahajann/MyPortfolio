@@ -37,14 +37,14 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({ currentPath }) => {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
         {/* Left: logo + name */}
         <a href="/" className="">
-            <div className="h-full w-45">
+            <div className="h-full w-50">
               <Lottie animationData={logoAnimation} loop autoplay />
             </div>
         </a>
 
         {/* Center: pill navigation */}
         <nav className="flex flex-1 justify-center">
-          <div className="flex items-center p-3 gap-3 rounded-full border border-white/10 bg-slate-950/80 shadow-lg shadow-black/40 backdrop-blur-md">
+          <div className="flex items-center p-3 gap-3 rounded-full border border-white/10 bg-gray-950/80 shadow-lg shadow-black/40 backdrop-blur-md">
             {navItems.map((item) => {
               const isActive =
                 item.href === "/"
@@ -57,7 +57,7 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({ currentPath }) => {
                   href={item.href}
                   className={`rounded-full px-6 py-1 text-lg font-medium transition-all ${
                     isActive
-                      ? "bg-blue-600 text-white shadow-md shadow-sky-500/40"
+                      ? "bg-sky-500 text-white shadow-md shadow-sky-500/40"
                       : "bg-gray-700/60 text-gray-300 hover:bg-gray-600/70"
                   }`}
                 >

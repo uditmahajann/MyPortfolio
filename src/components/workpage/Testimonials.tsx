@@ -18,7 +18,7 @@ export default function EpicFooter() {
   return (
     <section
       ref={ref}
-      className="relative h-[102vh] overflow-hidden"
+      className="relative h-[120vh] overflow-hidden"
     >
       {/* ===== CLOUDS (FRONT LAYER) ===== */}
       <motion.img
@@ -33,7 +33,7 @@ export default function EpicFooter() {
         src="/Images/MountainB.png"
         alt=""
         style={{ y: farMountainsY }}
-        className="pointer-events-none absolute inset-x-0 bottom-40 z-20 w-full"
+        className="pointer-events-none absolute inset-x-0 bottom-25 z-20 w-full"
       />
 
       {/* ===== MAIN MOUNTAIN ===== */}
@@ -46,37 +46,37 @@ export default function EpicFooter() {
       {/* ===== CONTENT BEHIND MOUNTAIN ===== */}
       <motion.div
         style={{ y: contentY, opacity: contentOpacity }}
-        className="relative z-10 mx-auto flex h-full max-w-5xl flex-col items-center justify-end pb-40 text-center text-white"
+        className="relative z-10 mx-auto flex h-full max-w-5xl flex-col items-center justify-end pb-130 text-center text-white"
       >
-        <h2 className="mb-6 text-4xl md:text-6xl font-serif">
+        <h2 className="mb-4 text-4xl md:text-6xl font-serif leading-tight">
           Still scrolling?  
-          <br />
+          <br/>
           Guess we should talk.
         </h2>
 
-        <p className="mb-10 max-w-xl text-lg text-white/70">
+        <p className="mb-8 max-w-xl text-lg text-white/70">
           Got an idea, a problem, or just curiosity?
-          I design thoughtful digital products that actually ship.
+          Email me at:
         </p>
 
         {/* Email CTA */}
         <a
-          href="mailto:hello@yourname.com"
-          className="mb-10 inline-block rounded-full border border-white/30 px-8 py-4 text-lg transition hover:bg-white hover:text-black"
+          href="mailto:uditmahajan95@gmail.com"
+          className="mb-8 inline-block rounded-full border border-white/30 px-6 py-4 font-google font-semibold text-lg tracking-wide transition hover:bg-white hover:text-black"
         >
-          hello@yourname.com
+        uditmahajan95@gmail.com
         </a>
 
         {/* Social Links */}
-        <div className="flex gap-6 text-sm text-white/70">
+        <div className="flex gap-6 font-google text-white/70">
           <a href="#" className="hover:text-white">LinkedIn</a>
           <a href="#" className="hover:text-white">Instagram</a>
           <a href="#" className="hover:text-white">Resume</a>
         </div>
 
-        <span className="mt-10 text-xs text-white/40">
+        {/* <span className="mt-10 text-xs text-white/40">
           © {new Date().getFullYear()} — Designed & built with intention
-        </span>
+        </span> */}
       </motion.div>
     </section>
   );

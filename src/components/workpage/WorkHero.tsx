@@ -38,9 +38,9 @@ const WorkHero: React.FC = () => {
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-6 text-center text-xs font-medium uppercase tracking-[0.28em] text-zinc-400 sm:text-[11px]"
+          className="mb-8 text-center font-caveat font-medium text-zinc-400 text-3xl"
         >
-          I&apos;m Udit — Product Designer &amp; Illustrator
+          👋 Hey! I'm Udit — UX Designer &amp; Developer
         </motion.p>
 
         {/* Main headline */}
@@ -48,26 +48,37 @@ const WorkHero: React.FC = () => {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.05 }}
-          className="text-center text-4xl font-semibold tracking-tight text-zinc-50 sm:text-5xl md:text-6xl lg:text-[4.25rem]"
+          className="text-center font-google font-bold text-zinc-50 text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight"
         >
-          I design products that
+          I <span className="text-sky-400/90"></span>design products
           <br className="hidden sm:block" />
-          <span className="text-zinc-300"> appeal, engage </span>
-          <span className="text-sky-400/90">&amp; sell.</span>
+          People{" "}
+          <span className="inline-flex items-center align-middle">
+            <img
+              src="/Images/heart.png"   // or /heart.png /heart.webp
+              alt="love"
+              className="mx-0.5 inline-block h-8 w-8 sm:h-20 sm:w-20"
+            />
+          </span>{" "}
+          using & that make
+          <br className="hidden sm:block" />
+          <span className="text-sky-400/90">Business </span>sense.
+          
         </motion.h1>
+
 
         {/* Minimal sub-hint */}
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.12 }}
-          className="mt-4 text-center text-xs text-zinc-400 sm:text-sm"
+          className="mt-8 text-center text-xs text-zinc-400 font-google sm:text-xl"
         >
-          No fluff. Clean flows, sharp UI, and visuals that actually move numbers.
+          Thought through, well built, and done for the long run.
         </motion.p>
 
         {/* CTA row */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.18 }}
@@ -88,7 +99,7 @@ const WorkHero: React.FC = () => {
             Let&apos;s talk
             <ArrowUpRight className="h-4 w-4" />
           </a>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

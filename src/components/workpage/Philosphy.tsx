@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const TEXT =
-  "Speed gets you to market. Experience decides if people stay. Clarity, trust, and intent are what make products stand out. AND I TRY TO DO THAT WITH DESIGN.";
+  "Speed gets you to market. User Experience decides if people stay. Clarity, trust, and intent are what make products stand out. AND I TRY TO DO THAT WITH DESIGN.";
 
 export default function ScrollRevealText() {
   const sectionRef = useRef<HTMLDivElement | null>(null);

@@ -6,6 +6,7 @@ import About from "../components/workpage/About";
 import Services from "../components/workpage/Services";
 import Testimonials from "../components/workpage/Testimonials";
 import Philosphy from "../components/workpage/Philosphy";
+import ToolsSection from "../components/workpage/ToolsSection";
 import FlippingCards from "../components/workpage/FlippingCards";
 
 
@@ -40,8 +41,8 @@ const sample = [
 ---
 
 <Layout
-  title="Udit's Portfolio"
-  description="From MVP to full-scale apps, Krityam builds high-performance digital products for startups and enterprises. We help businesses build MVPs, scale apps, and deliver full-stack digital experiences with speed and precision."
+  title="Udit Mahajan — Product Designer & Developer | Product Design, UX & Visual Systems"
+  description="My journey into design, how I think about products, and what I value while working with teams and founders. A curated selection of product design, UX, and visual work focused on clarity, emotion, and real-world impact."
   pubDate={new Date()}
   >
   <WorkHero client:load />
@@ -49,6 +50,7 @@ const sample = [
   <FeaturedWork client:load />
   <Philosphy client:load/>
   <Services client:only />
+  <!-- <ToolsSection client:load/> -->
   <About client:load />
   <Testimonials client:load />
 </Layout>
