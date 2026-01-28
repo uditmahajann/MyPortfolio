@@ -8,7 +8,7 @@ import { ArrowUpRight } from "lucide-react";
 
 
 // TODO: replace these with your actual Lottie JSON files
-import webLottie from "../../../public/animations/Frontend.json";
+import webLottie from "../../../public/animations/Website.json";
 import graphicLottie from "../../../public/animations/Graphic.json";
 import uiuxLottie from "../../../public/animations/UXD.json";
 import motionLottie from "../../../public/animations/Content.json";
@@ -89,7 +89,7 @@ const Services: React.FC = () => {
         <section
             id="services"
             ref={sectionRef}
-            className="relative mx-auto max-w-7xl px-5 lg:px-10 pb-15 my-15 overflow-hidden"
+            className="relative mx-auto max-w-7xl px-5 lg:px-10 pb-15 my-15"
         >
 
             {/* subtle divider from previous section */}
@@ -102,7 +102,7 @@ const Services: React.FC = () => {
                     mainAfter="that i do"
                     highlightSvg="/Images/H2Bold.png"
                     highlightAlt="designs"
-                    noteSvg="/Images/Note.png"
+                    noteSvg="/Images/H2Note.png"
                     punchline=""
                     align="center"
                 />
@@ -110,7 +110,7 @@ const Services: React.FC = () => {
 
 
             {/* Cards grid (centered) */}
-            <div className="relative z-10 pt-10">
+            <div className="relative z-10 pt-10 overflow-hidden">
                 <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2">
                     {services.map((service, index) => {
                         const offsets = cornerOffsets[service.corner];

@@ -26,8 +26,8 @@ const containerVariants: Variants = {
 const itemVariants = (index: number): Variants => {
   // tweak these arrays to change the fan direction and spread
   const offsetsX = [120, 50, -50, -120]; // final x offset for each card (px)
-  const offsetsY = [20, -60, -60, 20]; // final y offset for each card (px)
-  const rotates = [-30, -20, 20, 30]; // slight rotation for fan effect
+  const offsetsY = [45, -55, -55, 45]; // final y offset for each card (px)
+  const rotates = [-25, -15, 15, 25]; // slight rotation for fan effect
 
   return {
     hidden: {
@@ -69,7 +69,7 @@ export default function FlippingCards({ cards }: { cards: CardItem[] }) {
   return (
     <section
       id="play-cards"
-      className="relative mx-auto max-w-7xl px-5 lg:px-10 -top-10"
+      className="relative mx-auto max-w-8xl px-5 lg:px-10 -top-25"
       // track mouse globally inside the section so the pill can follow
       onMouseMove={(e) =>
         setCursor((c) => ({
@@ -88,7 +88,7 @@ export default function FlippingCards({ cards }: { cards: CardItem[] }) {
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.85, opacity: 0 }}
           transition={{ type: "spring", stiffness: 260, damping: 22 }}
-          className="fixed pointer-events-none z-9999 rounded-full bg-white text-black text-sm font-medium px-4 py-2 shadow-lg"
+          className="fixed pointer-events-none z-200 rounded-full border-2 border-black bg-white text-black text-base font-google font-semibold px-4 py-3 shadow-lg tracking-wide"
           style={{
             top: cursor.y + 18,
             left: cursor.x + 18,
@@ -105,14 +105,14 @@ export default function FlippingCards({ cards }: { cards: CardItem[] }) {
       <motion.div
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.8 }}
+        viewport={{ once: false, amount: 0.6 }}
         variants={containerVariants}
-        className="mx-auto max-w-6xl items-center justify-center"
+        className="mx-auto max-w-8xl items-center justify-center"
       >
         <div className="relative flex items-center justify-center">
           {/* center stack container used for fan-out visuals */}
           <div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 place-items-center"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 place-items-center"
             // keep it visible while animation fans out
           >
             {cards.map((c, i) => (
@@ -151,10 +151,21 @@ function FlipCard({
 
   return (
     <motion.div
-      variants={itemVariants(index)}
-      // custom not needed now; we used index to create a variants closure
-      className="relative"
-    >
+  variants={itemVariants(index)}
+  className="relative group"
+>
+  {/* Glow layer */}
+  <div
+    aria-hidden
+    className="
+      pointer-events-none
+      absolute -inset-2
+      rounded-[15px]
+      bg-white/15
+      blur-xl
+    "
+  />
+
       <motion.div
         role="button"
         tabIndex={0}
@@ -184,8 +195,8 @@ function FlipCard({
         style={{
           transformStyle: "preserve-3d",
           perspective: 1200,
-          width: 240,
-          height: 340,
+          width: 300,
+          height: 425,
           cursor: "pointer", // show pointer to indicate clickability
         }}
         className="mx-auto"

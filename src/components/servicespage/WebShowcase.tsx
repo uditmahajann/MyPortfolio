@@ -20,7 +20,7 @@ const projects = [
   },
   {
     title: "Krityam Agency Website",
-    image: "/Images/KLightSnap.png",
+    image: "/Images/RiseSnap.png",
     live: "https://krityam.com",
   },
   {
@@ -37,7 +37,7 @@ const projects = [
 
 export default function WebsiteDesignShowcase() {
   return (
-    <section className="mx-auto max-w-7xl px-5 lg:px-10 xl:px-0 py-25 my-25 overflow-hidden">
+    <section className="mx-auto max-w-7xl px-5 lg:px-10 xl:px-0 py-25 my-30">
       <div className="mb-25">
                 <SectionHeading
                     prefix="balancing usability, aesthetics, & technical reality."
@@ -45,7 +45,7 @@ export default function WebsiteDesignShowcase() {
                     mainAfter="I've Designed & Built"
                     highlightSvg="/Images/H4Bold.png"
                     highlightAlt="designs"
-                    noteSvg="/Images/Note.png"
+                    noteSvg="/Images/H4Note.png"
                     punchline=""
                     align="center"
                 />

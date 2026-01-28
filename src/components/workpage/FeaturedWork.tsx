@@ -79,14 +79,14 @@ const CaseStudies: React.FC = () => {
     >
 
 
-    <div className="my-25">
+    <div className="my-30">
       <SectionHeading
         prefix="long before they looked good..."
         mainBefore=""
         mainAfter="that felt Good,"
         highlightSvg="/Images/H1Bold.png"
         highlightAlt="designs"
-        noteSvg="/Images/Note.png"
+        noteSvg="/Images/H1Note.png"
         punchline=""
         align="center"
       />

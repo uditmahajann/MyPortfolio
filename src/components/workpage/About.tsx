@@ -123,7 +123,7 @@ const AboutExperienceSection: React.FC = () => {
             mainAfter="that built me"
             highlightSvg="/Images/H3Bold.png"
             highlightAlt="designs"
-            noteSvg="/Images/Note.png"
+            noteSvg="/Images/H3Note.png"
             punchline=""
             align="center"
           />

@@ -1,6 +1,5 @@
 import type React from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
-import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 
 const WorkHero: React.FC = () => {
   const mouseX = useMotionValue(0.5);
@@ -54,28 +53,42 @@ const WorkHero: React.FC = () => {
           <br className="hidden sm:block" />
           People{" "}
           <span className="inline-flex items-center align-middle">
-            <img
+            {/* <img
               src="/Images/heart.png"   // or /heart.png /heart.webp
               alt="love"
               className="mx-0.5 inline-block h-8 w-8 sm:h-20 sm:w-20"
+            /> */}
+            <motion.img
+              src="/Images/heart.png"
+              alt="love"
+              className="mx-0.5 inline-block h-8 w-8 sm:h-20 sm:w-20"
+              animate={{
+                scale: [1, 1.15, 1],
+              }}
+              transition={{
+                duration: 0.6,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
             />
+
           </span>{" "}
           using & that make
           <br className="hidden sm:block" />
           <span className="text-sky-400/90">Business </span>sense.
-          
+
         </motion.h1>
 
 
         {/* Minimal sub-hint */}
-        <motion.p
+        {/* <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.12 }}
           className="mt-8 text-center text-xs text-zinc-400 font-google sm:text-xl"
         >
           Thought through, well built, and done for the long run.
-        </motion.p>
+        </motion.p> */}
 
         {/* CTA row */}
         {/* <motion.div

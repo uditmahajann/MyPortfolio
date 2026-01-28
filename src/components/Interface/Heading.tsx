@@ -88,10 +88,10 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
               <motion.img
                 src={noteSvg}
                 alt=""
-                className="pointer-events-none absolute left-1/2 bottom-0 -z-10 h-30 w-auto -translate-x-1/2"
+                className="pointer-events-none absolute left-1/2 bottom-0 -z-10 h-60 w-auto -translate-x-1/2"
                 variants={{
-                  rest: { opacity: 0.3, y: -20, scale: 0.6, rotate: 0 },
-                  hover: { opacity: 1, y: -100, scale: 1, rotate: -60 },
+                  rest: { opacity: 0, y: -20, scale: 0.6, rotate: 0 },
+                  hover: { opacity: 1, y: -80, scale: 1, rotate: 0 },
                 }}
                 transition={{ duration: 0.24, ease: "easeOut" }}
               />
