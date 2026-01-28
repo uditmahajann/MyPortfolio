@@ -34,7 +34,7 @@ const services: Service[] = [
             "Landing pages, product sites, and mini-experiences that look premium and load fast — from layout to build.",
         lottie: webLottie,
         corner: "tl",
-        href: "/services/website-design",
+        href: "/services/web-design",
     },
     {
         id: "visual",
@@ -44,7 +44,7 @@ const services: Service[] = [
             "Campaign assets, social visuals, and brand pieces that feel cohesive with your product, not disconnected.",
         lottie: graphicLottie,
         corner: "tr",
-        href: "/services/website-design",
+        href: "/web-design-&-development",
     },
     {
         id: "uiux",
