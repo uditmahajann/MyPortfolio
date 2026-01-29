@@ -8,10 +8,10 @@ import { ArrowUpRight } from "lucide-react";
 
 
 // TODO: replace these with your actual Lottie JSON files
-import webLottie from "../../../public/animations/Website.json";
-import graphicLottie from "../../../public/animations/Graphic.json";
-import uiuxLottie from "../../../public/animations/Ux-Design.json";
-import motionLottie from "../../../public/animations/Micro-Interaction.json";
+import webLottie from "../../assets/Animations/Website.json";
+import graphicLottie from "../../assets/Animations/Graphic.json";
+import uiuxLottie from "../../assets/Animations/Ux-Design.json";
+import motionLottie from "../../assets/Animations/Micro-Interaction.json";
 
 type Corner = "tl" | "tr" | "bl" | "br";
 

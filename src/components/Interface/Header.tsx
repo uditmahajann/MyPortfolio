@@ -2,7 +2,7 @@ import type React from "react";
 import { useEffect, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import Lottie from "lottie-react";
-import logoAnimation from "../../../public/Animations/Profile-Icon.json"; // adjust path if needed
+import logoAnimation from "../../assets/Animations/Profile-Icon.json"; // adjust path if needed
 
 interface SiteHeaderProps {
   currentPath: string;
