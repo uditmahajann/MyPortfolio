@@ -114,7 +114,7 @@ const HangingIDBadge: React.FC<Props> = ({
           />
 
           {/* a small sticker / badge on the card (example) */}
-          <g transform={`translate(${photoX + 6}, ${photoY + 550})`}>
+          <g transform={`translate(${photoX + 6}, ${photoY + 560})`}>
             {/* <rect x={0} y={0} rx={8} ry={8} width={photoW-20} height={32} fill="#000"/> */}
             <text x={0} y={0} fontSize="28" fill="#fff" fontWeight={700} textAnchor="start" fontFamily="Caveat Variable, cursive">
              ~{caption}

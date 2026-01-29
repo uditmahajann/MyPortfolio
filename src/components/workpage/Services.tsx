@@ -11,7 +11,7 @@ import { ArrowUpRight } from "lucide-react";
 import webLottie from "../../../public/animations/Website.json";
 import graphicLottie from "../../../public/animations/Graphic.json";
 import uiuxLottie from "../../../public/animations/UXD.json";
-import motionLottie from "../../../public/animations/Content.json";
+import motionLottie from "../../../public/animations/Micro-Interaction.json";
 
 type Corner = "tl" | "tr" | "bl" | "br";
 
