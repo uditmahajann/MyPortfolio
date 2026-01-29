@@ -110,7 +110,7 @@ const Services: React.FC = () => {
 
 
             {/* Cards grid (centered) */}
-            <div className="relative z-10 pt-10 overflow-hidden">
+            <div className="relative z-10 py-10 overflow-hidden">
                 <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2">
                     {services.map((service, index) => {
                         const offsets = cornerOffsets[service.corner];

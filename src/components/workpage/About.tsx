@@ -111,7 +111,7 @@ const AboutExperienceSection: React.FC = () => {
   const sectionHeightVh = experiences.length * 100 + 100; // extra buffer
   // You can tweak the top sticky position (top offset) as needed
   return (
-    <section ref={sectionRef} className="relative my-15 py-15">
+    <section ref={sectionRef} className="relative my-10 py-10">
       {/* Container is taller to allow segmented scroll */}
       <div style={{ height: `${sectionHeightVh}vh` }} className="relative mx-auto max-w-7xl px-5 sm:px-10">
 
