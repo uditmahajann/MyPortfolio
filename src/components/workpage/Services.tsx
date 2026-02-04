@@ -54,7 +54,7 @@ const services: Service[] = [
             "Flows, screens, and systems that make it easy for users to get what they came for — without fighting the UI.",
         lottie: uiuxLottie,
         corner: "bl",
-        href: "/services/website-design",
+        href: "/services/ux-design",
     },
     {
         id: "motion",
@@ -64,7 +64,7 @@ const services: Service[] = [
             "Subtle motion, transitions, and feedback that guide attention and make the experience feel thoughtfully crafted.",
         lottie: motionLottie,
         corner: "br",
-        href: "/services/website-design",
+        href: "/services/motion-design",
     },
 ];
 
