@@ -2,7 +2,7 @@ import type React from "react";
 import { useRef } from "react";
 import SectionHeading from "../../components/Interface/Heading";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Lock } from "lucide-react";
 
 type CaseStudy = {
   id: string;
@@ -27,7 +27,7 @@ const CASE_STUDIES: CaseStudy[] = [
     role: "Product design · UX · UI · Interaction",
     result:
       "Helped runners understand their progress emotionally, not just numerically.",
-    href: "/project",
+    href: "#",
     image: "/Images/Sample.png",
     tags: ["Mobile", "Sports", "Behaviours"],
   },
@@ -202,8 +202,8 @@ const CaseStudyCard: React.FC<{ caseStudy: CaseStudy }> = ({ caseStudy }) => {
                 href={caseStudy.href}
                 className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-950 px-5 py-2.5 text-sm sm:text-base font-google font-medium text-zinc-50 transition hover:border-zinc-300 hover:bg-zinc-900"
               >
-                <span>View Full Case Study</span>
-                <ArrowUpRight className="h-4 w-4" />
+                <span>Case Study: Coming Soon</span>
+                <Lock className="h-4 w-4" />
               </a>
             </div>
           </div>

@@ -44,7 +44,7 @@ const services: Service[] = [
             "Campaign assets, social visuals, and brand pieces that feel cohesive with your product, not disconnected.",
         lottie: graphicLottie,
         corner: "tr",
-        href: "/web-design-&-development",
+        href: "/services/graphic-design",
     },
     {
         id: "uiux",

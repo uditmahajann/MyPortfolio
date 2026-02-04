@@ -80,7 +80,7 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({ currentPath }) => {
             <ArrowUpRight className="h-5 w-5" />
           </a>
           <a
-            href="/resume.pdf" // place your resume in /public as resume.pdf
+            href="https://drive.google.com/file/d/1JoUMy_nRR7a-aZ2GlaL9WirM-n-KStpv/view?usp=sharing" // place your resume in /public as resume.pdf
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2 text-white hover:text-gray-300"

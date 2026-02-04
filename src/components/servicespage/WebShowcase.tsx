@@ -4,40 +4,56 @@ import SectionHeading from "../../components/Interface/Heading";
 
 const projects = [
   {
-    title: "Krityam Services & Solutions",
+    title: "Krityam Solutions (Dark Theme)",
     image: "/Images/KrityamSnap.png",
     live: "https://rise.app",
   },
   {
-    title: "AI Health & Wellness Marketplace",
+    title: "MCS-Kindergaten Theme Page",
     image: "/Images/KinderSnap.png",
     live: "https://health.ai",
   },
   {
-    title: "Krityam Agency Website",
+    title: "Krityam Solutions (Light Theme)",
     image: "/Images/KLightSnap.png",
     live: "https://krityam.com",
   },
   {
-    title: "Krityam Agency Website",
+    title: "RISE-Running Club Landing Page",
     image: "/Images/RiseSnap.png",
     live: "https://krityam.com",
   },
   {
-    title: "Krityam Agency Website",
-    image: "/Images/KLightSnap.png",
+    title: "Product Designer's Portfolio",
+    image: "/Images/PortfolioSnap.png",
     live: "https://krityam.com",
   },
+  
   {
-    title: "Krityam Agency Website",
-    image: "/Images/KLightSnap.png",
+    title: "Montessori Cambridge School",
+    image: "/Images/OrospacesSnap.png",
     live: "https://krityam.com",
+  },
+   {
+    title: "Orospaces Landing Page",
+    image: "/Images/OrospacesSnap.png",
+    live: "https://www.orospaces.com/",
+  },
+  {
+    title: "Linnaea Ventures Website",
+    image: "/Images/LinnaeaSnap.png",
+    live: "https://www.linnaea.in/",
+  },
+   {
+    title: "VS Pharmatech Website",
+    image: "/Images/VspharmaSnap.png",
+    live: "https://www.vspharmatech.com/",
   },
 ];
 
 export default function WebsiteDesignShowcase() {
   return (
-    <section className="mx-auto max-w-7xl px-5 lg:px-10 xl:px-0 py-25 my-30">
+    <section className="mx-auto max-w-7xl px-5 lg:px-10 xl:px-0 py-25 mt-30">
       <div className="mb-25">
                 <SectionHeading
                     prefix="balancing usability, aesthetics, & technical reality."
@@ -73,32 +89,27 @@ export default function WebsiteDesignShowcase() {
             </div>
 
             {/* Content */}
-            <div className="p-6">
-              <h3 className="text-2xl font-google font-semibold text-zinc-50">
+            <div className="p-5">
+              <h3 className="text-xl font-google font-medium tracking-wide text-zinc-50">
                 {project.title}
               </h3>
               
               {/* Actions */}
-              <div className="mt-6 flex items-center gap-5">
+              <div className="mt-2 flex items-center gap-5">
                 <a
                   href={project.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-zinc-50 hover:text-white transition"
+                  className="inline-flex items-center gap-1 font-google text-sky-400 hover:text-sky-300 hover:underline transition"
                 >
-                  View Live
-                  <ArrowUpRight className="h-4 w-4" />
+                  View Live Project
+                  <ArrowUpRight className="h-5 w-5" />
                 </a>
               </div>
             </div>
           </motion.article>
         ))}
       </div>
-
-      {/* Footer note */}
-      <p className="mt-16 text-sm text-zinc-500">
-        More projects available on request. Some work lives behind NDAs.
-      </p>
     </section>
   );
 }

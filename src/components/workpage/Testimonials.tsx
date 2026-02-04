@@ -69,9 +69,9 @@ export default function EpicFooter() {
 
         {/* Social Links */}
         <div className="flex gap-6 font-google text-white/70">
-          <a href="#" className="hover:text-white">LinkedIn</a>
-          <a href="#" className="hover:text-white">Instagram</a>
-          <a href="#" className="hover:text-white">Resume</a>
+          <a href="https://www.linkedin.com/in/udit-mahajann/" className="hover:text-white">LinkedIn</a>
+          <a href="https://www.instagram.com/uditmahajann/" className="hover:text-white">Instagram</a>
+          <a href="https://drive.google.com/file/d/1JoUMy_nRR7a-aZ2GlaL9WirM-n-KStpv/view?usp=sharing" className="hover:text-white">Resume</a>
         </div>
 
         {/* <span className="mt-10 text-xs text-white/40">
