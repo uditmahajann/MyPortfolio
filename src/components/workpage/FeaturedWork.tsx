@@ -18,46 +18,46 @@ type CaseStudy = {
 
 const CASE_STUDIES: CaseStudy[] = [
   {
-    id: "rise",
-    label: "Product · Mobile · Experience",
+    id: "yelona",
+    label: "Yelona's Inventory Management Web App",
     title:
-      "Rise – a running companion that feels like a story, not a stats dump.",
+      "Reducing Stock Errors in Day-to-Day Inventory Operations",
     teaser:
-      "Designing a calm, cinematic running experience that nudges athletes to see their training as seasons, chapters, and satisfying arcs instead of random scattered runs.",
+      "Designed a single, guided inventory workflow for YELONA's IMS, that brings stock updates, system validation, and reconciliation into one continuous flow — making errors visible immediately and reducing manual cross-checking.",
     role: "Product design · UX · UI · Interaction",
     result:
       "Helped runners understand their progress emotionally, not just numerically.",
     href: "#",
-    image: "/Images/Sample.png",
-    tags: ["Mobile", "Sports", "Behaviours"],
+    image: "/Images/Soon.jpg",
+    tags: ["Reduced Stock Update Errors by 48%", "Increased Speed by 27%", "Introduced Composite Set Inventory Model"],
   },
   {
-    id: "dashboard",
-    label: "Product · Web · Strategy",
+    id: "rise",
+    label: "RISE- Fitness & Activity Tracking",
     title:
-      "Turning a dense dashboard into a place people actually want to work in.",
+      "Boosted Monthly Active Runners with Loyalty Program",
     teaser:
-      "Restructuring an overgrown interface into a focused control center so teams could see what matters in seconds — without hunting through filters, tabs, and tooltips.",
-    role: "UX audit · IA · UI design",
+      "Designed a loyalty and rewards flow for RISE App, that connects run consistency with visible progress and earned milestones—motivating runners to return weekly and stay active across the month instead of dropping off after short streaks.",
+    role: "Product design · UX · UI · Interaction",
     result:
-      "Made everyday workflows feel lighter, faster, and less mentally noisy.",
+      "Helped runners understand their progress emotionally, not just numerically.",
     href: "#",
-    image: "/Images/Sample2.png",
-    tags: ["B2B", "Complex UX", "Interface clarity"],
+    image: "/Images/Soon.jpg",
+    tags: ["Increased MAU's by 31%", "Improved User-engagement", "Boosted Overall Retention"],
   },
   {
-    id: "illustration-system",
-    label: "Illustration · System · Visual",
+    id: "cosmo",
+    label: "Cosmo AI- AI Health & Wellness Marketplace",
     title:
-      "An illustration system that looked bespoke, not “from the same 3 libraries”.",
+      "Reduced Friction in Personalized Health Shopping",
     teaser:
-      "Creating a flexible illustration language that could stretch across onboarding, empty states, and marketing without losing its personality or feeling repetitive.",
-    role: "Art direction · Illustration · Visual system",
+      "Designed an AI-powered marketplace for COSMO App, that helps users understand products via health score, build habits & make confident wellness choices with personalized recommendations — without overwhelming them, otherwise leading to drop-offs & abandoned flows.",
+    role: "Product design · UX · UI · Interaction",
     result:
-      "Gave the product a recognisable face that teams could reuse confidently.",
+      "Helped runners understand their progress emotionally, not just numerically.",
     href: "#",
-    image: "/Images/Sample.jpg",
-    tags: ["Illustration", "Design systems", "Brand"],
+    image: "/Images/Soon.jpg",
+    tags: ["Improved Progression Rate by 28%", "Reduced Task-friction by 48%", "Personalization Logic Optimized"],
   },
 ];
 
