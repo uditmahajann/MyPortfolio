@@ -9,8 +9,6 @@ type CaseStudy = {
   label: string;
   title: string;
   teaser: string;
-  role: string;
-  result: string;
   href: string;
   image: string;
   tags: string[];
@@ -24,9 +22,6 @@ const CASE_STUDIES: CaseStudy[] = [
       "Reducing Stock Errors in Day-to-Day Inventory Operations",
     teaser:
       "Designed a single, guided inventory workflow for YELONA's IMS, that brings stock updates, system validation, and reconciliation into one continuous flow — making errors visible immediately and reducing manual cross-checking.",
-    role: "Product design · UX · UI · Interaction",
-    result:
-      "Helped runners understand their progress emotionally, not just numerically.",
     href: "#",
     image: "/Images/Soon.jpg",
     tags: ["Reduced Stock Update Errors by 48%", "Increased Speed by 27%", "Introduced Composite Set Inventory Model"],
@@ -38,9 +33,6 @@ const CASE_STUDIES: CaseStudy[] = [
       "Boosted Monthly Active Runners with Loyalty Program",
     teaser:
       "Designed a loyalty and rewards flow for RISE App, that connects run consistency with visible progress and earned milestones—motivating runners to return weekly and stay active across the month instead of dropping off after short streaks.",
-    role: "Product design · UX · UI · Interaction",
-    result:
-      "Helped runners understand their progress emotionally, not just numerically.",
     href: "#",
     image: "/Images/Soon.jpg",
     tags: ["Increased MAU's by 31%", "Improved User-engagement", "Boosted Overall Retention"],
@@ -52,9 +44,6 @@ const CASE_STUDIES: CaseStudy[] = [
       "Reduced Friction in Personalized Health Shopping",
     teaser:
       "Designed an AI-powered marketplace for COSMO App, that helps users understand products via health score, build habits & make confident wellness choices with personalized recommendations — without overwhelming them, otherwise leading to drop-offs & abandoned flows.",
-    role: "Product design · UX · UI · Interaction",
-    result:
-      "Helped runners understand their progress emotionally, not just numerically.",
     href: "#",
     image: "/Images/Soon.jpg",
     tags: ["Improved Progression Rate by 28%", "Reduced Task-friction by 48%", "Personalization Logic Optimized"],
@@ -79,18 +68,18 @@ const CaseStudies: React.FC = () => {
     >
 
 
-    <div className="my-30">
-      <SectionHeading
-        prefix="long before they looked good..."
-        mainBefore=""
-        mainAfter="that felt Good,"
-        highlightSvg="/Images/H1Bold.png"
-        highlightAlt="designs"
-        noteSvg="/Images/H1Note.png"
-        punchline=""
-        align="center"
-      />
-    </div>
+      <div className="my-30">
+        <SectionHeading
+          prefix="long before they looked good..."
+          mainBefore=""
+          mainAfter="that felt Good,"
+          highlightSvg="/Images/H1Bold.png"
+          highlightAlt="designs"
+          noteSvg="/Images/H1Note.png"
+          punchline=""
+          align="center"
+        />
+      </div>
 
 
       <div className="flex items-center justify-between gap-4 mb-6 ml-6">
@@ -152,14 +141,14 @@ const CaseStudies: React.FC = () => {
 const CaseStudyCard: React.FC<{ caseStudy: CaseStudy }> = ({ caseStudy }) => {
   return (
     <div className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-zinc-900 bg-[#060608]/99 transition-transform duration-500 ease-out hover:-translate-y-1 hover:border-zinc-700">
-      
+
       <div className="pointer-events-none absolute inset-px rounded-[1.45rem] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_95%)] opacity-50 transition-opacity duration-500 group-hover:opacity-100" />
 
       <div className="relative grid h-full p-5 sm:p-6 md:p-12 gap-6 md:gap-10 md:grid-cols-[minmax(0,2.25fr)_minmax(0,2.5fr)]">
         {/* Left: content */}
         <div className="relative z-1 flex flex-col justify-between gap-6">
           <div className="space-y-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-400">
+            <p className="text-sm font-semibold uppercase tracking-[0.15em] text-zinc-400">
               {caseStudy.label}
             </p>
 
@@ -184,19 +173,6 @@ const CaseStudyCard: React.FC<{ caseStudy: CaseStudy }> = ({ caseStudy }) => {
           </div>
 
           <div className="flex flex-col text-sm text-zinc-300">
-            {/* <div>
-              <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-zinc-500">
-                Role
-              </p>
-              <p className="mt-1">{caseStudy.role}</p>
-            </div>
-            <div>
-              <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-zinc-500">
-                Outcome
-              </p>
-              <p className="mt-1 text-zinc-200">{caseStudy.result}</p>
-            </div> */}
-
             <div className="">
               <a
                 href={caseStudy.href}
