@@ -44,7 +44,7 @@ const CASE_STUDIES: CaseStudy[] = [
       "Reduced Friction in Personalized Health Shopping",
     teaser:
       "Designed an AI-powered marketplace for COSMO App, that helps users understand products via health score, build habits & make confident wellness choices with personalized recommendations — without overwhelming them, otherwise leading to drop-offs & abandoned flows.",
-    href: "#",
+    href: "work/cosmo",
     image: "/Images/Soon.jpg",
     tags: ["Improved Progression Rate by 28%", "Reduced Task-friction by 48%", "Personalization Logic Optimized"],
   },
