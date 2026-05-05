@@ -3,12 +3,32 @@ import CaseStudyHero from "../../components/projectpage/ProjectHero";
 import CaseStudyIntro from "../../components/projectpage/ProjectIntro";
 import CaseStudyPrologue from "../../components/projectpage/ProjectPrologue";
 import CaseStudyInsights from "../../components/projectpage/ProjectInsight";
-import ProjectSection from "../../components/projectpage/ProjectSection";
+import CaseStudyProblem from "../../components/projectpage/ProjectProblems";
+import CaseStudyIdeation from "../../components/projectpage/ProjectIdeas";
 import StickyScreens from "../../components/projectpage/StickyScreens";
 import ImpactStats from "../../components/projectpage/ImpactStats";
 import NextProject from "../../components/projectpage/NextProject";
 import Layout from '../../layouts/Layout.astro';
+
+const problems = [
+  {
+    number: "1",
+    before: "A) If a user",
+    highlight: "can’t decipher the back-of-pack jargon",
+    after:
+      "in the 5 seconds they spend at the shelf or online, every other health feature (personalization, tracking & quick-commerce) falls apart.",
+  },
+  {
+    number: "2",
+    before: "B) If a user",
+    highlight: "can't trust the information on the packet",
+    after:
+      ", they cannot make an informed or confident decision & in turn, they cannot track their nutrition accurately.",
+  },
+];
 ---
+
+
 
 <Layout
   title="Udit Mahajan — Product Designer & Developer | Product Design, UX & Visual Systems"
@@ -36,7 +56,7 @@ The proposed solution was a "Super-App"—a place to buy, a place to track, and 
   client:load
 />
 
-<section class="mx-auto max-w-6xl px-5 sm:px-10 py-25">
+<section class="mx-auto max-w-6xl px-5 sm:px-10 py-20">
 
 <p class="text-base tracking-[0.2em] font-google font-bold text-zinc-500 uppercase">
   Research
@@ -47,7 +67,7 @@ The proposed solution was a "Super-App"—a place to buy, a place to track, and 
 </h2>
 
 <p class="text-zinc-400 text-base md:text-lg leading-relaxed whitespace-pre-line">
-  At the first glance, the founder's observation seemed spot-on: Eating healthy in India is an exhausting chore. Between navigating misleading marketing, tracking complex calories, and aligning with personal health goals, the mental load on the average Indian consumer had reached a breaking point. So, to validate this hypothesis, we stepped out into the aisles of modern retail stores in Mumbai & these are the pain points we discovered:
+  At the first glance, the founder's observation seemed spot-on: Eating healthy in India is an exhausting chore. Between hunting for healthy products, tracking complex calories, and aligning with personal health goals, the mental load on the average Indian consumer had reached a breaking point. So, to validate this hypothesis, I along with my manager, stepped out into the aisles of modern retail stores in Mumbai & discovered these pain points:
 </p>
 
 </section>
@@ -89,7 +109,7 @@ The proposed solution was a "Super-App"—a place to buy, a place to track, and 
   client:load
 />
 
-<section class="mx-auto max-w-6xl px-5 sm:px-10 py-25">
+<section class="mx-auto max-w-6xl px-5 sm:px-10 pb-40">
   <div class="border-l-3 border-zinc-700 pl-6 md:pl-8">
   <p class="text-2xl tracking-wider font-google font-bold text-zinc-50 italic">
     The $30 Billion "Intent Gap"
@@ -104,94 +124,70 @@ The proposed solution was a "Super-App"—a place to buy, a place to track, and 
   </div>
 </section>
 
-<CaseStudyPrologue
+
+<CaseStudyProblem
   eyebrow="PROBLEM SELECTION"
   title="Finding the 'Single Point of Failure'"
-  description={`We found that 7 out of 10 shoppers genuinely want to switch to healthier alternatives at the point of purchase, yet only 1 in 10 actually succeeds in finding one. This "Intent to Action Gap" represents a missed opportunity for clean-label brands & a health catastrophe for the consumer. Our initial discovery revealed that the "exhaustion" wasn't due to a lack of healthy options, but a lack of understanding & trust:
-
- A) If a user can’t decipher the back-of-pack jargon in the 5 seconds they spend at the shelf or online, every other "health feature" (personalization, tracking & quick-commerce) falls apart.
- 
- B) If a user can't trust the information on the packet, they cannot make an informed or confident decision & in turn, they cannot track their nutrition accurately.`}
-  image="/Images/cosmograph.png"
-  note="*Representational Graph"
+  description={`As we started to deconstruct the problem, I realized that we were designing for the "Aftermath" of the problem, not the "Source." We found that 7 out of 10 shoppers genuinely want to switch to healthier alternatives at the point of purchase, yet only 1 in 10 actually succeeds in finding one. This "Intent to Action Gap" represents a missed opportunity for clean-label brands & a health catastrophe for the consumer. Our initial discovery revealed that the "exhaustion" wasn't due to a lack of healthy options, but a lack of understanding & trust:`}
+ problems={problems}
   client:load
 />
 
-<section class="mx-auto max-w-6xl px-5 sm:px-10 pb-25">
+<section class="mx-auto max-w-6xl px-5 sm:px-10 pb-40">
   <div class="border-l-3 border-zinc-700 pl-6 md:pl-8">
-  <p class="text-2xl tracking-wider font-google font-bold text-zinc-50">
-    The Strategic Pivot: Solving for 1 Core Problem
+  <p class="text-2xl tracking-wider font-google font-bold text-zinc-50 italic">
+    The Strategic Pivot
   </p>
-  <p class="mt-4 text-zinc-400 text-base md:text-lg leading-relaxed ">
-    Finally, as we deconstructed the problem, we realized that while the other problems dealt with buying or tracking food, the ‘Single Point of Failure’ happened much earlier—at the moment of Decision.
+  <p class="mt-4 text-zinc-400 text-base md:text-lg leading-relaxed italic">
+    Finally, we agreed that while the other problems dealt with buying or tracking food, the ‘Single Point of Failure’ happened much earlier—at the moment of Decision.
     So, by solving Label Literacy, we empower the user at the exact "Moment of Truth"—the 5 seconds before the product hits the cart. And, it would naturally fix the other problems in the future.
 
   </p>
   </div>
 </section>
 
+
 <CaseStudyPrologue
-  eyebrow="PROLOGUE"
+  eyebrow="DEFINING THE PROBLEM"
   title="'Health Halo' is killing Indians"
-  description={`India is eating itself sick. Over 100 million people struggle with "lifestyle diseases"—like Diabetes and PCOD—caused by ultra-processed foods. Consumers are now desperately seeking help. While urban Indians are more "health-conscious" than ever, they are losing the battle against the "Health Halo." We see a massive surge in people trying to make better choices, but they are being stopped by a "Wall of Jargon" on the back of food packaging.`}
+  description={`India is eating itself sick. Over 100 million people struggle with "lifestyle diseases"—like Diabetes and PCOD, caused by ultra-processed foods disguised as "healthy". Consumers are now desperately seeking help. While urban Indians are more "health-conscious" than ever, they are losing the battle against the "Health Halo." We see a massive surge in people trying to make better choices, but they are being stopped by a "Wall of Jargon" on the back of food packaging.`}
   image="/Images/cosmograph.png"
   note="*Representational Graph"
+  detail={`So, I had to design a solution to capture this exact, high-intent moment of doubt by translating complex chemical ingredients & nutritional tables into a simple, personalized "Match Score" based on a user’s unique health profile. This provides an opportunity to convert high-friction skepticism into instant, trust-driven conversion. Based on this understanding, I defined the problem statement by asking a simple question:`}
+  image="/Images/cosmograph.png"
   client:load
 />
 
-
-<!-- <section class="mx-auto max-w-6xl px-5 sm:px-10 pb-25">
+<section class="mx-auto max-w-6xl px-5 sm:px-10 pb-25">
   <div class="border-l-3 border-zinc-700 pl-6 md:pl-8">
   <p class="text-2xl tracking-wider font-google font-bold text-zinc-50">
-    The $30 Billion "Intent Gap"
+    The Problem Statement:
   </p>
-  <p class="mt-4 max-w-2xl text-zinc-400 text-base md:text-lg leading-relaxed">
-    People today want to make healthier choices — but the journey is fragmented.
-    From unclear labels and misleading claims to overwhelming options,
-    decision-making becomes exhausting instead of empowering.
-    <br /><br />
-    Most platforms focus on selling products, not helping users understand them.
-    As a result, users either overthink every decision — or give up entirely.
+  <p class="mt-4 text-zinc-400 text-base md:text-lg leading-relaxed ">
+    How might we transform complex label jargon into a personalized, instant, and trustworthy health verdict for busy shoppers—empowering their 'intent to buy healthy' in a matter of seconds?
   </p>
   </div>
-</section> -->
+</section>
 
-
-
-
-
-
-
-
-  <ProjectSection
-    eyebrow="Why this exists"
-    title="Running apps track distance. Few understand motivation."
-    body="Rise began with a simple question — why does consistency feel so hard even when the data looks good?"
-    client:load
-  />
-
-  <ProjectSection
-    centered
-    title="Running isn’t about streaks. It’s about momentum."
-    body="The entire product was designed around emotional continuity — not daily pressure, not competition."
-    client:load
-  />
-
-  <StickyScreens client:load/>
-
-  <ProjectSection
-    title="Designing calm, not dopamine"
-    body="Every visual decision was intentional. No aggressive gradients. No loud success states. Just clarity, pacing, and reassurance."
-    client:load
-  />
-
-  <ImpactStats />
-
-  <ProjectSection
-    title="What this project taught me"
-    body="Motivation doesn’t need to shout. Sometimes the best experiences simply stay out of the way."
-    client:load
-  />
+<CaseStudyIdeation
+  eyebrow="DESIGN PROCESS & STRATEGY"
+  title="Navigating Divergent Ideas"
+  description={`Instead of ideating in a silo, we gathered a cross-functional team to brainstorm how to dismantle the "Health Halo". We used a collaborative board to collect ideas on how to turn complex data into instant, actionable insights. The goal was to explore every possible way to bridge the gap between intent and action before narrowing our focus to the most viable path.
+  
+  Some of the ideas we initially converged on:`}
+  images={[
+    "/Cosmo/cosmoprob1.png",
+    "/Cosmo/cosmoprob1.png",
+    "/Cosmo/cosmoprob1.png",
+    "/Cosmo/cosmoprob1.png",
+    "/Cosmo/cosmoprob2.png",
+    "/Cosmo/cosmoprob2.png",
+    "/Cosmo/cosmoprob2.png",
+    "/Cosmo/cosmoprob2.png",
+  ]}
+  detail={`This collaborative ideation session was essential for mapping out different approaches and evaluating their long-term potential. While many innovative concepts emerged, our next step was to filter them through the lens of feasibility and high immediate user impact.`}
+  client:load
+/>
 
   <NextProject />
 </Layout>

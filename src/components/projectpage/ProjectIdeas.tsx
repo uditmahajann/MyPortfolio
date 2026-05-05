@@ -5,25 +5,23 @@ type Props = {
   eyebrow?: string;
   title: string;
   description: string;
-  image?: string;
+  images?: string[];
   imageAlt?: string;
-  note?: string;
   detail?: string;
 };
 
-const CaseStudyPrologue: React.FC<Props> = ({
-  eyebrow = "PROLOGUE",
+const CaseStudyIdeation: React.FC<Props> = ({
+  eyebrow = "",
   title,
   description,
-  image,
-  imageAlt = "prologue visual",
-  note,
+  images = [],
+  imageAlt = "",
   detail,
-  
 }) => {
+  
   return (
     <section className="mx-auto max-w-6xl px-5 sm:px-10 py-25">
-      
+
       {/* Top Content */}
       <motion.div
         initial={{ opacity: 0, y: 24 }}
@@ -31,53 +29,48 @@ const CaseStudyPrologue: React.FC<Props> = ({
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        {/* Eyebrow */}
         <p className="text-base tracking-[0.2em] font-google font-bold text-zinc-500 uppercase">
           {eyebrow}
         </p>
 
-        {/* Title */}
         <h2 className="mt-4 text-3xl md:text-5xl font-google font-semibold text-zinc-50 leading-tight tracking-wide">
           {title}
         </h2>
 
-        {/* Description */}
         <p className="mt-6 text-zinc-400 text-base md:text-lg leading-relaxed whitespace-pre-line">
           {description}
         </p>
       </motion.div>
 
-      {/* Visual Section */}
-      {image && (
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="mt-10"
+      {/* Visual Grid */}
+      {images.length > 0 && (
+  <motion.div
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6, delay: 0.1 }}
+    className="my-12"
+  >
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 rounded-2xl">
+      
+      {images.map((img, i) => (
+        <div
+          key={i}
+          className="overflow-hidden rounded-xl"
         >
-          <div className="relative rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900 lg:aspect-video">
-            
-            {/* Image */}
-            <img
-              src={image}
-              alt={imageAlt}
-              className="w-full h-auto object-contain lg:aspect-video"
-            />
+          <img
+            src={img}
+            alt={`${imageAlt}-${i}`}
+            className="w-full h-full object-cover aspect-square"
+          />
+        </div>
+      ))}
 
-          </div>
+    </div>
+  </motion.div>
+)}
 
-          {/* Optional Note */}
-          {note && (
-            <p className="mt-3 text-base font-google text-zinc-500 text-right">
-              {note}
-            </p>
-          )}
-        </motion.div>
-      )}
-
-
-      {/* Bottom Content */}
+{/* Bottom Content */}
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -89,9 +82,8 @@ const CaseStudyPrologue: React.FC<Props> = ({
           {detail}
         </p>
       </motion.div>
-
     </section>
   );
 };
 
-export default CaseStudyPrologue;
+export default CaseStudyIdeation;

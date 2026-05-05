@@ -2,9 +2,9 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 const screens = [
-  "/images/rise-1.png",
-  "/images/rise-2.png",
-  "/images/rise-3.png",
+  "/Cosmo/cosmoprob2.png",
+  "/Cosmo/cosmoprob1.png",
+  "/Cosmo/cosmoprob2.png",
 ];
 
 export default function StickyScreens() {

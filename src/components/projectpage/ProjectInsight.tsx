@@ -37,7 +37,7 @@ export default function ProblemInsights({ insights }: Props) {
   }, []);
 
   return (
-    <section className="relative mx-auto max-w-6xl px-5 sm:px-10 py-25">
+    <section className="relative mx-auto max-w-6xl px-5 sm:px-10 py-20">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-25">
 
         {/* LEFT SIDE (SCROLLING TEXT) */}
