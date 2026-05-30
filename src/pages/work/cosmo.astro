@@ -5,10 +5,59 @@ import CaseStudyPrologue from "../../components/projectpage/ProjectPrologue";
 import CaseStudyInsights from "../../components/projectpage/ProjectInsight";
 import CaseStudyProblem from "../../components/projectpage/ProjectProblems";
 import CaseStudyIdeation from "../../components/projectpage/ProjectIdeas";
+import CaseStudyStrategy from "../../components/projectpage/ProjectStrategy";
+import CaseStudyUsers from "../../components/projectpage/ProjectUsers";
+import CaseStudyDecisions from "../../components/projectpage/ProjectDecisions";
+import ProjectPhilosophy from "../../components/projectpage/ProjectPhilosophy";
 import StickyScreens from "../../components/projectpage/StickyScreens";
 import ImpactStats from "../../components/projectpage/ImpactStats";
 import NextProject from "../../components/projectpage/NextProject";
 import Layout from '../../layouts/Layout.astro';
+
+
+const factors = [
+  {
+    icon: "BarChart3",
+    title: "Accessibility",
+    description: "Solution must turn complexity into intuitive flow.",
+  },
+  {
+    icon: "Users",
+    title: "Transparency",
+    description: "The architecture must reflect honesty & build trust.",
+  },
+  {
+    icon: "MessageSquare",
+    title: "Velocity",
+    description: "Respect the shopper's time. Communicate in seconds.",
+  },
+  {
+    icon: "Smartphone",
+    title: "Autonomy",
+    description: "Empower the user to make an informed choice.",
+  },
+];
+
+const personas = [
+  {
+    image: "/Images/Sample.png",
+    title: "The Vigilant Optimizer",
+    description:
+      "Actively manages specific health goals or dietary restrictions. Wants healthier alternatives but struggles to understand ingredient lists & nutrition labels.",
+  },
+  {
+    image: "/Images/Sample.png",
+    title: "The Conscious Hustler",
+    description:
+      "Has a strong intent to buy healthy but is severely starved for time. They grab items based on buzzwords because they lack the time & energy to audit labels.",
+  },
+  {
+    image: "/Images/Sample.png",
+    title: "The Passive Buyer",
+    description:
+      "Shops purely based on price, habit, and taste packaging. They aren't emotionally invested in ingredient lists and assume that if it's on a shelf, it must be safe.",
+  },
+];
 
 const problems = [
   {
@@ -188,6 +237,75 @@ The proposed solution was a "Super-App"—a place to buy, a place to track, and 
   detail={`This collaborative ideation session was essential for mapping out different approaches and evaluating their long-term potential. While many innovative concepts emerged, our next step was to filter them through the lens of feasibility and high immediate user impact.`}
   client:load
 />
+
+<CaseStudyStrategy
+  eyebrow="THE DECISION ARCHITECTURE"
+  title="Choosing a Path from 25+ Ideas"
+  description="To transition from a chaotic board of ideas to a cohesive product strategy, we established a strict evaluative framework. We needed to ensure our final path was not just creative, but deeply anchored in human psychology, technical reality, and the specific behavioral constraints of our users."
+  strategyHeading="1. UX Prioritization"
+  strategyDescription="We plotted every concept from our ideation phase against an Impact vs. Feasibility matrix. Our goal was to isolate the highest-leverage solutions that could be realistically built and deployed."
+  image="/Images/cosmograph.png"
+  note="*Representational Graph"
+  client:load
+/>
+
+<CaseStudyDecisions
+  decisionHeading="2. Deciding Factors"
+  decisionDescription="Our approach was simple: Design for the subconscious, not just the interface. We focused on these four deciding factors based on user psychology, emotional states, and behavioral triggers:"
+  factors={factors}
+  client:load
+/>
+
+<CaseStudyUsers
+  personaHeading="3. The Target Personas"
+  personaDescription="To design an effective solution, we first had to map our target audience based on their willingness to engage with health data which varied wildly based on their health priority and emotional investment."
+  personas={personas}
+  detail={`This collaborative ideation session was essential for mapping out different approaches and evaluating their long-term potential. While many innovative concepts emerged, our next step was to filter them through the lens of feasibility and high immediate user impact.`}
+  client:load
+/>
+
+<section class="mx-auto max-w-6xl px-5 sm:px-10 pb-40">
+  <div class="border-l-[3px] border-zinc-700 pl-6 md:pl-8">
+
+    <p class="text-2xl tracking-wider font-google font-bold text-zinc-50 italic">
+      The $30 Billion "Intent Gap"
+    </p>
+
+    <p class="mt-4 text-zinc-400 text-base md:text-lg leading-relaxed italic">
+      People today want to make healthier choices — but the journey is fragmented.
+      From unclear labels and misleading claims to overwhelming options,
+      decision-making becomes exhausting instead of empowering.
+      Most platforms focus on selling products, not helping users understand them.
+      As a result, users either overthink every decision — or give up entirely.
+    </p>
+
+    <!-- Philosophy Pills -->
+    <div class="mt-8 flex flex-wrap gap-3">
+      
+      <div class="rounded-full border border-zinc-800 bg-zinc-900 px-5 py-3 text-sm font-medium text-zinc-200">
+        🔍 Transparency
+      </div>
+
+      <div class="rounded-full border border-zinc-800 bg-zinc-900 px-5 py-3 text-sm font-medium text-zinc-200">
+        ⚡ Instant Clarity
+      </div>
+
+      <div class="rounded-full border border-zinc-800 bg-zinc-900 px-5 py-3 text-sm font-medium text-zinc-200">
+        🧠 Education First
+      </div>
+
+      <div class="rounded-full border border-zinc-800 bg-zinc-900 px-5 py-3 text-sm font-medium text-zinc-200">
+        🤝 Trust Before Sales
+      </div>
+
+      <div class="rounded-full border border-zinc-800 bg-zinc-900 px-5 py-3 text-sm font-medium text-zinc-200">
+        ✨ Delightful Guidance
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
   <NextProject />
 </Layout>
