@@ -88,9 +88,9 @@ const CaseStudyStrategy: React.FC<Props> = ({
                               whileInView={{ opacity: 1, y: 0 }}
                               viewport={{ once: true }}
                               transition={{ duration: 0.6, delay: 0.1 }}
-                              className="mt-10"
+                              className="mt-15"
                             >
-                              <div className="relative rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900 lg:aspect-video">
+                              <div className="relative rounded-2xl overflow-hidden lg:aspect-video">
                                 
                                 {/* Image */}
                                 <img

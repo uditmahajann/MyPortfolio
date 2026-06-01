@@ -56,7 +56,7 @@ const CaseStudyPrologue: React.FC<Props> = ({
           transition={{ duration: 0.6, delay: 0.1 }}
           className="mt-10"
         >
-          <div className="relative rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900 lg:aspect-video">
+          <div className="relative rounded-2xl overflow-hidden lg:aspect-video">
             
             {/* Image */}
             <img

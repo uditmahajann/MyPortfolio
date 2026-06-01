@@ -1,18 +1,18 @@
 import { motion } from "framer-motion";
 import type React from "react";
 import {
-  BarChart3,
-  Users,
-  MessageSquare,
-  Smartphone,
+  ScanSearch,
+  Eye,
+  Zap,
+  Compass,
   Search,
 } from "lucide-react";
 
 const iconMap = {
-  BarChart3,
-  Users,
-  MessageSquare,
-  Smartphone,
+  ScanSearch,
+  Eye,
+  Zap,
+  Compass,
   Search,
 };
 
@@ -45,7 +45,7 @@ const CaseStudyDecisions: React.FC<Props> = ({
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.6 }}
-    className="py-10"
+    className="pb-10"
   >
     {/* Section Intro */}
     {(decisionHeading || decisionDescription) && (
@@ -57,7 +57,7 @@ const CaseStudyDecisions: React.FC<Props> = ({
         )}
 
         {decisionDescription && (
-          <p className="mt-3 max-w-3xl text-zinc-400 text-base md:text-lg leading-relaxed">
+          <p className="mt-3 max-w-2xl text-zinc-400 text-base md:text-lg leading-relaxed">
             {decisionDescription}
           </p>
         )}
@@ -87,13 +87,13 @@ const CaseStudyDecisions: React.FC<Props> = ({
           <Icon size={32} />
         </div>
 
-        <h4 className="text-zinc-100 text-lg font-medium leading-snug">
+        <h4 className="text-zinc-100 text-3xl font-caveat font-medium leading-snug">
           {factor.title}
         </h4>
 
       </div>
 
-      <p className="mt-5 text-sm text-zinc-400 leading-relaxed max-w-[220px]">
+      <p className="mt-5 font-google text-zinc-400 leading-relaxed max-w-[220px]">
         {factor.description}
       </p>
     </motion.div>

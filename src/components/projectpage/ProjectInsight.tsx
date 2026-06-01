@@ -48,11 +48,10 @@ export default function ProblemInsights({ insights }: Props) {
               className="insight-block min-h-[50vh] flex items-center"
             >
               <div
-                className={`transition-all duration-500 ${
-                  activeIndex === index
+                className={`transition-all duration-500 ${activeIndex === index
                     ? "opacity-100 translate-y-0"
                     : "opacity-30 translate-y-10"
-                }`}
+                  }`}
               >
                 <h3 className="text-3xl md:text-5xl font-semibold text-zinc-50 font-google leading-tight tracking-wide">
                   {item.title}
@@ -70,7 +69,7 @@ export default function ProblemInsights({ insights }: Props) {
         <div className="relative">
           <div className="sticky top-45">
             <div className="rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900">
-              
+
               {/* Image Switch */}
               <img
                 key={activeIndex}
@@ -78,6 +77,15 @@ export default function ProblemInsights({ insights }: Props) {
                 alt="insight visual"
                 className="w-full h-[350px] md:h-[450px] object-cover transition-all duration-500"
               />
+              <div
+                className="absolute inset-0 pointer-events-none rounded-2xl"
+                style={{
+                  background:
+                    "radial-gradient(circle at center, transparent 40%, rgba(24,24,27,0.15) 60%, rgba(24,24,27,0.95) 100%)",
+                }}
+              />
+              {/* Bottom Gradient */}
+              <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-zinc-900 to-transparent rounded-2xl" />
 
             </div>
           </div>

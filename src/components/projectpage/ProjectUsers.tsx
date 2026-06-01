@@ -89,11 +89,11 @@ const CaseStudyPrologue: React.FC<Props> = ({
 
                                 {/* Card Content */}
                                 <div className="p-6">
-                                    <h3 className="text-xl font-google font-semibold text-zinc-50">
+                                    <h3 className="text-xl font-google font-medium text-zinc-50">
                                         {persona.title}
                                     </h3>
 
-                                    <p className="mt-3 text-zinc-400 text-base leading-relaxed">
+                                    <p className="mt-3 text-zinc-400 font-google text-base leading-relaxed">
                                         {persona.description}
                                     </p>
                                 </div>

@@ -8,31 +8,71 @@ import CaseStudyIdeation from "../../components/projectpage/ProjectIdeas";
 import CaseStudyStrategy from "../../components/projectpage/ProjectStrategy";
 import CaseStudyUsers from "../../components/projectpage/ProjectUsers";
 import CaseStudyDecisions from "../../components/projectpage/ProjectDecisions";
+import CaseStudyFlow from "../../components/projectpage/ProjectFlow";
+import CaseStudyIterations from "../../components/projectpage/ProjectIterations";
 import ProjectPhilosophy from "../../components/projectpage/ProjectPhilosophy";
 import StickyScreens from "../../components/projectpage/StickyScreens";
 import ImpactStats from "../../components/projectpage/ImpactStats";
 import NextProject from "../../components/projectpage/NextProject";
 import Layout from '../../layouts/Layout.astro';
 
+const flowSteps = [
+  {
+    label: "Search Results",
+    image: "/Images/FrontDark.png",
+    title: "Grouped by Price",
+    description:
+      "For budget-conscious users, flights were grouped by price instead of airline.",
+  },
+  {
+    label: "Search Results",
+    image: "/Images/FrontDark.png",
+    title: "Grouped by Time",
+    description:
+      "Flights were organized under time blocks for time-sensitive travelers.",
+  },
+  {
+    label: "Checkout",
+    image: "/Images/FrontDark.png",
+    title: "Gift Selection",
+    description:
+      "Users could choose which products to include in a gift package.",
+  },
+  {
+    label: "Checkout",
+    image: "/Images/FrontDark.png",
+    title: "Gift Customization",
+    description:
+      "Visual personalization options improved delight and confidence.",
+  },
+  {
+    label: "",
+    image: "",
+    title: "",
+    description:
+      "",
+  },
+];
+
 
 const factors = [
   {
-    icon: "BarChart3",
+    icon: "ScanSearch",
     title: "Accessibility",
     description: "Solution must turn complexity into intuitive flow.",
   },
   {
-    icon: "Users",
+    icon: "Eye",
     title: "Transparency",
     description: "The architecture must reflect honesty & build trust.",
   },
   {
-    icon: "MessageSquare",
+    icon: "Zap",
     title: "Velocity",
     description: "Respect the shopper's time. Communicate in seconds.",
   },
   {
-    icon: "Smartphone",
+    icon: "Compass",
     title: "Autonomy",
     description: "Empower the user to make an informed choice.",
   },
@@ -40,19 +80,19 @@ const factors = [
 
 const personas = [
   {
-    image: "/Images/Sample.png",
+    image: "/Personas/persona1.png",
     title: "The Vigilant Optimizer",
     description:
       "Actively manages specific health goals or dietary restrictions. Wants healthier alternatives but struggles to understand ingredient lists & nutrition labels.",
   },
   {
-    image: "/Images/Sample.png",
+    image: "/Personas/persona2.png",
     title: "The Conscious Hustler",
     description:
-      "Has a strong intent to buy healthy but is severely starved for time. They grab items based on buzzwords because they lack the time & energy to audit labels.",
+      "Has strong intent to buy healthy but is severely starved for time. They grab items based on buzzwords because they lack time & energy to audit labels.",
   },
   {
-    image: "/Images/Sample.png",
+    image: "/Personas/persona3.png",
     title: "The Passive Buyer",
     description:
       "Shops purely based on price, habit, and taste packaging. They aren't emotionally invested in ingredient lists and assume that if it's on a shelf, it must be safe.",
@@ -101,7 +141,7 @@ Their initial hypothesis was broad: “Eating healthy in India is exhausting. Pe
 The proposed solution was a "Super-App"—a place to buy, a place to track, and an AI to talk to. It was a massive technical & design challenge, so we wanted to validate this hypothesis to understand the problem more precisely.`}
   role={["Product Designer", "UX Researcher"]}
   duration="Oct 2025 — Dec 2025"
-  team={["1 Product Manager", "2 Developers", "1 Designer (Me)"]}
+  team={["1 Product Manager", "2 Developers", "1 Designer (Me)", "+ More"]}
   client:load
 />
 
@@ -128,31 +168,31 @@ The proposed solution was a "Super-App"—a place to buy, a place to track, and 
       title: "1. Curation Fatigue",
       description:
         "India’s 'clean label' market is so fragmented that users spend hours switching between aisles or even stores just to find one healthy alternative.",
-      image: "/Images/Banner1.png",
+      image: "/Problems/problem1.png",
     },
     {
       title: "2. Personal Mismatch",
       description:
         " Generic ‘healthy’ labels lead to a lack of user trust as it doesn't account for individual goals, such as managing PCOD, Diabetes, or specific fitness goals.",
-      image: "/Images/Banner2.png",
+      image: "/Problems/problem2.png",
     },
     {
       title: "3. Tracking Accuracy",
       description:
         "Most nutrition trackers are often inaccurate because marketing claims like 'Baked, not Fried' or 'No Added Sugar' create a false sense of security.",
-      image: "/Images/Banner3.png",
+      image: "/Problems/problem3.png",
     },
     {
       title: "4. Label Literacy",
       description:
         "Complex chemical names & 'Greenwashed' marketing claims hide the reality of their ingredients & make it impossible to know what is actually inside the box.",
-      image: "/Images/Banner3.png",
+      image: "/Problems/problem4.png",
     },
     {
       title: "5. The Velocity Gap",
       description:
         "Shopping is a high-speed activity. Consumers don't have the cognitive bandwidth to spend 10 minutes required to research a single product while standing in a busy aisle.",
-      image: "/Images/Banner3.png",
+      image: "/Problems/problem5.png",
     },
   ]}
   client:load
@@ -185,7 +225,7 @@ The proposed solution was a "Super-App"—a place to buy, a place to track, and 
 <section class="mx-auto max-w-6xl px-5 sm:px-10 pb-40">
   <div class="border-l-3 border-zinc-700 pl-6 md:pl-8">
   <p class="text-2xl tracking-wider font-google font-bold text-zinc-50 italic">
-    The Strategic Pivot
+    The Strategic Pivot: Solving only for Label Literacy
   </p>
   <p class="mt-4 text-zinc-400 text-base md:text-lg leading-relaxed italic">
     Finally, we agreed that while the other problems dealt with buying or tracking food, the ‘Single Point of Failure’ happened much earlier—at the moment of Decision.
@@ -225,14 +265,14 @@ The proposed solution was a "Super-App"—a place to buy, a place to track, and 
   
   Some of the ideas we initially converged on:`}
   images={[
-    "/Cosmo/cosmoprob1.png",
-    "/Cosmo/cosmoprob1.png",
-    "/Cosmo/cosmoprob1.png",
-    "/Cosmo/cosmoprob1.png",
-    "/Cosmo/cosmoprob2.png",
-    "/Cosmo/cosmoprob2.png",
-    "/Cosmo/cosmoprob2.png",
-    "/Cosmo/cosmoprob2.png",
+    "/Ideas/idea7.png",
+    "/Ideas/idea6.png",
+    "/Ideas/idea3.png",
+    "/Ideas/idea5.png",
+    "/Ideas/idea2.png",
+    "/Ideas/idea4.png",
+    "/Ideas/idea8.png",
+    "/Ideas/idea1.png",
   ]}
   detail={`This collaborative ideation session was essential for mapping out different approaches and evaluating their long-term potential. While many innovative concepts emerged, our next step was to filter them through the lens of feasibility and high immediate user impact.`}
   client:load
@@ -244,7 +284,7 @@ The proposed solution was a "Super-App"—a place to buy, a place to track, and 
   description="To transition from a chaotic board of ideas to a cohesive product strategy, we established a strict evaluative framework. We needed to ensure our final path was not just creative, but deeply anchored in human psychology, technical reality, and the specific behavioral constraints of our users."
   strategyHeading="1. UX Prioritization"
   strategyDescription="We plotted every concept from our ideation phase against an Impact vs. Feasibility matrix. Our goal was to isolate the highest-leverage solutions that could be realistically built and deployed."
-  image="/Images/cosmograph.png"
+  image="/Images/matrix.png"
   note="*Representational Graph"
   client:load
 />
@@ -258,9 +298,64 @@ The proposed solution was a "Super-App"—a place to buy, a place to track, and 
 
 <CaseStudyUsers
   personaHeading="3. The Target Personas"
-  personaDescription="To design an effective solution, we first had to map our target audience based on their willingness to engage with health data which varied wildly based on their health priority and emotional investment."
+  personaDescription="To design an effective solution, we also had to map our target audience based on their willingness to engage with health data which varied wildly based on their health priority and emotional investment."
   personas={personas}
-  detail={`This collaborative ideation session was essential for mapping out different approaches and evaluating their long-term potential. While many innovative concepts emerged, our next step was to filter them through the lens of feasibility and high immediate user impact.`}
+  detail={`We realized our MVP needed to cater heavily to the Conscious Hustler and Vigilant Optimizer—the segments experiencing the sharpest friction between their intent and the reality of the market. The Passive Buyers were simply not our target audience.`}
+  client:load
+/>
+
+<CaseStudyFlow
+  eyebrow="UNDERSTANDING USER FLOWS"
+  title="Where does Cosmo fits into the picture?"
+  description={`Before designing a single interface, we had to answer a critical product question: How do we introduce a health-conscious marketplace without forcing users to completely rewrite their deep-rooted shopping habits?
+
+Modern consumers are deeply conditioned by the hyper-efficiency of quick-commerce giants like Blinkit, Zepto, and Swiggy Instamart. They expect friction-free, instantaneous gratification. If our solution required them to adopt an entirely new, tedious mental model, the product would face immediate abandonment.
+
+Cosmo was built not to disrupt existing user behavior, but to elegantly piggyback on it.`}
+  flowHeading="1. Dissecting the Current Q-Commerce Flow"
+  flowDescription="In the current Indian retail landscape, platforms like Blinkit and Zepto have automated the user’s shopping ritual into a highly efficient, subconscious loop:"
+  steps={flowSteps}
+  client:load
+/>
+
+<section class="mx-auto max-w-6xl px-5 sm:px-10 pb-25">
+  <div class="border-l-3 border-zinc-700 pl-6 md:pl-8">
+  <p class="text-2xl tracking-wider font-google font-bold text-zinc-50">
+    The Design Challenge:
+  </p>
+  <p class="mt-4 text-zinc-400 text-base md:text-lg leading-relaxed ">
+   If we intercept this loop with a slow, educational tool that lectures the user on ingredients, we break the velocity they crave. Cosmo needed to match the exact speed and convenience of a 10-minute delivery app while fundamentally upgrading the quality of what goes into the cart.
+  </p>
+  </div>
+</section>
+
+
+<CaseStudyIterations
+  flowHeading="2. Introducing Cosmo: The Healthy Marketplace"
+  flowDescription="Cosmo enters the picture as a dual-engine ecosystem designed to meet the user exactly where they are—whether they are shopping digitally on their couch or standing physically in a grocery store aisle. Instead of an abstract tracking app, Cosmo is a comprehensive ecosystem powered by three core pillars:"
+  steps={flowSteps}
+  client:load
+/>
+
+<section class="mx-auto max-w-6xl px-5 sm:px-10 pb-25">
+  <div class="border-l-3 border-zinc-700 pl-6 md:pl-8">
+  <p class="text-2xl tracking-wider font-google font-bold text-zinc-50">
+    The Design Challenge:
+  </p>
+  <p class="mt-4 text-zinc-400 text-base md:text-lg leading-relaxed ">
+   If we intercept this loop with a slow, educational tool that lectures the user on ingredients, we break the velocity they crave. Cosmo needed to match the exact speed and convenience of a 10-minute delivery app while fundamentally upgrading the quality of what goes into the cart.
+  </p>
+  </div>
+</section>
+
+<CaseStudyStrategy
+  eyebrow="PRODUCT DESIGN"
+  title="The Final Solution"
+  description="To transition from a chaotic board of ideas to a cohesive product strategy, we established a strict evaluative framework. We needed to ensure our final path was not just creative, but deeply anchored in human psychology, technical reality, and the specific behavioral constraints of our users."
+  strategyHeading="1. UX Prioritization"
+  strategyDescription="We plotted every concept from our ideation phase against an Impact vs. Feasibility matrix. Our goal was to isolate the highest-leverage solutions that could be realistically built and deployed."
+  image="/Images/cosmograph.png"
+  note="*Representational Graph"
   client:load
 />
 
