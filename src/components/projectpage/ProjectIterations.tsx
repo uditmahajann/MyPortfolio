@@ -13,7 +13,6 @@ import {
 
 type FlowStep = {
   image: string;
-//   label?: string;
   title: string;
   description: string;
 };
@@ -32,6 +31,7 @@ export default function CaseStudyUserFlow({
 }: Props) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
   const [maxTranslate, setMaxTranslate] = useState(0);
 
@@ -42,29 +42,46 @@ export default function CaseStudyUserFlow({
 
   useEffect(() => {
     const calculateWidth = () => {
-      if (!trackRef.current) return;
+      if (!trackRef.current || !wrapperRef.current) return;
 
       const totalWidth = trackRef.current.scrollWidth;
       const viewportWidth = window.innerWidth;
 
-      const translateAmount = Math.max(
-        totalWidth - viewportWidth + 120,
-        0
+      const styles = getComputedStyle(
+        wrapperRef.current
       );
 
-      setMaxTranslate(translateAmount);
+      const paddingLeft = parseFloat(
+        styles.paddingLeft
+      );
+
+      const paddingRight = parseFloat(
+        styles.paddingRight
+      );
+
+      setMaxTranslate(
+        Math.max(
+          totalWidth -
+            viewportWidth +
+            paddingLeft +
+            paddingRight,
+          0
+        )
+      );
     };
 
     calculateWidth();
 
-    window.addEventListener("resize", calculateWidth);
+    window.addEventListener(
+      "resize",
+      calculateWidth
+    );
 
-    return () => {
+    return () =>
       window.removeEventListener(
         "resize",
         calculateWidth
       );
-    };
   }, [steps]);
 
   const x = useTransform(
@@ -74,16 +91,9 @@ export default function CaseStudyUserFlow({
   );
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative"
-      style={{
-        height: `${steps.length * 90}vh`,
-      }}
-    >
-      {/* Intro Content */}
-      <div className="mx-auto max-w-6xl px-5 sm:px-10 pb-15">
-
+    <section>
+      {/* Intro */}
+      <div className="mx-auto max-w-6xl px-5 sm:px-10 pb-25">
         {(flowHeading || flowDescription) && (
           <div className="mt-20">
             {flowHeading && (
@@ -101,46 +111,57 @@ export default function CaseStudyUserFlow({
         )}
       </div>
 
-      {/* Sticky Horizontal Flow */}
-      <div className="sticky top-30 h-screen overflow-hidden ">
+      {/* Scroll Area */}
+      <div
+        ref={sectionRef}
+        className="relative"
+        style={{
+          height: `${steps.length * 65}vh`,
+        }}
+      >
+        <div className="sticky top-30 h-[calc(100vh-120px)] overflow-hidden">
 
-        <motion.div
-          ref={trackRef}
-          style={{ x }}
-          className="flex items-start gap-20 mx-auto max-w-6xl px-5 sm:px-10 will-change-transform"
-        >
-          {steps.map((step, index) => (
-            <div
-              key={index}
-              className="w-[280px] md:w-[320px] shrink-0"
+          <div
+            ref={wrapperRef}
+            className="px-6 sm:px-10 lg:px-60"
+          >
+            <motion.div
+              ref={trackRef}
+              style={{ x }}
+              className="flex items-center gap-20 will-change-transform"
             >
-              {/* {step.label && (
-                <div className="mb-6 inline-flex rounded-full border border-lime-900 bg-lime-950 px-4 py-2 text-sm text-lime-300">
-                  {step.label}
+              {steps.map((step, index) => (
+                <div
+                  key={index}
+                  className="w-[700px] shrink-0 flex items-center gap-10"
+                >
+                  {/* Phone */}
+                  <div className="w-[290px] shrink-0">
+                    <img
+                      src={step.image}
+                      alt={step.title}
+                      className="w-full"
+                    />
+                  </div>
+
+                  {/* Description */}
+                  <div className="max-w-[320px]">
+                    <div className="mb-4 h-px w-12 bg-lime-300" />
+
+                    <h4 className="text-3xl font-google font-semibold text-zinc-50 leading-tight">
+                      {step.title}
+                    </h4>
+
+                    <p className="mt-4 text-zinc-400 text-lg leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
                 </div>
-              )} */}
+              ))}
+            </motion.div>
+          </div>
 
-              {/* Phone */}
-              <div className="shadow-2xl">
-                <img
-                  src={step.image}
-                  alt={step.title}
-                  className="w-full"
-                />
-              </div>
-
-              {/* Content */}
-              <h4 className="mt-6 text-xl font-semibold text-zinc-50">
-                {step.title}
-              </h4>
-
-              <p className="mt-3 text-zinc-400 leading-relaxed">
-                {step.description}
-              </p>
-            </div>
-          ))}
-        </motion.div>
-        
+        </div>
       </div>
     </section>
   );

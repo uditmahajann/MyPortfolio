@@ -30,7 +30,7 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({ currentPath }) => {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
         scrolled
-          ? "border-b border-white/10 bg-zinc-950/75 backdrop-blur-xl py-2"
+          ? "border-b border-white/10 bg-zinc-950/75 backdrop-blur-xl py-0.5"
           : "bg-transparent py-5"
       }`}
     >

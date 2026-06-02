@@ -9,48 +9,112 @@ import CaseStudyStrategy from "../../components/projectpage/ProjectStrategy";
 import CaseStudyUsers from "../../components/projectpage/ProjectUsers";
 import CaseStudyDecisions from "../../components/projectpage/ProjectDecisions";
 import CaseStudyFlow from "../../components/projectpage/ProjectFlow";
+import CaseStudyConcepts from "../../components/projectpage/ProjectConcepts";
 import CaseStudyIterations from "../../components/projectpage/ProjectIterations";
-import ProjectPhilosophy from "../../components/projectpage/ProjectPhilosophy";
-import StickyScreens from "../../components/projectpage/StickyScreens";
-import ImpactStats from "../../components/projectpage/ImpactStats";
-import NextProject from "../../components/projectpage/NextProject";
+import CaseStudySolutions from "../../components/projectpage/ProjectSolutions";
+import CaseStudyCta from "../../components/projectpage/ProjectCta";
 import Layout from '../../layouts/Layout.astro';
+
+const iterations = [
+  {
+    image: "/Flows/flow1.png",
+    title: "Step-1: The Trigger",
+    description:
+      "A health-conscious user realizes that they are out of breakfast items or grocery or gets a sudden mid-day snack craving and reaches for their phone.",
+  },
+  {
+    image: "/Flows/flow2.png",
+    title: "Step-2: The Sensory Flood",
+    description:
+      "The user opens a q-commerce app, immediately flooded by generic categories, specifically engineered to trigger immediate, unhealthy impulse clicks.",
+  },
+  {
+    image: "/Flows/flow3.png",
+    title: "Step-3: The Deceptive Hope",
+    description:
+      "The user selects a category or searches for 'Museli' & is met with inconsistent tags across products, making it impossible to compare nutritional value. ",
+  },
+  {
+    image: "/Flows/flow4.png",
+    title: "Step-4: The Growing Friction",
+    description:
+      "The screen displays some basic & random metrics like '24g Protein' but provides zero context & lacks personalization, leaving the user uncertain.",
+  },
+  {
+    image: "/Flows/flow5.png",
+    title: "Step-5: The Mental Burnout",
+    description:
+      "To verify the truth, user opens the label details & is caught up with cognitive fatigue, manually calculating serving sizes & decoding chemical jargon.",
+  },
+  {
+    image: "/Flows/flow6.png",
+    title: "Step-6: The Guilty Compromise",
+    description:
+      "Run out of patience, forces a quick tap, leaving the health-conscious user with a subtle layer of post-purchase guilt, unsure if they actually bought healthy.",
+  },
+];
+
+
+const solutions = [
+  {
+    label: "1. A Smart & Instant Scanner",
+    before: "Allows user to curate a healthier shopping cart in real time without the research fatigue",
+    highlight: "by providing an instant, honest health verdict",
+    after:
+      "on simply scanning a product's barcode or picture or directly via search query.",
+  },
+  {
+    label: "2. A Personalized Marketplace",
+    before: "A familiar, fast shopping interface, with a personalized marketplace",
+    highlight: "where every product is pre-vetted & categorized based on real nutritional value,",
+    after:
+      "incorporating health goals and medical concerns.",
+  },
+  {
+    label: "3. An AI Health Assistant",
+    before: "The specific interface designs, mechanics, and workflows cannot be disclosed for this feature",
+    highlight: "due to Non-Disclosure Agreement.",
+    after:
+      "",
+  },
+];
 
 const flowSteps = [
   {
-    label: "Search Results",
-    image: "/Images/FrontDark.png",
-    title: "Grouped by Price",
+    image: "/Flows/flow1.png",
+    title: "Step-1: The Trigger",
     description:
-      "For budget-conscious users, flights were grouped by price instead of airline.",
+      "A health-conscious user realizes that they are out of breakfast items or grocery or gets a sudden mid-day snack craving and reaches for their phone.",
   },
   {
-    label: "Search Results",
-    image: "/Images/FrontDark.png",
-    title: "Grouped by Time",
+    image: "/Flows/flow2.png",
+    title: "Step-2: The Sensory Flood",
     description:
-      "Flights were organized under time blocks for time-sensitive travelers.",
+      "The user opens a q-commerce app, immediately flooded by generic categories, specifically engineered to trigger immediate, unhealthy impulse clicks.",
   },
   {
-    label: "Checkout",
-    image: "/Images/FrontDark.png",
-    title: "Gift Selection",
+    image: "/Flows/flow3.png",
+    title: "Step-3: The Deceptive Hope",
     description:
-      "Users could choose which products to include in a gift package.",
+      "The user selects a category or searches for 'Museli' & is met with inconsistent tags across products, making it impossible to compare nutritional value. ",
   },
   {
-    label: "Checkout",
-    image: "/Images/FrontDark.png",
-    title: "Gift Customization",
+    image: "/Flows/flow4.png",
+    title: "Step-4: The Growing Friction",
     description:
-      "Visual personalization options improved delight and confidence.",
+      "The screen displays some basic & random metrics like '24g Protein' but provides zero context & lacks personalization, leaving the user uncertain.",
   },
   {
-    label: "",
-    image: "",
-    title: "",
+    image: "/Flows/flow5.png",
+    title: "Step-5: The Mental Burnout",
     description:
-      "",
+      "To verify the truth, user opens the label details & is caught up with cognitive fatigue, manually calculating serving sizes & decoding chemical jargon.",
+  },
+  {
+    image: "/Flows/flow6.png",
+    title: "Step-6: The Guilty Compromise",
+    description:
+      "Run out of patience, forces a quick tap, leaving the health-conscious user with a subtle layer of post-purchase guilt, unsure if they actually bought healthy.",
   },
 ];
 
@@ -198,7 +262,7 @@ The proposed solution was a "Super-App"—a place to buy, a place to track, and 
   client:load
 />
 
-<section class="mx-auto max-w-6xl px-5 sm:px-10 pb-40">
+<!-- <section class="mx-auto max-w-6xl px-5 sm:px-10 pb-40">
   <div class="border-l-3 border-zinc-700 pl-6 md:pl-8">
   <p class="text-2xl tracking-wider font-google font-bold text-zinc-50 italic">
     The $30 Billion "Intent Gap"
@@ -211,7 +275,7 @@ The proposed solution was a "Super-App"—a place to buy, a place to track, and 
     As a result, users either overthink every decision — or give up entirely.
   </p>
   </div>
-</section>
+</section> -->
 
 
 <CaseStudyProblem
@@ -225,7 +289,7 @@ The proposed solution was a "Super-App"—a place to buy, a place to track, and 
 <section class="mx-auto max-w-6xl px-5 sm:px-10 pb-40">
   <div class="border-l-3 border-zinc-700 pl-6 md:pl-8">
   <p class="text-2xl tracking-wider font-google font-bold text-zinc-50 italic">
-    The Strategic Pivot: Solving only for Label Literacy
+    Conclusion: Solve only for Label Literacy
   </p>
   <p class="mt-4 text-zinc-400 text-base md:text-lg leading-relaxed italic">
     Finally, we agreed that while the other problems dealt with buying or tracking food, the ‘Single Point of Failure’ happened much earlier—at the moment of Decision.
@@ -247,12 +311,12 @@ The proposed solution was a "Super-App"—a place to buy, a place to track, and 
   client:load
 />
 
-<section class="mx-auto max-w-6xl px-5 sm:px-10 pb-25">
+<section class="mx-auto max-w-6xl px-5 sm:px-10 pt-25 pb-50">
   <div class="border-l-3 border-zinc-700 pl-6 md:pl-8">
   <p class="text-2xl tracking-wider font-google font-bold text-zinc-50">
     The Problem Statement:
   </p>
-  <p class="mt-4 text-zinc-400 text-base md:text-lg leading-relaxed ">
+  <p class="mt-4 text-zinc-400 text-base md:text-2xl leading-relaxed ">
     How might we transform complex label jargon into a personalized, instant, and trustworthy health verdict for busy shoppers—empowering their 'intent to buy healthy' in a matter of seconds?
   </p>
   </div>
@@ -313,12 +377,12 @@ Modern consumers are deeply conditioned by the hyper-efficiency of quick-commerc
 
 Cosmo was built not to disrupt existing user behavior, but to elegantly piggyback on it.`}
   flowHeading="1. Dissecting the Current Q-Commerce Flow"
-  flowDescription="In the current Indian retail landscape, platforms like Blinkit and Zepto have automated the user’s shopping ritual into a highly efficient, subconscious loop:"
+  flowDescription="In the current Indian retail landscape, platforms like Blinkit and Zepto have automated the user’s shopping ritual into a highly efficient, subconscious loop. However, this hyper-efficiency creates major friction for healthy eating:"
   steps={flowSteps}
   client:load
 />
 
-<section class="mx-auto max-w-6xl px-5 sm:px-10 pb-25">
+<section class="mx-auto max-w-6xl px-5 sm:px-10 py-25">
   <div class="border-l-3 border-zinc-700 pl-6 md:pl-8">
   <p class="text-2xl tracking-wider font-google font-bold text-zinc-50">
     The Design Challenge:
@@ -330,10 +394,80 @@ Cosmo was built not to disrupt existing user behavior, but to elegantly piggybac
 </section>
 
 
+<CaseStudySolutions
+  eyebrow="FINAL PRODUCT DESIGN"
+  title="The Solution: Introducing Cosmo"
+  description={`Cosmo enters the picture as a dual-engine ecosystem designed to meet the user exactly where they are—whether they are shopping digitally on their couch or standing physically in a grocery store aisle. By focusing on real-world utility, Cosmo integrates into a user's routine, providing instant confidence without asking them to learn a new habit. It solves a single major frustration: the anxiety, second-guessing, and confusion that happens when trying to buy healthy groceries.
+
+
+Instead of an abstract shopping app, Cosmo is a comprehensive ecosystem powered by three core pillars:`}
+ solutions={solutions}
+  client:load
+/>
+
+<CaseStudyConcepts
+  flowHeading="The zero friction healthy marketplace"
+  flowDescription="To ensure high adoption, we mapped Cosmo directly onto the standard behavioral psychology framework (Trigger, Emotion, Action, Reward)."
+
+  steps={[
+    {
+      leftImage: "/Flows/concept1.jpeg",
+      leftTitle: "Product Discovery via Scanner",
+      leftDescription:
+        "Flights were grouped under pricing buckets for budget-conscious travelers.",
+
+      rightImage: "/Flows/concept2.jpeg",
+      rightTitle: "Product Discovery via Marketplace",
+      rightDescription:
+        "Flights were organized into time windows for users with schedule preferences.",
+    },
+
+    {
+      leftImage: "/Flows/concept3.jpeg",
+      leftTitle: "Product Discovery via Scanner",
+      leftDescription:
+        "Users could immediately narrow options by budget.",
+
+      rightImage: "/Flows/concept4.jpeg",
+      rightTitle: "Product Discovery via Marketplace",
+      rightDescription:
+        "Users could browse departures matching their preferred schedule.",
+    },
+
+    {
+      leftImage: "/Flows/concept1.jpeg",
+      leftTitle: "Product Discovery via Scanner",
+      leftDescription:
+        "Reduced decision fatigue by highlighting the cheapest route.",
+
+      rightImage: "/Flows/concept2.jpeg",
+      rightTitle: "Product Discovery via Marketplace",
+      rightDescription:
+        "Reduced scanning effort by grouping flights into intuitive blocks.",
+    },
+  ]}
+  client:load
+/>
+
+<CaseStudyFlow
+  eyebrow="FLOW A: PRODUCT SCANNER"
+  title="Where does Cosmo fits into the picture?"
+  description={`Before designing a single interface, we had to answer a critical product question: How do we introduce a health-conscious marketplace without forcing users to completely rewrite their deep-rooted shopping habits?
+
+Modern consumers are deeply conditioned by the hyper-efficiency of quick-commerce giants like Blinkit, Zepto, and Swiggy Instamart. They expect friction-free, instantaneous gratification. If our solution required them to adopt an entirely new, tedious mental model, the product would face immediate abandonment.
+
+Cosmo was built not to disrupt existing user behavior, but to elegantly piggyback on it.`}
+  flowHeading="1. Dissecting the Current Q-Commerce Flow"
+  flowDescription="In the current Indian retail landscape, platforms like Blinkit and Zepto have automated the user’s shopping ritual into a highly efficient, subconscious loop. However, this hyper-efficiency creates major friction for healthy eating:"
+  steps={iterations}
+  client:load
+/>
+
+
 <CaseStudyIterations
   flowHeading="2. Introducing Cosmo: The Healthy Marketplace"
   flowDescription="Cosmo enters the picture as a dual-engine ecosystem designed to meet the user exactly where they are—whether they are shopping digitally on their couch or standing physically in a grocery store aisle. Instead of an abstract tracking app, Cosmo is a comprehensive ecosystem powered by three core pillars:"
-  steps={flowSteps}
+  steps={iterations}
   client:load
 />
 
@@ -359,7 +493,7 @@ Cosmo was built not to disrupt existing user behavior, but to elegantly piggybac
   client:load
 />
 
-<section class="mx-auto max-w-6xl px-5 sm:px-10 pb-40">
+<!-- <section class="mx-auto max-w-6xl px-5 sm:px-10 pb-40">
   <div class="border-l-[3px] border-zinc-700 pl-6 md:pl-8">
 
     <p class="text-2xl tracking-wider font-google font-bold text-zinc-50 italic">
@@ -374,7 +508,6 @@ Cosmo was built not to disrupt existing user behavior, but to elegantly piggybac
       As a result, users either overthink every decision — or give up entirely.
     </p>
 
-    <!-- Philosophy Pills -->
     <div class="mt-8 flex flex-wrap gap-3">
       
       <div class="rounded-full border border-zinc-800 bg-zinc-900 px-5 py-3 text-sm font-medium text-zinc-200">
@@ -400,7 +533,7 @@ Cosmo was built not to disrupt existing user behavior, but to elegantly piggybac
     </div>
 
   </div>
-</section>
+</section> -->
 
-  <NextProject />
+  <CaseStudyCta />
 </Layout>
