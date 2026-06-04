@@ -13,6 +13,7 @@ import CaseStudyConcepts from "../../components/projectpage/ProjectConcepts";
 import CaseStudyIterations from "../../components/projectpage/ProjectIterations";
 import CaseStudyDesigns from "../../components/projectpage/ProjectDesigns";
 import CaseStudySolutions from "../../components/projectpage/ProjectSolutions";
+import CaseStudyVideo from "../../components/projectpage/ProjectVideo";
 import CaseStudyCta from "../../components/projectpage/ProjectCta";
 import Layout from '../../layouts/Layout.astro';
 
@@ -406,52 +407,8 @@ Instead of an abstract shopping app, Cosmo is a comprehensive ecosystem powered 
   client:load
 />
 
-<CaseStudyConcepts
-  flowHeading="The zero friction healthy marketplace"
-  flowDescription="To ensure high adoption, we mapped Cosmo directly onto the standard behavioral psychology framework (Trigger, Emotion, Action, Reward)."
-
-  steps={[
-    {
-      leftImage: "/Flows/concept1.jpeg",
-      leftTitle: "Product Discovery via Scanner",
-      leftDescription:
-        "Flights were grouped under pricing buckets for budget-conscious travelers.",
-
-      rightImage: "/Flows/concept2.jpeg",
-      rightTitle: "Product Discovery via Marketplace",
-      rightDescription:
-        "Flights were organized into time windows for users with schedule preferences.",
-    },
-
-    {
-      leftImage: "/Flows/concept3.jpeg",
-      leftTitle: "Product Discovery via Scanner",
-      leftDescription:
-        "Users could immediately narrow options by budget.",
-
-      rightImage: "/Flows/concept4.jpeg",
-      rightTitle: "Product Discovery via Marketplace",
-      rightDescription:
-        "Users could browse departures matching their preferred schedule.",
-    },
-
-    {
-      leftImage: "/Flows/concept1.jpeg",
-      leftTitle: "Product Discovery via Scanner",
-      leftDescription:
-        "Reduced decision fatigue by highlighting the cheapest route.",
-
-      rightImage: "/Flows/concept2.jpeg",
-      rightTitle: "Product Discovery via Marketplace",
-      rightDescription:
-        "Reduced scanning effort by grouping flights into intuitive blocks.",
-    },
-  ]}
-  client:load
-/>
-
 <CaseStudyDesigns
-  eyebrow="DESIGN SOLUTIONS: A) PRODUCT SCANNER"
+  eyebrow="A) PRODUCT SCANNER"
   title="Bridging Intent to Action through Instant Verdict"
   description={`To serve a user who values proactive health over panic, I had to design the core scanning and search flows, to turn complex nutrition data into instant, confident decisions. By streamlining the entire experience, we ensured that every scan and search seamlessly connects the user's health goals with better everyday choices.`}
 
@@ -512,7 +469,7 @@ Instead of an abstract shopping app, Cosmo is a comprehensive ecosystem powered 
 
 
 <CaseStudyDesigns
-  eyebrow="DESIGN SOLUTIONS: B) PRODUCT RATING"
+  eyebrow="B) RATING & HEALTH SCORE"
   title="Converting Label Insights into Confident Decisions"
   description={`The next step was to design an intuitive product description and rating screen that instantly translates complex data into an empowering, clear health score that deepens label literacy while immediately surfacing highly compatible, healthier alternatives, letting users swap and upgrade their cart with a single tap.`}
 
@@ -520,50 +477,61 @@ Instead of an abstract shopping app, Cosmo is a comprehensive ecosystem powered 
     {
       label: "A) Translating raw data into personalized insights",
       title1: "Challenges",
-      description1: `• Discrepancies when a scan matches multiple similar variants.
-      • Guessing incorrectly undermines accuracy & trust.`,
+      description1: `• Nutrition labels are complex & text-heavy leading to immediate visual fatigue & analytical paralysis.
+      • Abstract metrics offer zero context & personal relevance.`,
       title2: "Iteration-1",
-      description2: "An error screen asking the user to rescan when the system fails to find a single, definitive match.",
-      title3: "Iteration-2",
-      description3: "Horizontal carousel of top 3 matches, requiring the user to compare & select the correct one before proceeding.",
+      description2: "A vertical list view of color-coded, granular, individual metrics with personalized insights categorized into negatives & positives.",
+      title3: "Why it didn't work?",
+      description3: "No at a glance unified verdict, scattered the user's attention.",
 
       image: "/Flows/flow2.png",
     },
 
-    {
-      label: "A) Accommodating Varied Scanning Scenarios",
-      title1: "Challenges",
-      description1: `• Low lighting or blurry camera in real-world settings.
-      • Torn, wrinkled, or poorly printed barcodes that fail to read.`,
-      title2: "Solution",
-      description2: "A unified scanner that automatically detects the product or barcode, paired with intuitive, thumb-zone toggle for manual overrides and a text-search option.",
+     {
+      label: "A) Translating raw data into personalized insights",
+      title1: "Iteration-2 (Final Solution)",
+      description1: "An organized grid of snackable cards that prioritizes only key insights tailored to the personal context linked to the user's health profile & goals while leaving the detailed ingredients as expandable bottom drawers utilizing progressive disclosure. Also, instantly contextualizing severity using color semantics.",
       title3: "Why this works?",
-      description3: "It respcts high-velocity user behaviour.",
+      description3: `• Satisfies the user's need for at a glance verdict by offering hierarchy-driven scannability.
+      • Shifts user emotion from confusion to confident validation with personalized intuitive insights.`,
 
       image: "/Flows/flow1.png",
     },
 
     {
-      label: "B) Navigating Product Match Discrepancies",
-      title1: "Iteration-3 (Final Solution)",
-      description1: `• A Smart Confirmation screen that displays the highest-confidence match which auto-redirects to the verdict page.
-      • If the user identifies a mismatch during this window, a single tap immediately reveals a list of alternative options.`,
+      label: "B) Overcoming the 'Abstract Score' Indifference",
+      title1: "Challenge",
+      description1: `The "One-Size-Fits-All" Score, treats nutrition as a monolith diluting unique risks & goals.`,
+      title2: "Solution",
+      description2: `A clear & vibrant rating card showing a 1-to-10 linear scale, combining an explicit score with a highly scannable text conclusion, supported by a reactive mascot and custom context based on user health profiles.`,
       title3: "Why this works?",
-      description3: `• Prioritizes speed, resolving 90% of cases without user intervention.
-      • Effectively balances system speed with user agency, ensuring that the flow is never interrupted.`,
+      description3: "The interface communicates a comprehensive health score in under a second and is highly receptive.",
 
       image: "/Flows/flow1.png",
     },
 
     {
-      label: "C) Resolving 'Product Not Found' into Community Value",
+      label: "C) Earning Trust Through Transparent Score Logic",
       title1: "Challenges",
-      description1: `• Momentum blocked, triggers immediate disappointment.
-      • Lose confidence in the app's reliability.`,
+      description1: `• Risk of creating a false expectation of clinical lab backing.
+      • Lose trust in the app's credibility.`,
       title2: "Solution",
-      description2: "An overlay acknowledging that the user has found something unique with a streamlined camera interface, that requests quick snapshots to fix the database gap.",
+      description2: "Presenting the rating as a personalized advisory score along with a prominent, interactive info-trigger that opens a conversational breakdown of the score logic.",
       title3: "Why this works?",
-      description3: "Transforms a moment of UX friction into a psychological positive.",
+      description3: "Kills skepticism, & builds long-term brand integrity.",
+
+      image: "/Flows/flow3.png",
+    },
+
+    {
+      label: "D) Preventing Churn and Keeping Cart Momentum",
+      title1: "Challenges",
+      description1: `• Unhealthy verdicts trigger emotional restriction & disappointment.
+      • Page dead-ends cause immediate cart abandonment.`,
+      title2: "Solution",
+      description2: `Embedding a contextual carousel of healthier "Smart Swap" alternatives directly below the negative product indicators, enabling frictionless, single-tap cart upgrades.`,
+      title3: "Why this works?",
+      description3: "Positive reinforcement keeps the purchase loop moving.",
 
       image: "/Flows/flow3.png",
     },
@@ -571,41 +539,96 @@ Instead of an abstract shopping app, Cosmo is a comprehensive ecosystem powered 
   client:load
 />
 
+
 <CaseStudyDesigns
-  eyebrow="DESIGN SOLUTIONS: B) PRODUCT RATING"
-  title="Converting Label Insights into Confident Decisions"
-  description={`The next step was to design an intuitive product description and rating screen that instantly translates complex data into an empowering, clear health score that deepens label literacy while immediately surfacing highly compatible, healthier alternatives, letting users swap and upgrade their cart with a single tap.`}
+  eyebrow="C) MARKETPLACE EXPERIENCE"
+  title="Turning Standard Browsing into Informed Grocery Shopping"
+  description={`The next step was to re-architect the marketplace navigation and product feeds, shifting from generic product layouts to a tailored shopping experience that matches individual health parameters at a single glance.`}
 
   steps={[
     {
-      label: "A) Translating raw data into personalized insights",
-      title1: "Simplified Health Labels",
-      description1:
-        "Complex nutritional information was converted into instantly understandable health signals.",
+      label: "A) Reorganizing Browse Categories for health intent.",
+      title1: "Challenges",
+      description1: `• Generic, diet-blind categories force users to blindly browse through unsuitable products.
+      • Repetitive manual filtering causes immediate user fatigue.`,
+      title2: "Solution",
+      description2: `Elevating custom, profile-driven "Smart Categories" that automatically pre-filter aisles based on the user's specific health profile.`,
+      title3: "Why this works?",
+      description3: "Eliminates navigational friction, accelerating the path-to-cart.",
 
-      image: "/Flows/flow1.png",
+      image: "/Flows/flow3.png",
     },
-
     {
-      label: "DETAIL 02",
-      title1: "Contextual Product Education",
-      description1:
-        "Users could understand why a recommendation was made before making a purchase decision.",
+      label: "B) Minimizing click-fatigue through self-contained cards",
+      title1: "Challenges",
+      description1: `• Hidden nutritional trade-offs makes product evaluation & comparison exhausting.
+      • Blind browsing leads to cognitive friction.`,
+      title2: "Solution",
+      description2: `Optimizing the primary discovery layer by moving critical, personalized nutritional insights directly onto the product cards within the search results and category feeds.`,
+      title3: "Why this works?",
+      description3: "Eliminates clicking friction & accelerates checkout velocity.",
 
-      image: "/case-study/cosmo/detail-2.webp",
-    },
-
-    {
-      label: "DETAIL 03",
-      title1: "Personalized Insights",
-      description1:
-        "Insights adapted based on individual health goals and dietary preferences.",
-
-      image: "/case-study/cosmo/detail-3.webp",
+      image: "/Flows/flow3.png",
     },
   ]}
   client:load
 />
+
+<CaseStudyVideo
+  eyebrow="THE CONCLUSION"
+  title="Measuring Impact & Looking Ahead"
+  description="The final experience bridges the gap between intent and action, helping users make confident healthy shopping decisions within seconds. By mapping the solutions directly to real-world user anxieties, cognitive loads, and behavioral loops, I tried to turn what used to be a frustrating chore into an empowering routine."
+  detail="By combining instant product verdicts, contextual education, and personalized recommendations, users can move from confusion to clarity without friction."
+  video="/Videos/final-flow.mp4"
+  note="Final shipped experience"
+  client:load
+/>
+
+
+<!-- <CaseStudyConcepts
+  flowHeading="The zero friction healthy marketplace"
+  flowDescription="To ensure high adoption, we mapped Cosmo directly onto the standard behavioral psychology framework (Trigger, Emotion, Action, Reward)."
+
+  steps={[
+    {
+      leftImage: "/Flows/concept1.jpeg",
+      leftTitle: "Product Discovery via Scanner",
+      leftDescription:
+        "Flights were grouped under pricing buckets for budget-conscious travelers.",
+
+      rightImage: "/Flows/concept2.jpeg",
+      rightTitle: "Product Discovery via Marketplace",
+      rightDescription:
+        "Flights were organized into time windows for users with schedule preferences.",
+    },
+
+    {
+      leftImage: "/Flows/concept3.jpeg",
+      leftTitle: "Product Discovery via Scanner",
+      leftDescription:
+        "Users could immediately narrow options by budget.",
+
+      rightImage: "/Flows/concept4.jpeg",
+      rightTitle: "Product Discovery via Marketplace",
+      rightDescription:
+        "Users could browse departures matching their preferred schedule.",
+    },
+
+    {
+      leftImage: "/Flows/concept1.jpeg",
+      leftTitle: "Product Discovery via Scanner",
+      leftDescription:
+        "Reduced decision fatigue by highlighting the cheapest route.",
+
+      rightImage: "/Flows/concept2.jpeg",
+      rightTitle: "Product Discovery via Marketplace",
+      rightDescription:
+        "Reduced scanning effort by grouping flights into intuitive blocks.",
+    },
+  ]}
+  client:load
+/> -->
+
 
 
 <!-- <CaseStudyFlow
