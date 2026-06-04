@@ -11,6 +11,7 @@ import CaseStudyDecisions from "../../components/projectpage/ProjectDecisions";
 import CaseStudyFlow from "../../components/projectpage/ProjectFlow";
 import CaseStudyConcepts from "../../components/projectpage/ProjectConcepts";
 import CaseStudyIterations from "../../components/projectpage/ProjectIterations";
+import CaseStudyDesigns from "../../components/projectpage/ProjectDesigns";
 import CaseStudySolutions from "../../components/projectpage/ProjectSolutions";
 import CaseStudyCta from "../../components/projectpage/ProjectCta";
 import Layout from '../../layouts/Layout.astro';
@@ -397,7 +398,7 @@ Cosmo was built not to disrupt existing user behavior, but to elegantly piggybac
 <CaseStudySolutions
   eyebrow="FINAL PRODUCT DESIGN"
   title="The Solution: Introducing Cosmo"
-  description={`Cosmo enters the picture as a dual-engine ecosystem designed to meet the user exactly where they are—whether they are shopping digitally on their couch or standing physically in a grocery store aisle. By focusing on real-world utility, Cosmo integrates into a user's routine, providing instant confidence without asking them to learn a new habit. It solves a single major frustration: the anxiety, second-guessing, and confusion that happens when trying to buy healthy groceries.
+  description={`To bridge the gap between health intent and retail reality without breaking established consumer habits, we designed Cosmo. By focusing on real-world utility, Cosmo integrates into a user's routine, providing instant confidence without asking them to learn a new habit. It solves a single major frustration: the anxiety, second-guessing, and confusion that happens when trying to buy healthy groceries.
 
 
 Instead of an abstract shopping app, Cosmo is a comprehensive ecosystem powered by three core pillars:`}
@@ -449,20 +450,173 @@ Instead of an abstract shopping app, Cosmo is a comprehensive ecosystem powered 
   client:load
 />
 
-<CaseStudyFlow
+<CaseStudyDesigns
+  eyebrow="DESIGN SOLUTIONS: A) PRODUCT SCANNER"
+  title="Bridging Intent to Action through Instant Verdict"
+  description={`To serve a user who values proactive health over panic, I had to design the core scanning and search flows, to turn complex nutrition data into instant, confident decisions. By streamlining the entire experience, we ensured that every scan and search seamlessly connects the user's health goals with better everyday choices.`}
+
+  steps={[
+    {
+      label: "A) Accommodating Varied Scanning Scenarios",
+      title1: "Challenges",
+      description1: `• Low lighting or blurry camera in real-world settings.
+      • Torn, wrinkled, or poorly printed barcodes that fail to read.`,
+      title2: "Solution",
+      description2: "A unified scanner that automatically detects the product or barcode, paired with intuitive, thumb-zone toggle for manual overrides and a text-search option.",
+      title3: "Why this works?",
+      description3: "It respcts high-velocity user behaviour.",
+
+      image: "/Flows/flow1.png",
+    },
+
+    {
+      label: "B) Navigating Product Match Discrepancies",
+      title1: "Challenges",
+      description1: `• Discrepancies when a scan matches multiple similar variants.
+      • Guessing incorrectly undermines accuracy & trust.`,
+      title2: "Iteration-1",
+      description2: "An error screen asking the user to rescan when the system fails to find a single, definitive match.",
+      title3: "Iteration-2",
+      description3: "Horizontal carousel of top 3 matches, requiring the user to compare & select the correct one before proceeding.",
+
+      image: "/Flows/flow2.png",
+    },
+
+    {
+      label: "B) Navigating Product Match Discrepancies",
+      title1: "Iteration-3 (Final Solution)",
+      description1: `• A Smart Confirmation screen that displays the highest-confidence match which auto-redirects to the verdict page.
+      • If the user identifies a mismatch during this window, a single tap immediately reveals a list of alternative options.`,
+      title3: "Why this works?",
+      description3: `• Prioritizes speed, resolving 90% of cases without user intervention.
+      • Effectively balances system speed with user agency, ensuring that the flow is never interrupted.`,
+
+      image: "/Flows/flow1.png",
+    },
+
+    {
+      label: "C) Resolving 'Product Not Found' into Community Value",
+      title1: "Challenges",
+      description1: `• Momentum blocked, triggers immediate disappointment.
+      • Lose confidence in the app's reliability.`,
+      title2: "Solution",
+      description2: "An overlay acknowledging that the user has found something unique with a streamlined camera interface, that requests quick snapshots to fix the database gap.",
+      title3: "Why this works?",
+      description3: "Transforms a moment of UX friction into a psychological positive.",
+
+      image: "/Flows/flow3.png",
+    },
+  ]}
+  client:load
+/>
+
+
+<CaseStudyDesigns
+  eyebrow="DESIGN SOLUTIONS: B) PRODUCT RATING"
+  title="Converting Label Insights into Confident Decisions"
+  description={`The next step was to design an intuitive product description and rating screen that instantly translates complex data into an empowering, clear health score that deepens label literacy while immediately surfacing highly compatible, healthier alternatives, letting users swap and upgrade their cart with a single tap.`}
+
+  steps={[
+    {
+      label: "A) Translating raw data into personalized insights",
+      title1: "Challenges",
+      description1: `• Discrepancies when a scan matches multiple similar variants.
+      • Guessing incorrectly undermines accuracy & trust.`,
+      title2: "Iteration-1",
+      description2: "An error screen asking the user to rescan when the system fails to find a single, definitive match.",
+      title3: "Iteration-2",
+      description3: "Horizontal carousel of top 3 matches, requiring the user to compare & select the correct one before proceeding.",
+
+      image: "/Flows/flow2.png",
+    },
+
+    {
+      label: "A) Accommodating Varied Scanning Scenarios",
+      title1: "Challenges",
+      description1: `• Low lighting or blurry camera in real-world settings.
+      • Torn, wrinkled, or poorly printed barcodes that fail to read.`,
+      title2: "Solution",
+      description2: "A unified scanner that automatically detects the product or barcode, paired with intuitive, thumb-zone toggle for manual overrides and a text-search option.",
+      title3: "Why this works?",
+      description3: "It respcts high-velocity user behaviour.",
+
+      image: "/Flows/flow1.png",
+    },
+
+    {
+      label: "B) Navigating Product Match Discrepancies",
+      title1: "Iteration-3 (Final Solution)",
+      description1: `• A Smart Confirmation screen that displays the highest-confidence match which auto-redirects to the verdict page.
+      • If the user identifies a mismatch during this window, a single tap immediately reveals a list of alternative options.`,
+      title3: "Why this works?",
+      description3: `• Prioritizes speed, resolving 90% of cases without user intervention.
+      • Effectively balances system speed with user agency, ensuring that the flow is never interrupted.`,
+
+      image: "/Flows/flow1.png",
+    },
+
+    {
+      label: "C) Resolving 'Product Not Found' into Community Value",
+      title1: "Challenges",
+      description1: `• Momentum blocked, triggers immediate disappointment.
+      • Lose confidence in the app's reliability.`,
+      title2: "Solution",
+      description2: "An overlay acknowledging that the user has found something unique with a streamlined camera interface, that requests quick snapshots to fix the database gap.",
+      title3: "Why this works?",
+      description3: "Transforms a moment of UX friction into a psychological positive.",
+
+      image: "/Flows/flow3.png",
+    },
+  ]}
+  client:load
+/>
+
+<CaseStudyDesigns
+  eyebrow="DESIGN SOLUTIONS: B) PRODUCT RATING"
+  title="Converting Label Insights into Confident Decisions"
+  description={`The next step was to design an intuitive product description and rating screen that instantly translates complex data into an empowering, clear health score that deepens label literacy while immediately surfacing highly compatible, healthier alternatives, letting users swap and upgrade their cart with a single tap.`}
+
+  steps={[
+    {
+      label: "A) Translating raw data into personalized insights",
+      title1: "Simplified Health Labels",
+      description1:
+        "Complex nutritional information was converted into instantly understandable health signals.",
+
+      image: "/Flows/flow1.png",
+    },
+
+    {
+      label: "DETAIL 02",
+      title1: "Contextual Product Education",
+      description1:
+        "Users could understand why a recommendation was made before making a purchase decision.",
+
+      image: "/case-study/cosmo/detail-2.webp",
+    },
+
+    {
+      label: "DETAIL 03",
+      title1: "Personalized Insights",
+      description1:
+        "Insights adapted based on individual health goals and dietary preferences.",
+
+      image: "/case-study/cosmo/detail-3.webp",
+    },
+  ]}
+  client:load
+/>
+
+
+<!-- <CaseStudyFlow
   eyebrow="FLOW A: PRODUCT SCANNER"
-  title="Where does Cosmo fits into the picture?"
-  description={`Before designing a single interface, we had to answer a critical product question: How do we introduce a health-conscious marketplace without forcing users to completely rewrite their deep-rooted shopping habits?
-
-Modern consumers are deeply conditioned by the hyper-efficiency of quick-commerce giants like Blinkit, Zepto, and Swiggy Instamart. They expect friction-free, instantaneous gratification. If our solution required them to adopt an entirely new, tedious mental model, the product would face immediate abandonment.
-
-Cosmo was built not to disrupt existing user behavior, but to elegantly piggyback on it.`}
+  title="Bridging Intent to Action through Instant Verdict"
+  description={`To serve a user who values proactive health over panic, I had to design the core scanning and search flows, to turn complex nutrition data into instant, confident decisions. By streamlining the entire experience, we ensured that every scan and search seamlessly connects the user's health goals with better everyday choices.`}
   flowHeading="1. Dissecting the Current Q-Commerce Flow"
   flowDescription="In the current Indian retail landscape, platforms like Blinkit and Zepto have automated the user’s shopping ritual into a highly efficient, subconscious loop. However, this hyper-efficiency creates major friction for healthy eating:"
   steps={iterations}
   client:load
 />
-
 
 <CaseStudyIterations
   flowHeading="2. Introducing Cosmo: The Healthy Marketplace"
@@ -470,28 +624,7 @@ Cosmo was built not to disrupt existing user behavior, but to elegantly piggybac
   steps={iterations}
   client:load
 />
-
-<section class="mx-auto max-w-6xl px-5 sm:px-10 pb-25">
-  <div class="border-l-3 border-zinc-700 pl-6 md:pl-8">
-  <p class="text-2xl tracking-wider font-google font-bold text-zinc-50">
-    The Design Challenge:
-  </p>
-  <p class="mt-4 text-zinc-400 text-base md:text-lg leading-relaxed ">
-   If we intercept this loop with a slow, educational tool that lectures the user on ingredients, we break the velocity they crave. Cosmo needed to match the exact speed and convenience of a 10-minute delivery app while fundamentally upgrading the quality of what goes into the cart.
-  </p>
-  </div>
-</section>
-
-<CaseStudyStrategy
-  eyebrow="PRODUCT DESIGN"
-  title="The Final Solution"
-  description="To transition from a chaotic board of ideas to a cohesive product strategy, we established a strict evaluative framework. We needed to ensure our final path was not just creative, but deeply anchored in human psychology, technical reality, and the specific behavioral constraints of our users."
-  strategyHeading="1. UX Prioritization"
-  strategyDescription="We plotted every concept from our ideation phase against an Impact vs. Feasibility matrix. Our goal was to isolate the highest-leverage solutions that could be realistically built and deployed."
-  image="/Images/cosmograph.png"
-  note="*Representational Graph"
-  client:load
-/>
+ -->
 
 <!-- <section class="mx-auto max-w-6xl px-5 sm:px-10 pb-40">
   <div class="border-l-[3px] border-zinc-700 pl-6 md:pl-8">
