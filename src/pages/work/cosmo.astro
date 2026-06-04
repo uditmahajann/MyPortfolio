@@ -14,6 +14,7 @@ import CaseStudyIterations from "../../components/projectpage/ProjectIterations"
 import CaseStudyDesigns from "../../components/projectpage/ProjectDesigns";
 import CaseStudySolutions from "../../components/projectpage/ProjectSolutions";
 import CaseStudyVideo from "../../components/projectpage/ProjectVideo";
+import CaseStudyImpact from "../../components/projectpage/ProjectImpact";
 import CaseStudyCta from "../../components/projectpage/ProjectCta";
 import Layout from '../../layouts/Layout.astro';
 
@@ -580,9 +581,44 @@ Instead of an abstract shopping app, Cosmo is a comprehensive ecosystem powered 
   description="The final experience bridges the gap between intent and action, helping users make confident healthy shopping decisions within seconds. By mapping the solutions directly to real-world user anxieties, cognitive loads, and behavioral loops, I tried to turn what used to be a frustrating chore into an empowering routine."
   detail="By combining instant product verdicts, contextual education, and personalized recommendations, users can move from confusion to clarity without friction."
   video="/Videos/final-flow.mp4"
-  note="Final shipped experience"
   client:load
 />
+
+<CaseStudyImpact
+  decisionHeading="Business Impact & Qualitative User Metrics"
+  decisionDescription="These are some of the User Acceptance Testing (UAT) results after MVP validation:"
+
+  impacts={[
+    {
+      label: "Healthy Product Ratio (vs regular marketplace) in final carts moved up",
+      value: "60%",
+      trend: "up",
+    },
+    {
+      label: "Reduction in Drop-offs on Product Description Page by",
+      value: "22%",
+      trend: "down",
+    },
+    {
+      label: "'Smart Swap' alternative choices selected went up by",
+      value: "32%",
+      trend: "up",
+    },
+  ]}
+  detail={`Note that some specific algorithmic logic, predictive modeling workflows, and interface architecture for the proprietary conversational AI engine remain under a strict non-disclosure agreement (NDA).`}
+  client:load
+/>
+
+<section class="mx-auto max-w-6xl px-5 sm:px-10 py-20">
+  <div class="border-l-3 border-zinc-700 pl-6 md:pl-8">
+  <p class="text-2xl tracking-wider font-google font-bold text-zinc-50">
+    New challenges and what's next:
+  </p>
+  <p class="mt-4 text-zinc-400 text-base md:text-lg leading-relaxed ">
+   While the MVP proved that personalized transparency can drive digital e-commerce confidence for healthy products, Cosmo’s next frontier lies in refining their proprietary nutritional database, embedding automated nutrition tracking, leveraging secure AI infrastructure to deliver predictive, life-aligned health intelligence at scale.
+  </p>
+  </div>
+</section>
 
 
 <!-- <CaseStudyConcepts
@@ -691,5 +727,10 @@ Instead of an abstract shopping app, Cosmo is a comprehensive ecosystem powered 
   </div>
 </section> -->
 
-  <CaseStudyCta />
+<CaseStudyCta
+  title="Atmoon"
+  description="Designing a premium digital presence for an AI-powered content and growth studio."
+  href="/work/atmoon"
+  client:load
+/>
 </Layout>

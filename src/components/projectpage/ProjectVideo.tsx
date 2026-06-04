@@ -21,9 +21,9 @@ const CaseStudyFinalFlow: React.FC<Props> = ({
   detail,
 }) => {
   return (
-    <section className="mx-auto max-w-7xl px-5 sm:px-10 py-25">
+    <section className="mx-auto max-w-6xl px-5 sm:px-10 py-25">
 
-      <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-16 items-center">
+      <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-20 items-center">
 
         {/* LEFT CONTENT */}
         <motion.div
@@ -75,11 +75,11 @@ const CaseStudyFinalFlow: React.FC<Props> = ({
 
             </div>
 
-            {note && (
+            {/* {note && (
               <p className="mt-3 text-sm text-zinc-500 text-right">
                 {note}
               </p>
-            )}
+            )} */}
           </motion.div>
         )}
 
