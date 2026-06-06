@@ -140,7 +140,7 @@ export default function CaseStudyUserFlow({
                                     <img
                                         src={current.image}
                                         alt={current.label}
-                                        className="h-[580px] aspect-square object-contain"
+                                        className="min-h-[600px] aspect-video object-contain"
                                     />
 
                                 </div>
