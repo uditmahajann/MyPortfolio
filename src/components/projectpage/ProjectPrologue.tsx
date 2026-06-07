@@ -69,7 +69,7 @@ const CaseStudyPrologue: React.FC<Props> = ({
 
           {/* Optional Note */}
           {note && (
-            <p className="mt-3 text-base font-google text-zinc-500 text-right">
+            <p className="mt-2 text-base font-google text-zinc-500 text-right">
               {note}
             </p>
           )}
@@ -85,7 +85,7 @@ const CaseStudyPrologue: React.FC<Props> = ({
         transition={{ duration: 0.5 }}
       >
         {/* Details */}
-        <p className="mt-6 text-zinc-400 text-base md:text-lg leading-relaxed whitespace-pre-line">
+        <p className="mt-8 text-zinc-400 text-base md:text-lg leading-relaxed whitespace-pre-line">
           {detail}
         </p>
       </motion.div>

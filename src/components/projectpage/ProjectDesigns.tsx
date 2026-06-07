@@ -13,6 +13,7 @@ import {
 
 type DetailStep = {
     label: string;
+    labelColor?: string;
     title1: string;
     description1: string;
     title2?: string;
@@ -99,10 +100,18 @@ export default function CaseStudyUserFlow({
 
                             {/* LEFT CONTENT */}
                             <div>
-
-                                <p className="text-lg uppercase tracking-[0.2em] font-google font-bold text-lime-300 leading-relaxed">
+                                <p
+                                    className="text-lg uppercase tracking-[0.2em] font-google font-bold leading-relaxed"
+                                    style={{
+                                        color: current.labelColor || "#bef264",
+                                    }}
+                                >
                                     {current.label}
                                 </p>
+
+                                {/* <p className="text-lg uppercase tracking-[0.2em] font-google font-bold text-lime-300 leading-relaxed">
+                                    {current.label}
+                                </p> */}
 
                                 <h3 className="mt-12 text-4xl md:text-2xl font-google font-semibold text-zinc-50 leading-tight">
                                     {current.title1}

@@ -16,13 +16,24 @@ type CaseStudy = {
 
 const CASE_STUDIES: CaseStudy[] = [
   {
+    id: "cosmo",
+    label: "Cosmo AI- AI Health & Wellness Marketplace",
+    title:
+      "Reduced Friction in Personalized Health Shopping",
+    teaser:
+      "Designed an AI-powered marketplace for COSMO App, that helps users understand products via health score, build habits & make confident wellness choices with personalized recommendations — without overwhelming them, otherwise leading to drop-offs & abandoned flows.",
+    href: "work/cosmo",
+    image: "/Images/Soon.jpg",
+    tags: ["Improved Progression Rate by 28%", "Reduced Task-friction by 48%", "Personalization Logic Optimized"],
+  },
+  {
     id: "yelona",
     label: "Yelona's Inventory Management Web App",
     title:
       "Reducing Stock Errors in Day-to-Day Inventory Operations",
     teaser:
       "Designed a single, guided inventory workflow for YELONA's IMS, that brings stock updates, system validation, and reconciliation into one continuous flow — making errors visible immediately and reducing manual cross-checking.",
-    href: "#",
+    href: "work/yelona",
     image: "/Images/Soon.jpg",
     tags: ["Reduced Stock Update Errors by 48%", "Increased Speed by 27%", "Introduced Composite Set Inventory Model"],
   },
@@ -37,17 +48,7 @@ const CASE_STUDIES: CaseStudy[] = [
     image: "/Images/Soon.jpg",
     tags: ["Increased MAU's by 31%", "Improved User-engagement", "Boosted Overall Retention"],
   },
-  {
-    id: "cosmo",
-    label: "Cosmo AI- AI Health & Wellness Marketplace",
-    title:
-      "Reduced Friction in Personalized Health Shopping",
-    teaser:
-      "Designed an AI-powered marketplace for COSMO App, that helps users understand products via health score, build habits & make confident wellness choices with personalized recommendations — without overwhelming them, otherwise leading to drop-offs & abandoned flows.",
-    href: "work/cosmo",
-    image: "/Images/Soon.jpg",
-    tags: ["Improved Progression Rate by 28%", "Reduced Task-friction by 48%", "Personalization Logic Optimized"],
-  },
+  
 ];
 
 const CaseStudies: React.FC = () => {

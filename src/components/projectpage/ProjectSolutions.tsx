@@ -4,6 +4,7 @@ type Solution = {
   label: string;
   before: string;
   highlight: string;
+  highlightColor?: string;
   after: string;
 };
 
@@ -48,7 +49,7 @@ export default function ProblemGrid({
       </motion.div>
 
       {/* Problems Grid */}
-      <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-5">
         {solutions.map((solution, index) => (
           <motion.div
             key={index}
@@ -66,7 +67,12 @@ export default function ProblemGrid({
             {/* Text */}
             <p className="mt-6 text-zinc-300 text-lg  font-google leading-relaxed whitespace-pre-line">
               {solution.before}{" "}
-              <span className="text-lime-300 font-medium">
+              <span
+                className="font-medium"
+                style={{
+                  color: solution.highlightColor || "#bef264",
+                }}
+              >
                 {solution.highlight}
               </span>{" "}
               {solution.after}

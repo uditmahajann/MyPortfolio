@@ -1,0 +1,476 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CaseStudyHero from "../../components/projectpage/ProjectHero";
+import CaseStudyIntro from "../../components/projectpage/ProjectIntro";
+import CaseStudyImpact from "../../components/projectpage/ProjectResults";
+import CaseStudyPrologue from "../../components/projectpage/ProjectPrologue";
+import CaseStudyProblem from "../../components/projectpage/ProjectProblems";
+import CaseStudyPain from "../../components/projectpage/ProjectPain";
+import CaseStudyGlossary from "../../components/projectpage/ProjectGlossary";
+import CaseStudyElements from "../../components/projectpage/ProjectElements";
+import CaseStudyDesigns from "../../components/projectpage/ProjectDesigns";
+import CaseStudyCta from "../../components/projectpage/ProjectCta";
+import CaseStudySolutions from "../../components/projectpage/ProjectSolutions";
+
+
+const problems = [
+  {
+    number: "1. Clarity over density",
+    before: "Prioritizing",
+    highlight: "contextual clarity over raw data volume",
+    after:
+      "ensures that back-office teams can extract critical, actionable insights—such as an immediate stockout risk, without drowning in noise.",
+    highlightColor: "#fcd34d",
+  },
+  {
+    number: "2. Scan-first layouts",
+    before: "Designing a scan-first layout that allows the user's eyes",
+    highlight: "to skim a dense dashboard screen or database",
+    after:
+      "and immediately map out relevant information for quick understanding before deep analysis.",
+    highlightColor: "#fcd34d",
+  },
+  {
+    number: "3. Consistency across views",
+    before: "Disjointed UX patterns across an application force the user to constantly reset their mental model.",
+    highlight: "But maintaining consistency reduces cognitive effort",
+    after:
+      "& the software rewards the user with immediate predictability.",
+    highlightColor: "#fcd34d",
+  },
+  {
+    number: "4. Scalable patterns",
+    before: "By designing a modular, highly flexible, and reusable UI system, the platform can",
+    highlight: "inherently support future features and datasets,",
+    after:
+      "without requiring a structural rewrite of the design system or the codebase.",
+    highlightColor: "#fcd34d",
+  },
+];
+
+const factors = [
+  {
+    icon: "Truck",
+    title: "Vendors",
+    description: "The external suppliers or manufacturers for all incoming goods/items.",
+  },
+  {
+    icon: "Package",
+    title: "Individual Items",
+    description: "Unique, standalone products across any category. (e.g., a specific footware etc.)",
+  },
+  {
+    icon: "Boxes",
+    title: "Composite Sets",
+    description: "Product bundles created from multiple Individual Items sold as a single package.",
+  },
+  {
+    icon: "Warehouse",
+    title: "Warehouses",
+    description: "The physical locations where the stock is stored and managed.",
+  },
+  {
+    icon: "Hash",
+    title: "SKU Code",
+    description: "The unique internal identifier for tracking every individual or composite item.",
+  },
+  {
+    icon: "Tag",
+    title: "Alias SKU Code",
+    description: "External identifier used by 3rd-party marketplaces; maps to our internal codes.",
+  },
+  {
+    icon: "ArrowDownToLine",
+    title: "Stock-In Entries",
+    description: "Logged records of inventory arrivals or purchased goods entering the warehouse.",
+  },
+  {
+    icon: "ArrowUpFromLine",
+    title: "Stock-Out Entries",
+    description: "Logged records of inventory leaving the warehouse due to sales, returns, or damage.",
+  },
+  {
+    icon: "TriangleAlert",
+    title: "Low-Stock Alerts",
+    description: "Automated status flags for items approaching safety thresholds.",
+  },
+  {
+    icon: "FileText",
+    title: "Purchase Orders",
+    description: "Formal documents generated to initiate procurement from suppliers.",
+  },
+];
+
+
+const solutions = [
+  {
+    label: "1. Pre-empted Stockout Revenue Loss",
+    before: "Automated thresholds flag low-stock items instantly,",
+    highlight: "ensuring critical inventory is replenished",
+    after:
+      "long before it hits absolute zero.",
+      highlightColor: "#fcd34d",
+  },
+  {
+    label: "2. Erased Warehouse Entry Errors",
+    before: "Ambient inline validation caught data-entry mistakes in real time,",
+    highlight: "drastically cutting fatigue-driven errors",
+    after:
+      "without breaking operational momentum.",
+      highlightColor: "#fcd34d",
+  },
+  {
+    label: "3. Accelerated Procurement Loop",
+    before: "Linking alerts directly to exclusive vendor profiles,",
+    highlight: "compressed a multi-hour paperwork grind into a single-click",
+    after:
+      "pre-filled Purchase Order review.",
+      highlightColor: "#fcd34d",
+  },
+];
+
+---
+
+
+
+<Layout
+  title="Udit Mahajan — Product Designer & Developer | Product Design, UX & Visual Systems"
+  description="My journey into design, how I think about products, and what I value while working with teams and founders. A curated selection of product design, UX, and visual work focused on clarity, emotion, and real-world impact."
+  pubDate={new Date()}
+  >
+
+  <CaseStudyHero
+  title="Yelona"
+  subtitle="Designing an AI-powered health marketplace that simplifies decision-making and builds lasting habits through personalized experiences."
+  image="/Images/Sample.png"
+  client:load
+/>
+
+<CaseStudyIntro
+  title="The Context"
+  description={`While designing solutions at Krityam, I was brought in to architect an internal Inventory & Order Management System (IOMS) for Yelona. 
+
+  Yelona is an online retail brand that sells a huge variety of products—ranging from apparel & footwear to fine jewelry, home goods, & electronics. They manage their own inventory & sell directly to customers across major Indian commerce channels like Amazon, IndiaMart & others.
+
+I replaced a highly vulnerable manual spreadsheet setup with a unified digital system that protects real-time stock numbers, handles multi-component product sets, and stops manual data-entry errors before they hit live sales channels.`}
+  role={["Product Designer", "UX Researcher"]}
+  duration="Jan 2025 — Feb 2025"
+  team={["1 Product Manager", "2 Developers", "1 Designer (Me)", "1 QA Tester"]}
+  client:load
+/>
+
+<CaseStudyImpact
+  decisionHeading="The Impact"
+  decisionDescription="Before diving into how I mapped out the system architecture, let's look at the direct impact these design updates had on Yelona’s day-to-day operations. After the initial rollout of the IOMS, we tracked performance across our primary operational bottlenecks. Key Performance Indicators revealed:"
+
+  impacts={[
+    {
+      label: "Bulk Processing & Data Entry Speed Improved by",
+      value: "27%",
+      trend: "up",
+    },
+    {
+      label: "Reduction in Stock-In & Stock-Out Update Errors by",
+      value: "48%",
+      trend: "down",
+    },
+    {
+      label: "Elimination of Composite Bundle Blindspots",
+      value: "100%",
+      trend: "up",
+    },
+  ]}
+  detail={`Please note that certain custom algorithmic calculations and internal database structures remain protected under a strict non-disclosure agreement (NDA).`}
+  client:load
+/>
+
+<CaseStudyPrologue
+  eyebrow="OVERVIEW"
+  title="About Yelona’s Business"
+  description={`Yelona is an online retail brand that sells a huge variety of products—ranging from apparel & footwear to fine jewelry, home goods, & electronics. They manage, stock, and fulfill their own diverse product portfolio and sell across major e-commerce platforms  in India, including Amazon, Flipkart, Indiamart & other digital storefronts.`}
+  image="/Images/cosmograph.png"
+  note="Courtesy: Yelona"
+  client:load
+/>
+
+<section class="mx-auto max-w-6xl px-5 sm:px-10 pb-20">
+
+<p class="text-base tracking-[0.2em] font-google font-bold text-zinc-500 uppercase">
+  Research & Discovery
+</p>
+
+<h2 class="mt-4 text-3xl md:text-5xl font-google font-semibold text-zinc-50 leading-tight tracking-wide">
+  Current Flow & Problems
+</h2>
+
+<p class="text-zinc-400 text-base md:text-lg leading-relaxed whitespace-pre-line">
+  At the first glance, the founder's observation seemed spot-on: Eating healthy in India is an exhausting chore. Between hunting for healthy products, tracking complex calories, and aligning with personal health goals, the mental load on the average Indian consumer had reached a breaking point. So, to validate this hypothesis, I along with my manager, stepped out into the aisles of modern retail stores in Mumbai & discovered these pain points:
+</p>
+
+</section>
+
+<CaseStudyPain
+  title="Pain Points"
+  description="Interviews and stakeholder workshops revealed recurring friction across admin teams, customers, and operations managers."
+  challenges={[
+    {
+      title: "Admin & Multi-Tenant Pain Points",
+      notes: [
+        "/Ideas/idea1.png",
+        "/Ideas/idea2.png",
+        "/Ideas/idea3.png",
+      ],
+    },
+    {
+      title: "Customer Pain Points",
+      notes: [
+        "/Ideas/idea4.png",
+        "/Ideas/idea5.png",
+        "/Ideas/idea6.png",
+      ],
+    },
+    {
+      title: "Operations & Finance Pain Points",
+      notes: [
+        "/Ideas/idea7.png",
+        "/Ideas/idea8.png",
+        "/Ideas/idea8.png",
+      ],
+    },
+  ]}
+  client:load
+/>
+
+<section class="mx-auto max-w-6xl px-5 sm:px-10 pt-25 pb-50">
+  <div class="border-l-3 border-zinc-700 pl-6 md:pl-8">
+  <p class="text-2xl tracking-wider font-google font-bold text-zinc-50">
+    The Core Objective:
+  </p>
+  <p class="mt-4 text-zinc-400 text-base md:text-xl leading-relaxed ">
+    How might we transform slow, repetitive manual data-entry into a unified, automated, & highly responsive inventory engine for warehouse operators—reducing processing times and sync friction down to a few clicks?
+  </p>
+  </div>
+</section>
+
+
+<section class="mx-auto max-w-6xl px-5 sm:px-10 py-20">
+
+<p class="text-base tracking-[0.2em] font-google font-bold text-zinc-500 uppercase">
+  THE IDEATION
+</p>
+
+<h2 class="mt-4 text-3xl md:text-5xl font-google font-semibold text-zinc-50 leading-tight tracking-wide">
+  Organising the Chaos
+</h2>
+
+<p class="text-zinc-400 text-base md:text-lg leading-relaxed whitespace-pre-line">
+  To move beyond the limitations of manual Excel spreadsheets, I had to treat the entire business operation as a relational data model. I mapped out every moving part and defined the logic governing how they interact, ensuring that the system could automate inventory states without human intervention.
+</p>
+
+</section>
+
+<CaseStudyGlossary
+  decisionHeading="The Core System Elements"
+  decisionDescription="I defined ten foundational components that make up the Yelona operational landscape:"
+  factors={factors}
+  client:load
+/>
+
+<CaseStudyPrologue
+  eyebrow="INFORMATION ARCHITECTURE (IA)"
+  title="Deconstructing the Architecture"
+  description={`To prevent data mismatch and errors, I designed the Information Architecture around specific relational dependencies. If one element changes, it creates a calculated ripple effect across the entire system by establishing strict system rules and interconnections to ensure the software would automate background tasks flawlessly.`}
+  image="/Images/cosmograph.png"
+  note="Representational Graph"
+  client:load
+/>
+
+<CaseStudyElements
+  decisionHeading="Mapping the Interconnections"
+  decisionDescription="To prevent data drift and operational errors, I built the Information Architecture on a strict set of relational rules:"
+  factors={[
+    {
+      source: "Vendor",
+      target: "Individual Item",
+      description:
+        "Every individual item is mapped to exactly one vendor. An item doesn't have two or more different suppliers in Yelona's database.",
+    },
+    {
+      source: "Composite Set",
+      target: "Individual Items",
+      description:
+        "Composite Sets derive availability from their underlying Individual Items, specifically with the lowest-available required component.",
+    },
+    {
+      source: "Warehouse",
+      target: "Inventory",
+      description:
+        "Stock quantities are maintained per warehouse, providing precise visibility into inventory distribution.",
+    },
+    {
+      source: "SKU Code",
+      target: "Alias SKU Codes",
+      description:
+        "Each internal SKU Code can map to multiple Alias SKU Codes, but an Alias SKU can only point back to one internal SKU.",
+    },
+    {
+      source: "Low Stock",
+      target: "Purchase Order",
+      description:
+        "Low-Stock alerts are calculated per SKU and act as the trigger to initiate the Purchase Order (PO) draft lifecycle.",
+    },
+    {
+      source: "Purchase Order",
+      target: "Stock-In",
+      description:
+        "A Purchase Order (PO) is tied to one Vendor. A Stock-In entry is created against the PO, once its received at the warehouse.",
+    }, 
+  ]}
+  client:load
+/>
+
+<CaseStudyProblem
+  eyebrow="THE STRATEGY"
+  title="The Cognitive Framework"
+  description={`Designing for enterprise operations isn’t about making a system "look pretty"—it’s about reducing the psychological friction of repetitive, high-stakes tasks. Warehouse environments are loud, fast-paced, and can be mentally exhausting. If a back-office worker feels cognitive fatigue, they make data-entry mistakes that directly hurt the company's bottom line.
+
+To build an interface that feels like an extension of the user's intent, I anchored my design decisions in the psychological realities of human error, visual fatigue, and spatial memory. I focused entirely on reducing the mental friction of managing massive data sets.`}
+ problems={problems}
+  client:load
+/>
+
+<!-- <section class="mx-auto max-w-6xl px-5 sm:px-10 pb-40">
+  <div class="border-l-[3px] border-zinc-700 pl-6 md:pl-8">
+
+    <p class="text-2xl tracking-wider font-google font-bold text-zinc-50 italic">
+      The $30 Billion "Intent Gap"
+    </p>
+
+    <p class="mt-4 text-zinc-400 text-base md:text-lg leading-relaxed italic">
+      People today want to make healthier choices — but the journey is fragmented.
+      From unclear labels and misleading claims to overwhelming options,
+      decision-making becomes exhausting instead of empowering.
+      Most platforms focus on selling products, not helping users understand them.
+      As a result, users either overthink every decision — or give up entirely.
+    </p>
+
+    <div class="mt-8 flex flex-wrap gap-3">
+      
+      <div class="rounded-full border border-zinc-800 bg-zinc-900 px-5 py-3 text-sm font-medium text-zinc-200">
+        🔍 Transparency
+      </div>
+
+      <div class="rounded-full border border-zinc-800 bg-zinc-900 px-5 py-3 text-sm font-medium text-zinc-200">
+        ⚡ Instant Clarity
+      </div>
+
+      <div class="rounded-full border border-zinc-800 bg-zinc-900 px-5 py-3 text-sm font-medium text-zinc-200">
+        🧠 Education First
+      </div>
+
+      <div class="rounded-full border border-zinc-800 bg-zinc-900 px-5 py-3 text-sm font-medium text-zinc-200">
+        🤝 Trust Before Sales
+      </div>
+
+      <div class="rounded-full border border-zinc-800 bg-zinc-900 px-5 py-3 text-sm font-medium text-zinc-200">
+        ✨ Delightful Guidance
+      </div>
+
+    </div>
+
+  </div>
+</section> -->
+
+<CaseStudyDesigns
+  eyebrow="A) PRODUCT SCANNER"
+  title="Bridging Intent to Action through Instant Verdict"
+  description={`To serve a user who values proactive health over panic, I had to design the core scanning and search flows, to turn complex nutrition data into instant, confident decisions. By streamlining the entire experience, we ensured that every scan and search seamlessly connects the user's health goals with better everyday choices.`}
+
+  steps={[
+    {
+      label: "A) Accommodating Varied Scanning Scenarios",
+      labelColor: "#fcd34d",
+      title1: "Challenges",
+      description1: `• Low lighting or blurry camera in real-world settings.
+      • Torn, wrinkled, or poorly printed barcodes that fail to read.`,
+      title2: "Solution",
+      description2: "A unified scanner that automatically detects the product or barcode, paired with intuitive, thumb-zone toggle for manual overrides and a text-search option.",
+      title3: "Why this works?",
+      description3: "It respcts high-velocity user behaviour.",
+      image: "/Designs/design1.png",
+    },
+
+    {
+      label: "B) Navigating Product Match Discrepancies",
+      labelColor: "#fcd34d",
+      title1: "Challenges",
+      description1: `• Discrepancies when a scan matches multiple similar variants.
+      • Guessing incorrectly undermines accuracy & trust.`,
+      title2: "Iteration-1",
+      description2: "An error screen asking the user to rescan when the system fails to map with a single, definitive match.",
+      title3: "Iteration-2",
+      description3: "Horizontal carousel of top 5 matches, requiring the user to compare & select the correct one before proceeding.",
+
+      image: "/Designs/design2.png",
+    },
+
+    {
+      label: "B) Navigating Product Match Discrepancies",
+      labelColor: "#fcd34d",
+      title1: "Iteration-3 (Final Solution)",
+      description1: `• A Smart Confirmation screen that displays the highest-confidence match which auto-redirects to the verdict page.
+      • If the user identifies a mismatch during this window, a single tap immediately reveals a list of alternative options.`,
+      title3: "Why this works?",
+      description3: `• Prioritizes speed, resolving 90% of cases without user intervention.
+      • Effectively balances system speed with user agency, ensuring that the flow is never interrupted.`,
+
+      image: "/Designs/design3.png",
+    },
+
+    {
+      label: "C) Resolving 'Product Not Found' into Community Value",
+      labelColor: "#fcd34d",
+      title1: "Challenges",
+      description1: `• Momentum blocked, triggers immediate disappointment.
+      • Lose confidence in the app's reliability.`,
+      title2: "Solution",
+      description2: "An overlay acknowledging that the user has found something unique with a streamlined camera interface, that requests quick snapshots to fix the database gap.",
+      title3: "Why this works?",
+      description3: "Transforms a moment of UX friction into a psychological positive.",
+
+      image: "/Designs/design4.png",
+    },
+  ]}
+  client:load
+/>
+
+<CaseStudySolutions
+  eyebrow="FINAL CONCLUSION"
+  title="Measuring Impact & Looking Ahead"
+  description={`Building the Yelona Inventory & Order Management System (IOMS) proved that great enterprise design isn't about chasing minimalist layout trends or maximizing empty whitespace—it's about operational survival. By replacing fragile, unvalidated spreadsheets with a high-density, utility-first ecosystem, the system directly resolved the central challenge: safeguarding business revenue by killing clerical blindspots before they ever hit the storefront.
+
+
+Strategic Impact:`}
+ solutions={solutions}
+  client:load
+/>
+
+<section class="mx-auto max-w-6xl px-5 sm:px-10 py-20">
+  <div class="border-l-3 border-zinc-700 pl-6 md:pl-8">
+  <p class="text-2xl tracking-wider font-google font-bold text-zinc-50">
+    New challenges and what's next:
+  </p>
+  <p class="mt-4 text-zinc-400 text-base md:text-lg leading-relaxed ">
+  While the initial deployment stabilized Yelona’s core inventory workflows, the next frontier focuses on expanding the platform's architectural depth and compliance capabilities. The immediate priority is designing a native GST Collection module to seamlessly orchestrate India's multi-tiered tax structures (CGST, SGST, IGST) alongside localized HSN code parameters directly within the procurement pipeline to automatically reconcile internal purchase orders with vendor tax filings. 
+  </p>
+  </div>
+</section>
+
+<CaseStudyCta
+  title="Atmoon"
+  description="Designing a premium digital presence for an AI-powered content and growth studio."
+  href="/work/atmoon"
+  client:load
+/>
+
+  </Layout>
