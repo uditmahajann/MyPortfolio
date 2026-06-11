@@ -18,7 +18,7 @@ export default function PainPointsSection({
 }: Props) {
   return (
     <section className="mx-auto max-w-6xl px-5 sm:px-10 py-25">
-      <div className="grid grid-cols-1 lg:grid-cols-[0.7fr_1.3fr] gap-15">
+      <div className="grid grid-cols-1 lg:grid-cols-[0.65fr_1.35fr] gap-15">
         
         {/* LEFT STICKY */}
         <div>

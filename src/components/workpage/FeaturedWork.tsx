@@ -12,6 +12,9 @@ type CaseStudy = {
   href: string;
   image: string;
   tags: string[];
+
+  buttonText: string;
+  isLocked?: boolean;
 };
 
 const CASE_STUDIES: CaseStudy[] = [
@@ -19,23 +22,40 @@ const CASE_STUDIES: CaseStudy[] = [
     id: "cosmo",
     label: "Cosmo AI- AI Health & Wellness Marketplace",
     title:
-      "Reduced Friction in Personalized Health Shopping",
+      "Reducing Friction in Personalized Health Shopping",
     teaser:
-      "Designed an AI-powered marketplace for COSMO App, that helps users understand products via health score, build habits & make confident wellness choices with personalized recommendations — without overwhelming them, otherwise leading to drop-offs & abandoned flows.",
+      "Transforming overwhelming nutritional data into personalized, actionable shopping loops for COSMO App, to eliminate decision paralysis in healthy shopping and maximize conversion.",
     href: "work/cosmo",
-    image: "/Images/Soon.jpg",
-    tags: ["Improved Progression Rate by 28%", "Reduced Task-friction by 48%", "Personalization Logic Optimized"],
+    image: "/Banners/csbanner1.png",
+    tags: ["Improved Healthy Product Ratio", "22% Reduction in PDP Drop-offs", "32% Increase in 'Smart Swap' Adoption"],
+    buttonText: "View Case Study",
+    isLocked: false,
   },
   {
     id: "yelona",
     label: "Yelona's Inventory Management Web App",
     title:
-      "Reducing Stock Errors in Day-to-Day Inventory Operations",
+      "Driving Operational Velocity in Inventory Management",
     teaser:
-      "Designed a single, guided inventory workflow for YELONA's IMS, that brings stock updates, system validation, and reconciliation into one continuous flow — making errors visible immediately and reducing manual cross-checking.",
+      "Designed a unified IOMS workflow that mitigates human error and streamlines complex inventory reconciliation — making errors visible immediately and reducing manual cross-checking.",
     href: "work/yelona",
     image: "/Images/Soon.jpg",
-    tags: ["Reduced Stock Update Errors by 48%", "Increased Speed by 27%", "Introduced Composite Set Inventory Model"],
+    tags: ["Accelerated data entry by 27%", "Cut update errors by 48%", "100% Elimination of composite bundle blindspots."],
+    buttonText: "View Case Study",
+    isLocked: false,
+  },
+  {
+    id: "atmoon",
+    label: "AtMoon Pe's Fintech Admin Portal",
+    title:
+      "Balancing Speed & Scrutiny in Merchant Lifecycle Design",
+    teaser:
+      "Transformed a fragmented backend auditing process into a unified command center for managing high-volume leads and KYC verification, that empowers internal risk teams to audit profiles with zero cognitive drag.",
+    href: "#",
+    image: "/Images/Soon.jpg",
+    tags: ["Introduced field-level audit logs", "Automated field review loops", "Unified lead-to-merchant lifecycle"],
+    buttonText: "Case Study: Coming Soon",
+    isLocked: true,
   },
   {
     id: "rise",
@@ -47,6 +67,8 @@ const CASE_STUDIES: CaseStudy[] = [
     href: "#",
     image: "/Images/Soon.jpg",
     tags: ["Increased MAU's by 31%", "Improved User-engagement", "Boosted Overall Retention"],
+    buttonText: "Case Study: Coming Soon",
+    isLocked: true,
   },
   
 ];
@@ -161,11 +183,11 @@ const CaseStudyCard: React.FC<{ caseStudy: CaseStudy }> = ({ caseStudy }) => {
               {caseStudy.teaser}
             </p>
 
-            <div className="mt-3 flex flex-wrap gap-2">
+            <div className="mt-3 flex flex-wrap gap-2 space-y-1">
               {caseStudy.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full bg-zinc-900 px-4 py-1 text-sm text-zinc-300 border border-zinc-800 font-google"
+                  className="rounded-full bg-zinc-900 px-4 py-1.5 text-sm text-zinc-300 border border-zinc-800 font-google"
                 >
                   {tag}
                 </span>
@@ -179,9 +201,21 @@ const CaseStudyCard: React.FC<{ caseStudy: CaseStudy }> = ({ caseStudy }) => {
                 href={caseStudy.href}
                 className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-950 px-5 py-2.5 text-sm sm:text-base font-google font-medium text-zinc-50 transition hover:border-zinc-300 hover:bg-zinc-900"
               >
+                <span>{caseStudy.buttonText}</span>
+
+                {caseStudy.isLocked ? (
+                  <Lock className="h-4 w-4" />
+                ) : (
+                  <ArrowUpRight className="h-4 w-4" />
+                )}
+              </a>
+              {/* <a
+                href={caseStudy.href}
+                className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-950 px-5 py-2.5 text-sm sm:text-base font-google font-medium text-zinc-50 transition hover:border-zinc-300 hover:bg-zinc-900"
+              >
                 <span>Case Study: Coming Soon</span>
                 <Lock className="h-4 w-4" />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
@@ -192,7 +226,7 @@ const CaseStudyCard: React.FC<{ caseStudy: CaseStudy }> = ({ caseStudy }) => {
             <img
               src={caseStudy.image}
               alt={caseStudy.title}
-              className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+              className="h-fit w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
             />
           </div>
           <div className="pointer-events-none absolute inset-0 bg-linear-to-tl from-black/75 via-transparent to-black/20" />

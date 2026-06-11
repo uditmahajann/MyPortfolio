@@ -4,6 +4,7 @@ import CaseStudyHero from "../../components/projectpage/ProjectHero";
 import CaseStudyIntro from "../../components/projectpage/ProjectIntro";
 import CaseStudyImpact from "../../components/projectpage/ProjectResults";
 import CaseStudyPrologue from "../../components/projectpage/ProjectPrologue";
+import CaseStudyGraph from "../../components/projectpage/ProjectGraph";
 import CaseStudyProblem from "../../components/projectpage/ProjectProblems";
 import CaseStudyPain from "../../components/projectpage/ProjectPain";
 import CaseStudyGlossary from "../../components/projectpage/ProjectGlossary";
@@ -140,9 +141,10 @@ const solutions = [
   >
 
   <CaseStudyHero
-  title="Yelona"
-  subtitle="Designing an AI-powered health marketplace that simplifies decision-making and builds lasting habits through personalized experiences."
+  title="Yelona's Inventory"
+  subtitle="Designing unified IOMS workflow that mitigates human error & streamlines complex inventory reconciliation — making errors visible immediately & reducing manual cross-checking."
   image="/Images/Sample.png"
+  gradientColor="rgba(251, 191, 36, 0.50)"
   client:load
 />
 
@@ -188,7 +190,7 @@ I replaced a highly vulnerable manual spreadsheet setup with a unified digital s
   eyebrow="OVERVIEW"
   title="About Yelona’s Business"
   description={`Yelona is an online retail brand that sells a huge variety of products—ranging from apparel & footwear to fine jewelry, home goods, & electronics. They manage, stock, and fulfill their own diverse product portfolio and sell across major e-commerce platforms  in India, including Amazon, Flipkart, Indiamart & other digital storefronts.`}
-  image="/Images/cosmograph.png"
+  image="/Images/yelonaonline.png"
   note="Courtesy: Yelona"
   detail={`The business was previously running on excel sheets & disconnected tools, resulting in inconsistent stock tracking, manual procurement workflows, and limited visibility across warehouses. As inventory volume grew, maintaining data accuracy and operational efficiency became increasingly difficult.`}
   client:load
@@ -217,35 +219,35 @@ I replaced a highly vulnerable manual spreadsheet setup with a unified digital s
   description="To engineer exact interface safeguards, I categorized the challenges by their specific operational use cases."
   challenges={[
     {
-      title: "Managing Composite Set & Bundle Pain Points",
+      title: "Composite Set & Bundle Pain Points",
       notes: [
-        "/Ideas/idea2.png",
-        "/Ideas/idea2.png",
-        "/Ideas/idea2.png",
+        "/Ideas/pain1.png",
+        "/Ideas/pain3.png",
+        "/Ideas/pain2.png",
       ],
     },
     {
       title: "Multi-Channel SKU Mapping Pain Points",
       notes: [
-        "/Ideas/idea4.png",
-        "/Ideas/idea4.png",
-        "/Ideas/idea4.png",
+        "/Ideas/pain4.png",
+        "/Ideas/pain5.png",
+        "/Ideas/pain6.png",
       ],
     },
     {
       title: "Purchase Order & Procurement Pain Points",
       notes: [
-        "/Ideas/idea8.png",
-        "/Ideas/idea8.png",
-        "/Ideas/idea8.png",
+        "/Ideas/pain7.png",
+        "/Ideas/pain8.png",
+        "/Ideas/pain9.png",
       ],
     },
     {
       title: "Analytical Blindspots & Dashboard Pain Points",
       notes: [
-        "/Ideas/idea3.png",
-        "/Ideas/idea3.png",
-        "/Ideas/idea3.png",
+        "/Ideas/pain10.png",
+        "/Ideas/pain11.png",
+        "/Ideas/pain12.png",
       ],
     },
   ]}
@@ -287,11 +289,11 @@ I replaced a highly vulnerable manual spreadsheet setup with a unified digital s
   client:load
 />
 
-<CaseStudyPrologue
+<CaseStudyGraph
   eyebrow="INFORMATION ARCHITECTURE (IA)"
   title="Deconstructing the Architecture"
   description={`To prevent data mismatch and errors, I designed the Information Architecture around specific relational dependencies. If one element changes, it creates a calculated ripple effect across the entire system by establishing strict system rules and interconnections to ensure the software would automate background tasks flawlessly.`}
-  image="/Images/cosmograph.png"
+  image="/Images/yelonagraph.png"
   note="Representational Graph"
   client:load
 />
@@ -391,6 +393,16 @@ To build an interface that feels like an extension of the user's intent, I ancho
 
   </div>
 </section> -->
+
+<CaseStudyGraph
+  eyebrow="THE SOLUTION"
+  title="Translating Complexity into Clarity"
+  description={`With the core relational rules outlined & cognitive framework established, the next step was to formalize the system into a definitive, closed-loop architecture that dictates exactly how data flows and traces an item’s entire operational journey. This refined framework acts as the final development blueprint.`}
+  image="/Images/yelonaflow.png"
+  note="Representational Graph"
+  detail={`By aligning the UI directly with this production-ready architecture, I designed an interface that surfaces real-time tracking, segregates complex workflows, and brings critical anomalies to the forefront. Here is how that foundational logic materialized into the specific design solutions:`}
+  client:load
+/>
 
 <CaseStudyDesigns
   eyebrow="INDIVIDUAL & COMPOSITE ITEMS"

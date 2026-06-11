@@ -67,11 +67,11 @@ const experiences: Experience[] = [
   },
   {
     year: "Where I Am Now (2025)",
-    role: "Rise of the Design Manager",
+    role: "Rise of the Lead Designer",
     line1: "I moved from internships and freelance work into a full-time job at Krityam in 2024— initially wearing multiple hats across design and development. Over time, my role evolved.",
     line2: "leading UX end-to-end while collaborating closely with founders, engineers, and product teams.",
     line3: "Today, I focus on systems, decisions, and alignment — helping teams design with clarity and intention",
-    text: "Today, I work as a Design Manager at Krityam,",
+    text: "Today, I work as a Lead Designer at Krityam,",
     tag1: "Still learning",
     tag2: "Want to switch back to core designing",
     tag3: "Looking for newer opportunities",

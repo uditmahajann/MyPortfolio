@@ -6,47 +6,52 @@ const projects = [
   {
     title: "Krityam Solutions (Dark Theme)",
     image: "/Images/KrityamSnap.png",
-    live: "https://rise.app",
+    live: "https://krityam.co.in/",
   },
   {
     title: "MCS-Kindergaten Theme Page",
     image: "/Images/KinderSnap.png",
-    live: "https://health.ai",
+    live: "https://www.mcspathankot.edu.in/academics/kindergarten",
   },
   {
     title: "Krityam Solutions (Light Theme)",
     image: "/Images/KLightSnap.png",
-    live: "https://krityam.com",
+    live: "https://krityam.co.in/about",
   },
   {
     title: "RISE-Running Club Landing Page",
     image: "/Images/RiseSnap.png",
-    live: "https://krityam.com",
+    live: "https://rise.com/",
   },
   {
     title: "Product Designer's Portfolio",
     image: "/Images/PortfolioSnap.png",
-    live: "https://krityam.com",
+    live: "https://udit-mahajan.netlify.app/",
   },
   
   {
     title: "Montessori Cambridge School",
-    image: "/Images/OrospacesSnap.png",
-    live: "https://krityam.com",
+    image: "/Banners/McsSnap.png",
+    live: "https://www.mcspathankot.edu.in/",
   },
+  // {
+  //   title: "AtMoon DPS Landing Page",
+  //   image: "/Images/OrospacesSnap.png",
+  //   live: "https://atmoon-website.netlify.app/",
+  // },
    {
     title: "Orospaces Landing Page",
-    image: "/Images/OrospacesSnap.png",
+    image: "/Banners/OrospacesSnap.png",
     live: "https://www.orospaces.com/",
   },
   {
     title: "Linnaea Ventures Website",
-    image: "/Images/LinnaeaSnap.png",
+    image: "/Banners/LinnaeaSnap.png",
     live: "https://www.linnaea.in/",
   },
    {
     title: "VS Pharmatech Website",
-    image: "/Images/VspharmaSnap.png",
+    image: "/Banners/VspharmaSnap.png",
     live: "https://www.vspharmatech.com/",
   },
 ];
