@@ -18,7 +18,7 @@ export default function PainPointsSection({
 }: Props) {
   return (
     <section className="mx-auto max-w-6xl px-5 sm:px-10 py-25">
-      <div className="grid grid-cols-1 lg:grid-cols-[0.6fr_1.4fr] gap-20">
+      <div className="grid grid-cols-1 lg:grid-cols-[0.7fr_1.3fr] gap-15">
         
         {/* LEFT STICKY */}
         <div>
@@ -34,13 +34,13 @@ export default function PainPointsSection({
         </div>
 
         {/* RIGHT CONTENT */}
-        <div className="space-y-40">
+        <div className="space-y-30">
           {challenges.map((challenge, index) => (
             <div
               key={index}
               className=""
             >
-              <h3 className="text-xl md:text-2xl font-google font-semibold text-zinc-100">
+              <h3 className="text-xl md:text-3xl font-caveat font-medium text-amber-300">
                 {challenge.title}
               </h3>
 

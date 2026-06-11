@@ -95,7 +95,7 @@ export default function CaseStudyUserFlow({
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.2 }}
-                            className="grid lg:grid-cols-2 gap-15 items-center"
+                            className="grid lg:grid-cols-2 gap-6 items-center"
                         >
 
                             {/* LEFT CONTENT */}

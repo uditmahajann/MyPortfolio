@@ -190,13 +190,14 @@ I replaced a highly vulnerable manual spreadsheet setup with a unified digital s
   description={`Yelona is an online retail brand that sells a huge variety of products—ranging from apparel & footwear to fine jewelry, home goods, & electronics. They manage, stock, and fulfill their own diverse product portfolio and sell across major e-commerce platforms  in India, including Amazon, Flipkart, Indiamart & other digital storefronts.`}
   image="/Images/cosmograph.png"
   note="Courtesy: Yelona"
+  detail={`The business was previously running on excel sheets & disconnected tools, resulting in inconsistent stock tracking, manual procurement workflows, and limited visibility across warehouses. As inventory volume grew, maintaining data accuracy and operational efficiency became increasingly difficult.`}
   client:load
 />
 
 <section class="mx-auto max-w-6xl px-5 sm:px-10 pb-20">
 
 <p class="text-base tracking-[0.2em] font-google font-bold text-zinc-500 uppercase">
-  Research & Discovery
+  User Research
 </p>
 
 <h2 class="mt-4 text-3xl md:text-5xl font-google font-semibold text-zinc-50 leading-tight tracking-wide">
@@ -204,37 +205,47 @@ I replaced a highly vulnerable manual spreadsheet setup with a unified digital s
 </h2>
 
 <p class="text-zinc-400 text-base md:text-lg leading-relaxed whitespace-pre-line">
-  At the first glance, the founder's observation seemed spot-on: Eating healthy in India is an exhausting chore. Between hunting for healthy products, tracking complex calories, and aligning with personal health goals, the mental load on the average Indian consumer had reached a breaking point. So, to validate this hypothesis, I along with my manager, stepped out into the aisles of modern retail stores in Mumbai & discovered these pain points:
+  When I sat down with the warehouse and operations teams to shadow their daily routine, I saw firsthand how incredibly stressful it was to manage a fast-growing retail business using nothing but spreadsheets. I mapped out the challenges, that the interviews and operational audits revealed, that were directly hurting Yelona’s business metrics.
+  
+  To set up the exact architectural safeguards implemented later in the system, I grouped the most critical challenges into four clear problem areas that were directly costing the business time, accuracy, and money.
 </p>
 
 </section>
 
 <CaseStudyPain
   title="Pain Points"
-  description="Interviews and stakeholder workshops revealed recurring friction across admin teams, customers, and operations managers."
+  description="To engineer exact interface safeguards, I categorized the challenges by their specific operational use cases."
   challenges={[
     {
-      title: "Admin & Multi-Tenant Pain Points",
+      title: "Managing Composite Set & Bundle Pain Points",
       notes: [
-        "/Ideas/idea1.png",
         "/Ideas/idea2.png",
-        "/Ideas/idea3.png",
+        "/Ideas/idea2.png",
+        "/Ideas/idea2.png",
       ],
     },
     {
-      title: "Customer Pain Points",
+      title: "Multi-Channel SKU Mapping Pain Points",
       notes: [
         "/Ideas/idea4.png",
-        "/Ideas/idea5.png",
-        "/Ideas/idea6.png",
+        "/Ideas/idea4.png",
+        "/Ideas/idea4.png",
       ],
     },
     {
-      title: "Operations & Finance Pain Points",
+      title: "Purchase Order & Procurement Pain Points",
       notes: [
-        "/Ideas/idea7.png",
         "/Ideas/idea8.png",
         "/Ideas/idea8.png",
+        "/Ideas/idea8.png",
+      ],
+    },
+    {
+      title: "Analytical Blindspots & Dashboard Pain Points",
+      notes: [
+        "/Ideas/idea3.png",
+        "/Ideas/idea3.png",
+        "/Ideas/idea3.png",
       ],
     },
   ]}
@@ -382,8 +393,8 @@ To build an interface that feels like an extension of the user's intent, I ancho
 </section> -->
 
 <CaseStudyDesigns
-  eyebrow="A) PRODUCT SCANNER"
-  title="Bridging Intent to Action through Instant Verdict"
+  eyebrow="INDIVIDUAL & COMPOSITE ITEMS"
+  title="Automating Inventory Tracking & Resolving Bundle Errors"
   description={`To serve a user who values proactive health over panic, I had to design the core scanning and search flows, to turn complex nutrition data into instant, confident decisions. By streamlining the entire experience, we ensured that every scan and search seamlessly connects the user's health goals with better everyday choices.`}
 
   steps={[
