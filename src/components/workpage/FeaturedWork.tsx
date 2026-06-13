@@ -39,7 +39,7 @@ const CASE_STUDIES: CaseStudy[] = [
     teaser:
       "Designed a unified IOMS workflow that mitigates human error and streamlines complex inventory reconciliation — making errors visible immediately and reducing manual cross-checking.",
     href: "work/yelona",
-    image: "/Images/Soon.jpg",
+    image: "/Banners/csbanner2.png",
     tags: ["Accelerated data entry by 27%", "Cut update errors by 48%", "100% Elimination of composite bundle blindspots."],
     buttonText: "View Case Study",
     isLocked: false,
@@ -226,10 +226,10 @@ const CaseStudyCard: React.FC<{ caseStudy: CaseStudy }> = ({ caseStudy }) => {
             <img
               src={caseStudy.image}
               alt={caseStudy.title}
-              className="h-fit w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+              className="h-fit w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.06]"
             />
           </div>
-          <div className="pointer-events-none absolute inset-0 bg-linear-to-tl from-black/75 via-transparent to-black/20" />
+          {/* <div className="pointer-events-none absolute inset-0 bg-linear-to-tl from-black/75 via-transparent to-black/20" /> */}
         </div>
       </div>
     </div>

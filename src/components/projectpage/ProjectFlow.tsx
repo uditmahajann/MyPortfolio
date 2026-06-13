@@ -25,6 +25,9 @@ type Props = {
   flowHeading?: string;
   flowDescription?: string;
 
+  flowAccentColor?: string;
+
+
   steps: FlowStep[];
 };
 
@@ -34,6 +37,7 @@ export default function CaseStudyUserFlow({
   description,
   flowHeading,
   flowDescription,
+  flowAccentColor = "#A3E635", // default lime
   steps,
 }: Props) {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -118,7 +122,10 @@ export default function CaseStudyUserFlow({
         {(flowHeading || flowDescription) && (
           <div className="mt-20">
             {flowHeading && (
-              <h3 className="text-xl md:text-4xl font-caveat font-medium text-lime-300">
+              <h3
+                className="text-xl md:text-4xl font-caveat font-medium"
+                style={{ color: flowAccentColor }}
+              >
                 {flowHeading}
               </h3>
             )}
@@ -167,7 +174,11 @@ export default function CaseStudyUserFlow({
 
                   {/* Description */}
                   <div className="max-w-xl">
-                    <div className="mb-4 h-px w-12 bg-lime-300" />
+                    {/* <div className="mb-4 h-px w-12 bg-lime-300" /> */}
+                    <div
+                      className="mb-4 h-px w-12"
+                      style={{ backgroundColor: flowAccentColor }}
+                    />
 
                     <h4 className="text-3xl font-google font-semibold text-zinc-50 leading-tight">
                       {step.title}

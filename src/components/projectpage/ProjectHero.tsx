@@ -25,7 +25,7 @@ const CaseStudyHero: React.FC<Props> = ({ title, subtitle, image, gradientColor 
       </div>
 
       {/* Content */}
-      <div className="relative mx-auto flex min-h-screen top-50 max-w-7xl flex-col items-center justify-center px-5 lg:px-10 text-center">
+      <div className="relative mx-auto flex min-h-screen top-45 max-w-7xl flex-col items-center justify-center px-5 lg:px-10 text-center">
         
         {/* Title */}
         <motion.h1
@@ -57,7 +57,7 @@ const CaseStudyHero: React.FC<Props> = ({ title, subtitle, image, gradientColor 
           <img
             src={image}
             alt="product preview"
-            className="w-[340px] sm:w-[480px] md:w-[620px] lg:w-[720px] object-contain"
+            className="w-[340px] sm:w-[480px] md:w-[620px] lg:w-[720px] xl:w-[900px] object-contain"
           />
         </motion.div>
 

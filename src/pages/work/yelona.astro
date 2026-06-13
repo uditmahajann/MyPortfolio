@@ -9,9 +9,95 @@ import CaseStudyProblem from "../../components/projectpage/ProjectProblems";
 import CaseStudyPain from "../../components/projectpage/ProjectPain";
 import CaseStudyGlossary from "../../components/projectpage/ProjectGlossary";
 import CaseStudyElements from "../../components/projectpage/ProjectElements";
+import CaseStudyFlow from "../../components/projectpage/ProjectFlow";
+import CaseStudyScreens from "../../components/projectpage/ProjectScreens";
 import CaseStudyDesigns from "../../components/projectpage/ProjectDesigns";
 import CaseStudyCta from "../../components/projectpage/ProjectCta";
 import CaseStudySolutions from "../../components/projectpage/ProjectSolutions";
+
+const vendorSteps = [
+  {
+    image: "/Flows/yelona1.png",
+    title: "1. Vendor-First Architecture",
+    description:
+      "I designed the interface to display critical business metrics—specifically 'Active Items' & 'Active POs' —allowing users to assess the operational impact of every vendor at a glance. I enforced a vendor-first architecture, ensuring 100% data integrity for future procurement tasks.",
+  },
+  {
+    image: "/Flows/yelona2.png",
+    title: "2. Adding Vendors",
+    description:
+      "The vendor creation is strictly tied to the Item Management lifecycle; by requiring a valid vendor profile first, we guarantee that every new item listed in the warehouse has an immediate, traceable supply source.",
+  },
+  {
+    image: "/Flows/yelona3.png",
+    title: "3.1 Viewing Vendor Profile",
+    description:
+      "I implemented a 3-tab architecture—Vendor Details, Active Items Catalog, and Purchase Orders—which segments vendor related data based on operational intent, reducing cognitive load.",
+  },
+  {
+    image: "/Flows/yelona4.png",
+    title: "3.2 Item-Vendor Integrity",
+    description:
+      "The 'Active Items Catalog' tab provides a direct lookup of every SKU supplied by that specific vendor, allowing managers to instantly verify supply relationships during stock audits.",
+  },
+  {
+    image: "/Flows/yelona5.png",
+    title: "3.3 Traceability & History",
+    description:
+      "The 'Purchase Orders' tab provides a live, chronological feed of procurement history, allowing users to track fulfillment speed & manage invoice status on a vendor level",
+  },
+];
+
+const itemsSteps = [
+  {
+    image: "/Flows/yelona6.png",
+    title: "1. Dependency-Aware UI",
+    description:
+      "I implemented a 3-tab hierarchy (Individual Items, Composite Items, Low Stock) to segregate data by operational intent. I designed the 'Individual Items' screen as the master registry for all atomic assets into a status-aware, dependency-tracked dashboard.",
+  },
+  {
+    image: "/Flows/yelona7.png",
+    title: "2. Adding Individual Items",
+    description:
+      "I designed the 'Add New Item' experience incorporating 1-to-Many Master SKU alias ledger, Restock Trigger Set up & Vendor Mapping so the system can autonomously manage the item's lifecycle from the moment it enters the database ",
+  },
+  {
+    image: "/Flows/yelona8.png",
+    title: "3.1 Viewing Item Dependencies",
+    description:
+      "I introduced the 'Used in Bundles' & 'Inventory Log' tabs to bridge the gap between individual stock units & the wider business ecosystem. For 'Used in Bundles' tab, instead of a static list, I integrated a direct view of every composite set that relies on a specific item.",
+  },
+  {
+    image: "/Flows/yelona9.png",
+    title: "3.2 Incorporated Logs",
+    description:
+      "For the 'Inventory Log' tab, I structured the log as a chronological, verifiable ledger of the item's entire lifecycle, forcing a clear declaration of the activity (Stock-In vs. Stock-Out) and its origin or destination (e.g., 'On Amazon Store' vs. 'Swissland Traders').",
+  },
+  {
+    image: "/Flows/yelona10.png",
+    title: "4.1 Managing Composite Items",
+    description:
+      "I built this module to act as a Dynamic Recipe Engine, calculating the true availability of a bundle in real-time based on its weakest component.",
+  },
+  {
+    image: "/Flows/yelona11.png",
+    title: "4.2 Component Thumbnail Row",
+    description:
+      "I integrated a component thumbnail row directly into the table, allowing the team to 'read' the recipe of any bundle at a glance without navigating away from the main list, increasing the fulfillment reliability.",
+  },
+  {
+    image: "/Flows/yelona12.png",
+    title: "5. Creating a New Set",
+    description:
+      "I engineered the Set Builder to pull real-time cost and stock data for every component added. As the user builds the 'recipe', the system dynamically aggregates the total cost & stock quantity of the set.",
+  },
+  {
+    image: "/Flows/yelona13.png",
+    title: "5.1 Component-Level Constraints",
+    description:
+      "I ensured the builder displays the current availability of each child item during the selection process, preventing the creation of bundles destined for 'Out of Stock' status.",
+  },
+];
 
 
 const problems = [
@@ -143,8 +229,8 @@ const solutions = [
   <CaseStudyHero
   title="Yelona's Inventory"
   subtitle="Designing unified IOMS workflow that mitigates human error & streamlines complex inventory reconciliation — making errors visible immediately & reducing manual cross-checking."
-  image="/Images/Sample.png"
-  gradientColor="rgba(251, 191, 36, 0.50)"
+  image="/Banners/yelonahero.png"
+  gradientColor="rgba(127, 29, 29, 0.55)"
   client:load
 />
 
@@ -404,10 +490,38 @@ To build an interface that feels like an extension of the user's intent, I ancho
   client:load
 />
 
-<CaseStudyDesigns
+<CaseStudyScreens
+  eyebrow="VENDOR MANAGEMENT"
+  title="Bridging the Gap Between Suppliers and Inventory"
+  description={`The current approach treated vendors as static contact records, disconnected from the actual product movement and replenishment loops. This created an operational blind spot where warehouse managers could not verify supply relationships or track order performance without manual cross-referencing, leading to fragmented procurement data.
+  
+  I designed the Vendor ecosystem to function as an active "Operational Hub," where vendor data is deeply integrated into the inventory and procurement lifecycle:`}
+  flowHeading="Building the Operational Foundation"
+  flowDescription="I started with the Vendors Module because from our IA framework outlined before, we know that the 'Vendor' is the parent entity. If we don't have a clean, actionable directory of who provides the stock, we cannot effectively manage 'Items' or 'Purchase Orders'."
+  steps={vendorSteps}
+  flowAccentColor="#fcd34d"
+  client:load
+/>
+
+<CaseStudyScreens
   eyebrow="INDIVIDUAL & COMPOSITE ITEMS"
   title="Automating Inventory Tracking & Resolving Bundle Errors"
-  description={`To serve a user who values proactive health over panic, I had to design the core scanning and search flows, to turn complex nutrition data into instant, confident decisions. By streamlining the entire experience, we ensured that every scan and search seamlessly connects the user's health goals with better everyday choices.`}
+  description={`The legacy system treats promotional bundles as single, standalone products with no connection to the actual items inside them. As a result, there's no way to map individual items to a composite set, so digital storefronts would keep accepting orders for a full bundle even if a vital component was completely missing in the warehouse. This left teams blind to hidden stock shortages & caused frequent broken orders.
+  
+  I replaced this monolithic tracking with a dynamic relational recipe engine that treats every bundle as a calculated set of child components:`}
+  flowHeading="Building an Interconnected Inventory Ecosystem"
+  flowDescription="After establishing the vendor as the foundational entity, the next critical layer was the Item Management architecture. I designed the Items module to replace the current manual, spreadsheet-reliant tracking with a dynamic relational recipe engine."
+  steps={itemsSteps}
+  flowAccentColor="#fcd34d"
+  client:load
+/>
+
+<!-- <CaseStudyDesigns
+  eyebrow="INDIVIDUAL & COMPOSITE ITEMS"
+  title="Automating Inventory Tracking & Resolving Bundle Errors"
+  description={`The legacy system treats promotional bundles as single, standalone products with no connection to the actual items inside them. As a result, there's no way to map individual items to a composite set, so digital storefronts would keep accepting orders for a full bundle even if a vital component was completely missing in the warehouse. This left teams blind to hidden stock shortages & caused frequent broken orders.
+  
+  I replaced this monolithic tracking with a dynamic relational recipe engine that treats every bundle as a calculated set of child components:`}
 
   steps={[
     {
@@ -420,7 +534,7 @@ To build an interface that feels like an extension of the user's intent, I ancho
       description2: "A unified scanner that automatically detects the product or barcode, paired with intuitive, thumb-zone toggle for manual overrides and a text-search option.",
       title3: "Why this works?",
       description3: "It respcts high-velocity user behaviour.",
-      image: "/Designs/design1.png",
+      image: "/Banners/yelonahero.png",
     },
 
     {
@@ -465,7 +579,7 @@ To build an interface that feels like an extension of the user's intent, I ancho
     },
   ]}
   client:load
-/>
+/> -->
 
 <CaseStudySolutions
   eyebrow="FINAL CONCLUSION"
