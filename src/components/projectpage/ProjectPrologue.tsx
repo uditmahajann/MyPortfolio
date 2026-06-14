@@ -69,7 +69,7 @@ const CaseStudyPrologue: React.FC<Props> = ({
 
           {/* Optional Note */}
           {note && (
-            <p className="mt-2 text-base font-google text-zinc-500 text-right">
+            <p className="mt-2 text-sm sm:text-base font-google text-zinc-500 text-right">
               {note}
             </p>
           )}

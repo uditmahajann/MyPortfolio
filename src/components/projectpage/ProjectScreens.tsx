@@ -104,7 +104,7 @@ export default function CaseStudyUserFlow({
   return (
     <section>
       {/* Intro */}
-      <div className="mx-auto max-w-6xl px-5 sm:px-10 py-25">
+      <div className="mx-auto max-w-6xl px-5 sm:px-10 py-10 sm:py-25">
         {eyebrow && (
           <p className="text-base tracking-[0.2em] font-google font-bold text-zinc-500 uppercase">
             {eyebrow}
@@ -120,10 +120,10 @@ export default function CaseStudyUserFlow({
         </p>
 
         {(flowHeading || flowDescription) && (
-          <div className="mt-20">
+          <div className="mt-10 sm:mt-20">
             {flowHeading && (
               <h3
-                className="text-xl md:text-4xl font-caveat font-medium"
+                className="text-2xl md:text-4xl font-caveat font-medium"
                 style={{ color: flowAccentColor }}
               >
                 {flowHeading}
@@ -156,15 +156,15 @@ export default function CaseStudyUserFlow({
             <motion.div
               ref={trackRef}
               style={{ x }}
-              className="flex items-center gap-25 will-change-transform"
+              className="flex items-center gap-15 sm:gap-25 will-change-transform"
             >
               {steps.map((step, index) => (
                 <div
                   key={index}
-                  className="w-auto shrink-0 flex items-center gap-10 pr-10"
+                  className="w-auto shrink-0 flex items-center gap-8 sm:gap-10 pr-10"
                 >
                   {/* Phone */}
-                  <div className="w-[800px] shrink-0">
+                  <div className="w-[650px] sm:w-[800px] shrink-0">
                     <img
                       src={step.image}
                       alt={step.title}
@@ -180,11 +180,11 @@ export default function CaseStudyUserFlow({
                       style={{ backgroundColor: flowAccentColor }}
                     />
 
-                    <h4 className="text-3xl font-google font-semibold text-zinc-50 leading-tight">
+                    <h4 className="text-2xl sm:text-3xl font-google font-semibold text-zinc-50 leading-tight">
                       {step.title}
                     </h4>
 
-                    <p className="mt-4 text-zinc-400 font-google text-lg leading-relaxed">
+                    <p className="mt-4 text-zinc-400 text-base font-google sm:text-lg leading-relaxed">
                       {step.description}
                     </p>
                   </div>

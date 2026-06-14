@@ -16,7 +16,7 @@ export default function NextProject({
   ctaText = "View Case Study",
 }: Props) {
   return (
-    <section className="mx-auto max-w-6xl px-5 sm:px-10 py-32">
+    <section className="mx-auto max-w-6xl px-5 sm:px-10 py-20 sm:py-32">
 
       <a
         href={href}
@@ -27,7 +27,7 @@ export default function NextProject({
           <div className="absolute -right-32 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-lime-300/10 blur-[120px]" />
         </div>
 
-        <div className="relative px-8 py-14 md:px-16 md:py-20">
+        <div className="relative px-8 py-12 sm:py-14 md:px-16 md:py-20">
 
           {/* Eyebrow */}
           <div className="flex items-center gap-3">
@@ -42,12 +42,12 @@ export default function NextProject({
           <div className="mt-8 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
 
             <div>
-              <h2 className="max-w-3xl text-4xl md:text-6xl font-google font-semibold text-zinc-50 leading-[1.05]">
+              <h2 className="max-w-3xl text-3xl sm:text-4xl md:text-6xl font-google font-semibold text-zinc-50 leading-[1.05]">
                 {title}
               </h2>
 
               {description && (
-                <p className="mt-6 max-w-xl text-zinc-400 text-lg leading-relaxed">
+                <p className="mt-6 max-w-xl text-zinc-400 text-base sm:text-lg leading-relaxed">
                   {description}
                 </p>
               )}
@@ -59,7 +59,7 @@ export default function NextProject({
                 {ctaText}
               </span>
 
-              <div className="flex h-16 w-16 items-center justify-center rounded-full border border-zinc-700 transition-all duration-500 group-hover:border-lime-300 group-hover:translate-x-2">
+              <div className="flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full border border-zinc-700 transition-all duration-500 group-hover:border-lime-300 group-hover:translate-x-2">
                 <ArrowUpRight
                   size={26}
                   strokeWidth={1.75}

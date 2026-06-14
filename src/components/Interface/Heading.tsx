@@ -62,7 +62,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
       >
         
         {/* Main bold line with SVG highlight */}
-        <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-zinc-50 uppercase">
+        <h2 className="text-3xl min-[540px]:text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-50 uppercase leading-tight">
           {mainBefore && <span>{mainBefore} </span>}
 
           <motion.span
@@ -75,7 +75,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
             <motion.img
               src={highlightSvg}
               alt={highlightAlt}
-              className="inline-block h-10 w-auto sm:h-12 md:h-32 cursor-pointer"
+              className="inline-block w-auto h-16 min-[540px]:h-22 md:h-25 lg:h-32 cursor-pointer"
               variants={{
                 rest: { y: 0, rotate: 0 },
                 hover: { y: 2, rotate: -2 },
@@ -103,7 +103,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
         
         {/* Prefix / script-ish line */}
         {prefix && (
-          <p className="-mt-5 text-2xl sm:text-4xl text-zinc-300 font-caveat">
+          <p className="md:-mt-2 lg:-mt-5 text-2xl min-[540px]:text-3xl sm:text-4xl text-zinc-300 font-caveat">
             {prefix}
           </p>
         )}

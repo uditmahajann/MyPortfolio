@@ -29,12 +29,12 @@ const CaseStudyDecisions: React.FC<Props> = ({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="pb-20"
+          className="pb-10 sm:pb-20"
         >
           {(decisionHeading || decisionDescription) && (
             <div className="mb-16">
               {decisionHeading && (
-                <h3 className="text-xl md:text-4xl font-caveat font-medium text-amber-300">
+                <h3 className="text-2xl md:text-4xl font-caveat font-medium text-amber-300">
                   {decisionHeading}
                 </h3>
               )}

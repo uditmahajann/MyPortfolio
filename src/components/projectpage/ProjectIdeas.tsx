@@ -20,7 +20,7 @@ const CaseStudyIdeation: React.FC<Props> = ({
 }) => {
   
   return (
-    <section className="mx-auto max-w-6xl px-5 sm:px-10 py-25">
+    <section className="mx-auto max-w-6xl px-5 sm:px-10 py-10 sm:py-25">
 
       {/* Top Content */}
       <motion.div
@@ -51,7 +51,7 @@ const CaseStudyIdeation: React.FC<Props> = ({
     transition={{ duration: 0.6, delay: 0.1 }}
     className="my-12"
   >
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 rounded-2xl">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 rounded-2xl">
       
       {images.map((img, i) => (
         <div

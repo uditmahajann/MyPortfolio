@@ -22,7 +22,7 @@ export default function ProblemGrid({
   solutions,
 }: Props) {
   return (
-    <section className="mx-auto max-w-6xl px-5 sm:px-10 py-20">
+    <section className="mx-auto max-w-6xl px-5 sm:px-10 py-10 sm:py-20">
 
       {/* Top Content */}
       <motion.div
@@ -60,12 +60,12 @@ export default function ProblemGrid({
             className="rounded-2xl bg-zinc-900/80 border border-zinc-800 p-8"
           >
             {/* Number */}
-            <p className="text-4xl font-caveat font-medium text-zinc-300">
+            <p className="text-3xl sm:text-4xl font-caveat font-medium text-zinc-300">
               {solution.label}
             </p>
 
             {/* Text */}
-            <p className="mt-6 text-zinc-300 text-lg  font-google leading-relaxed whitespace-pre-line">
+            <p className="mt-5 sm:mt-6 text-zinc-300 text-lg font-google leading-relaxed whitespace-pre-line">
               {solution.before}{" "}
               <span
                 className="font-medium"

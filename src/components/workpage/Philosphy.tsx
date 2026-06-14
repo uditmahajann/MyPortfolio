@@ -21,7 +21,7 @@ export default function ScrollRevealText() {
       className="relative h-[220vh]"
     >
       {/* Sticky container */}
-      <div className="sticky top-0 flex h-screen items-center justify-center px-6">
+      <div className="sticky top-0 flex h-screen items-center justify-center px-6 sm:px-8 md:px-12 lg:px-20">
         <p className="max-w-5xl text-center text-2xl sm:text-3xl md:text-4xl font-google font-medium leading-relaxed">
           {words.map((word, i) => {
             const start = i / words.length;

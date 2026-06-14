@@ -51,7 +51,7 @@ const CaseStudyDecisions: React.FC<Props> = ({
     {(decisionHeading || decisionDescription) && (
       <div className="mb-14">
         {decisionHeading && (
-          <h3 className="text-xl md:text-4xl font-caveat font-medium text-lime-300">
+          <h3 className="text-2xl md:text-4xl font-caveat font-medium text-lime-300">
             {decisionHeading}
           </h3>
         )}
@@ -65,7 +65,7 @@ const CaseStudyDecisions: React.FC<Props> = ({
     )}
 
     {/* Decision Factors */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
       {factors.map((factor, index) => {
   const Icon = iconMap[factor.icon as keyof typeof iconMap];
 
@@ -81,13 +81,13 @@ const CaseStudyDecisions: React.FC<Props> = ({
       }}
       className="flex flex-col items-center text-center"
     >
-      <div className="w-52 h-52 rounded-full border border-zinc-700 bg-zinc-900 flex flex-col items-center justify-center p-8 transition-all duration-300 hover:border-lime-300 hover:shadow-[0_0_40px_rgba(163,230,53,0.15)]">
+      <div className="w-40 h-40 sm:w-52 sm:h-52 rounded-full border border-zinc-700 bg-zinc-900 flex flex-col items-center justify-center p-8 transition-all duration-300 hover:border-lime-300 hover:shadow-[0_0_40px_rgba(163,230,53,0.15)]">
 
         <div className="text-lime-300 mb-5">
           <Icon size={32} />
         </div>
 
-        <h4 className="text-zinc-100 text-3xl font-caveat font-medium leading-snug">
+        <h4 className="text-zinc-100 text-2xl sm:text-3xl font-caveat font-medium leading-snug">
           {factor.title}
         </h4>
 

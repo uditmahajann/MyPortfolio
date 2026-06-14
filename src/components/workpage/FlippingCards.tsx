@@ -1,5 +1,5 @@
 // components/FlippingCards.tsx
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, type Variants } from "framer-motion";
 
 type CardItem = {
@@ -23,29 +23,51 @@ const containerVariants: Variants = {
  * itemVariants is a function-style variants object:
  * it accepts "custom" (the card index) so each card can animate to a unique offset.
  */
-const itemVariants = (index: number): Variants => {
-  // tweak these arrays to change the fan direction and spread
-  const offsetsX = [120, 50, -50, -120]; // final x offset for each card (px)
-  const offsetsY = [45, -55, -55, 45]; // final y offset for each card (px)
-  const rotates = [-25, -15, 15, 25]; // slight rotation for fan effect
+const itemVariants = (
+  index: number,
+  isMobile: boolean,
+  isTablet: boolean
+): Variants => {
+  let offsetsX: number[];
+  let offsetsY: number[];
+  let rotates: number[];
+
+  if (isMobile) {
+    offsetsX = [160, 120, -120, -160];
+    offsetsY = [-15, 30, -230, -280];
+    rotates = [10, 20, -20, -5];
+  } else if (isTablet) {
+    offsetsX = [70, 35, -35, -70];
+    offsetsY = [35, -30, -30, 35];
+    rotates = [-15, -8, 8, 15];
+  } else {
+    offsetsX = [120, 50, -50, -120];
+    offsetsY = [45, -55, -55, 45];
+    rotates = [-25, -15, 15, 25];
+  }
 
   return {
     hidden: {
-      // start overlapped at center (no offset)
       x: offsetsX[index] ?? 0,
       y: offsetsY[index] ?? 0,
       rotate: rotates[index] ?? 0,
       opacity: 1,
       scale: 0.92,
     },
+
     show: {
       x: 0,
       y: 0,
       rotate: 0,
       opacity: 1,
       scale: 1,
-      transition: { type: "spring", stiffness: 120, damping: 18 },
+      transition: {
+        type: "spring",
+        stiffness: 120,
+        damping: 18,
+      },
     },
+
     exit: {
       x: 0,
       y: 0,
@@ -66,10 +88,34 @@ export default function FlippingCards({ cards }: { cards: CardItem[] }) {
     y: number;
   }>({ visible: false, text: "", x: 0, y: 0 });
 
+const [isMobile, setIsMobile] = useState(false);
+const [isTablet, setIsTablet] = useState(false);
+
+useEffect(() => {
+  const updateScreenSize = () => {
+    setIsMobile(window.innerWidth < 640);
+
+    setIsTablet(
+      window.innerWidth >= 640 &&
+      window.innerWidth < 1024
+    );
+  };
+
+  updateScreenSize();
+
+  window.addEventListener("resize", updateScreenSize);
+
+  return () =>
+    window.removeEventListener(
+      "resize",
+      updateScreenSize
+    );
+}, []);
+
   return (
     <section
       id="play-cards"
-      className="relative mx-auto max-w-8xl px-5 lg:px-10 -top-25"
+      className="relative mx-auto max-w-8xl px-5 lg:px-10 -top-35 sm:-top-25 lg:-top-20 overflow-x-clip"
       // track mouse globally inside the section so the pill can follow
       onMouseMove={(e) =>
         setCursor((c) => ({
@@ -112,15 +158,17 @@ export default function FlippingCards({ cards }: { cards: CardItem[] }) {
         <div className="relative flex items-center justify-center">
           {/* center stack container used for fan-out visuals */}
           <div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 place-items-center"
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-4 lg:gap-6 place-items-center"
             // keep it visible while animation fans out
           >
             {cards.map((c, i) => (
               <FlipCard
-                key={c.id}
+                key={`${c.id}-${isMobile}-${isTablet}`}
                 item={c}
                 index={i}
                 setCursor={setCursor}
+                isMobile={isMobile}
+                isTablet={isTablet}
               />
             ))}
           </div>
@@ -140,18 +188,38 @@ function FlipCard({
   item,
   index,
   setCursor,
+  isMobile,
+  isTablet,
 }: {
   item: CardItem;
   index: number;
   setCursor: React.Dispatch<
-    React.SetStateAction<{ visible: boolean; text: string; x: number; y: number }>
+    React.SetStateAction<{
+      visible: boolean;
+      text: string;
+      x: number;
+      y: number;
+    }>
   >;
+  isMobile: boolean;
+  isTablet: boolean;
+  
 }) {
-  const [flipped, setFlipped] = useState(false);
+ console.log(
+  "render",
+  index,
+  isMobile,
+  isTablet
+);
+ const [flipped, setFlipped] = useState(false);
 
   return (
     <motion.div
-  variants={itemVariants(index)}
+  variants={itemVariants(
+  index,
+  isMobile,
+  isTablet
+)}
   className="relative group"
 >
   {/* Glow layer */}
@@ -195,11 +263,21 @@ function FlipCard({
         style={{
           transformStyle: "preserve-3d",
           perspective: 1200,
-          width: 300,
-          height: 425,
-          cursor: "pointer", // show pointer to indicate clickability
+          cursor: "pointer",
         }}
-        className="mx-auto"
+        className="
+        mx-auto
+        w-[175px]
+        h-[245px]
+        sm:w-[250px]
+        sm:h-[350px]
+        md:w-[200px]
+        md:h-[280px]
+        lg:w-[250px]
+        lg:h-[350px]
+        xl:w-[300px]
+        xl:h-[425px]
+        "
       >
         {/* front face */}
         <div
@@ -248,6 +326,279 @@ function FlipCard({
     </motion.div>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // components/FlippingCards.tsx
+// import React, { useState } from "react";
+// import { motion, type Variants } from "framer-motion";
+
+// type CardItem = {
+//   id: string;
+//   frontSrc: string;
+//   backSrc: string;
+//   hoverText: string; // unique pill text per card
+// };
+
+// const containerVariants: Variants = {
+//   hidden: {},
+//   show: {
+//     transition: {
+//       staggerChildren: 0.08,
+//       delayChildren: 0.06,
+//     },
+//   },
+// };
+
+// /**
+//  * itemVariants is a function-style variants object:
+//  * it accepts "custom" (the card index) so each card can animate to a unique offset.
+//  */
+// const itemVariants = (index: number): Variants => {
+//   // tweak these arrays to change the fan direction and spread
+//   const offsetsX = [120, 50, -50, -120]; // final x offset for each card (px)
+//   const offsetsY = [45, -55, -55, 45]; // final y offset for each card (px)
+//   const rotates = [-25, -15, 15, 25]; // slight rotation for fan effect
+
+//   return {
+//     hidden: {
+//       // start overlapped at center (no offset)
+//       x: offsetsX[index] ?? 0,
+//       y: offsetsY[index] ?? 0,
+//       rotate: rotates[index] ?? 0,
+//       opacity: 1,
+//       scale: 0.92,
+//     },
+//     show: {
+//       x: 0,
+//       y: 0,
+//       rotate: 0,
+//       opacity: 1,
+//       scale: 1,
+//       transition: { type: "spring", stiffness: 120, damping: 18 },
+//     },
+//     exit: {
+//       x: 0,
+//       y: 0,
+//       rotate: 0,
+//       opacity: 0,
+//       scale: 0.92,
+//       transition: { duration: 0.18 },
+//     },
+//   };
+// };
+
+// export default function FlippingCards({ cards }: { cards: CardItem[] }) {
+//   // cursor = pill state that follows mouse and shows the card-specific message
+//   const [cursor, setCursor] = useState<{
+//     visible: boolean;
+//     text: string;
+//     x: number;
+//     y: number;
+//   }>({ visible: false, text: "", x: 0, y: 0 });
+
+//   return (
+//     <section
+//       id="play-cards"
+//       className="relative mx-auto max-w-8xl px-5 lg:px-10 -top-25"
+//       // track mouse globally inside the section so the pill can follow
+//       onMouseMove={(e) =>
+//         setCursor((c) => ({
+//           ...c,
+//           x: e.clientX,
+//           y: e.clientY,
+//         }))
+//       }
+//       // don't hide the default cursor — we want the native pointer to remain
+//     >
+//       {/* Floating Cursor Pill (follows mouse, but DOES NOT hide native cursor) */}
+//       {/* pointer-events none ensures it doesn't block the real cursor or clicks */}
+//       {cursor.visible && (
+//         <motion.div
+//           initial={{ scale: 0.85, opacity: 0 }}
+//           animate={{ scale: 1, opacity: 1 }}
+//           exit={{ scale: 0.85, opacity: 0 }}
+//           transition={{ type: "spring", stiffness: 260, damping: 22 }}
+//           className="fixed pointer-events-none z-200 rounded-full border-2 border-black bg-white text-black text-base font-google font-semibold px-4 py-3 shadow-lg tracking-wide"
+//           style={{
+//             top: cursor.y + 18,
+//             left: cursor.x + 18,
+//             transform: "translate(-50%, -50%)",
+//             whiteSpace: "nowrap",
+//             // small blur/glow optional:
+//             boxShadow: "0 20px 50px rgba(0,0,0,0.45), 0 6px 18px rgba(0,0,0,0.35)",
+//           }}
+//         >
+//           {cursor.text}
+//         </motion.div>
+//       )}
+
+//       <motion.div
+//         initial="hidden"
+//         whileInView="show"
+//         viewport={{ once: false, amount: 0.6 }}
+//         variants={containerVariants}
+//         className="mx-auto max-w-8xl items-center justify-center"
+//       >
+//         <div className="relative flex items-center justify-center">
+//           {/* center stack container used for fan-out visuals */}
+//           <div
+//             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 place-items-center"
+//             // keep it visible while animation fans out
+//           >
+//             {cards.map((c, i) => (
+//               <FlipCard
+//                 key={c.id}
+//                 item={c}
+//                 index={i}
+//                 setCursor={setCursor}
+//               />
+//             ))}
+//           </div>
+//         </div>
+//       </motion.div>
+//     </section>
+//   );
+// }
+
+// /* -------------------------
+//    FlipCard (single card)
+//    - Fires setCursor on hover enter/leave
+//    - Uses motion.animate rotateY to flip
+//    ------------------------- */
+
+// function FlipCard({
+//   item,
+//   index,
+//   setCursor,
+// }: {
+//   item: CardItem;
+//   index: number;
+//   setCursor: React.Dispatch<
+//     React.SetStateAction<{ visible: boolean; text: string; x: number; y: number }>
+//   >;
+// }) {
+//   const [flipped, setFlipped] = useState(false);
+
+//   return (
+//     <motion.div
+//   variants={itemVariants(index)}
+//   className="relative group"
+// >
+//   {/* Glow layer */}
+//   <div
+//     aria-hidden
+//     className="
+//       pointer-events-none
+//       absolute -inset-2
+//       rounded-[15px]
+//       bg-white/15
+//       blur-xl
+//     "
+//   />
+
+//       <motion.div
+//         role="button"
+//         tabIndex={0}
+//         aria-pressed={flipped}
+//         onClick={() => setFlipped((v) => !v)}
+//         onKeyDown={(e) => {
+//           if (e.key === "Enter" || e.key === " ") {
+//             e.preventDefault();
+//             setFlipped((v) => !v);
+//           }
+//         }}
+//         onMouseEnter={(ev) =>
+//           setCursor({
+//             visible: true,
+//             text: item.hoverText,
+//             // initial x,y — will be updated by parent onMouseMove as well
+//             x: (ev as React.MouseEvent).clientX,
+//             y: (ev as React.MouseEvent).clientY,
+//           })
+//         }
+//         onMouseLeave={() =>
+//           setCursor((c) => ({ ...c, visible: false }))
+//         }
+//         whileHover={{ scale: 1.03 }}
+//         animate={{ rotateY: flipped ? 180 : 0 }}
+//         transition={{ type: "spring", stiffness: 260, damping: 22 }}
+//         style={{
+//           transformStyle: "preserve-3d",
+//           perspective: 1200,
+//           width: 300,
+//           height: 425,
+//           cursor: "pointer", // show pointer to indicate clickability
+//         }}
+//         className="mx-auto"
+//       >
+//         {/* front face */}
+//         <div
+//           aria-hidden={flipped}
+//           style={{
+//             position: "absolute",
+//             inset: 0,
+//             backfaceVisibility: "hidden",
+//             WebkitBackfaceVisibility: "hidden",
+//             transform: "rotateY(0deg)",
+//             borderRadius: 14,
+//             overflow: "hidden",
+//             zIndex: 2,
+//             background: "#0b0b0b",
+//           }}
+//         >
+//           <img
+//             src={item.frontSrc}
+//             alt={item.frontSrc}
+//             className="w-full h-full object-cover"
+//           />
+//         </div>
+
+//         {/* back face */}
+//         <div
+//           aria-hidden={!flipped}
+//           style={{
+//             position: "absolute",
+//             inset: 0,
+//             backfaceVisibility: "hidden",
+//             WebkitBackfaceVisibility: "hidden",
+//             transform: "rotateY(180deg)",
+//             borderRadius: 14,
+//             overflow: "hidden",
+//             zIndex: 1,
+//             background: "#0b0b0b",
+//           }}
+//         >
+//           <img
+//             src={item.backSrc}
+//             alt={item.backSrc}
+//             className="w-full h-full object-cover"
+//           />
+//         </div>
+//       </motion.div>
+//     </motion.div>
+//   );
+// }
 
 
 

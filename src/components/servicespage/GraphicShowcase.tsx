@@ -128,7 +128,7 @@ const brochures = [
 export default function WebsiteDesignShowcase() {
     return (
         <section className="mx-auto max-w-7xl px-5 lg:px-10 xl:px-0 py-25 mt-30">
-            <div className="mb-25">
+            <div className="mb-10 sm:mb-25">
                 <SectionHeading
                     prefix="designed to communicate before you read."
                     mainBefore=""
@@ -142,13 +142,13 @@ export default function WebsiteDesignShowcase() {
             </div>
 
             <div className="flex items-center justify-between gap-4 mb-6">
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/60 px-5 py-2 text-sm font-medium uppercase tracking-[0.15em] text-zinc-300">
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/60 px-5 py-2 text-xs sm:text-sm font-medium uppercase tracking-[0.15em] text-zinc-300">
                     <span className="h-2 w-2 rounded-full bg-lime-400 border-2 border-emerald-400" /> Social Media Posts Designs
                 </div>
             </div>
 
             {/* Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-3">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
                 {projects.map((project, i) => (
                     <motion.article
                         initial={{ opacity: 0, y: 24 }}
@@ -169,8 +169,8 @@ export default function WebsiteDesignShowcase() {
                 ))}
             </div>
 
-             <div className="flex items-center justify-between gap-4 mb-6 mt-40">
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/60 px-5 py-2 text-sm font-medium uppercase tracking-[0.15em] text-zinc-300">
+             <div className="flex items-center justify-between gap-4 mb-6 mt-20 sm:mt-40">
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/60 px-5 py-2 text-xs sm:text-sm font-medium uppercase tracking-[0.15em] text-zinc-300">
                     <span className="h-2 w-2 rounded-full bg-lime-400 border-2 border-emerald-400" /> Banners & Flyers
                 </div>
             </div>
@@ -197,14 +197,14 @@ export default function WebsiteDesignShowcase() {
                 ))}
             </div>
 
-             <div className="flex items-center justify-between gap-4 mb-6 mt-40">
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/60 px-5 py-2 text-sm font-medium uppercase tracking-[0.15em] text-zinc-300">
+             <div className="flex items-center justify-between gap-4 mb-6 mt-20 sm:mt-40">
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/60 px-5 py-2 text-xs sm:text-sm font-medium uppercase tracking-[0.15em] text-zinc-300">
                     <span className="h-2 w-2 rounded-full bg-lime-400 border-2 border-emerald-400" /> Brochure & Pitch Decks
                 </div>
             </div>
 
             {/* Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-3">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
                 {brochures.map((brochure, i) => (
                     <motion.article
                         initial={{ opacity: 0, y: 24 }}

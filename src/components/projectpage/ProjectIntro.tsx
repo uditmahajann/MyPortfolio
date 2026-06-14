@@ -22,9 +22,9 @@ const CaseStudyIntro: React.FC<Props> = ({
   team,
 }) => {
   return (
-    <section className="mx-auto max-w-6xl px-5 sm:px-10 py-25">
+    <section className="mx-auto max-w-6xl px-5 sm:px-10 py-10 sm:py-25">
       
-      <div className="grid grid-cols-1 lg:grid-cols-[4fr_1fr] gap-30">
+      <div className="grid grid-cols-1 sm:grid-cols-[3fr_1fr] lg:grid-cols-[4fr_1fr] gap-8 md:gap-12 lg:gap-30">
         
         {/* LEFT: Problem / Intro */}
         <motion.div
@@ -64,7 +64,7 @@ const CaseStudyIntro: React.FC<Props> = ({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="space-y-10 py-6"
+          className="space-y-8 sm:space-y-10 py-5 sm:py-6"
         >
           {/* Role */}
           <div>

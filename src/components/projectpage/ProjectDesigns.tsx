@@ -1,167 +1,414 @@
 "use client";
 
 import {
-    motion,
-    useScroll,
-    useTransform,
+  motion,
+  useScroll,
 } from "framer-motion";
 import {
-    useRef,
-    useEffect,
-    useState,
+  useRef,
+  useEffect,
+  useState,
 } from "react";
 
 type DetailStep = {
-    label: string;
-    labelColor?: string;
-    title1: string;
-    description1: string;
-    title2?: string;
-    description2?: string;
-    title3?: string;
-    description3?: string;
-    image: string;
+  label: string;
+  labelColor?: string;
+  title1: string;
+  description1: string;
+  title2?: string;
+  description2?: string;
+  title3?: string;
+  description3?: string;
+  image: string;
 };
 
 type Props = {
-    eyebrow?: string;
-    title: string;
-    description: string;
-    steps: DetailStep[];
+  eyebrow?: string;
+  title: string;
+  description: string;
+  steps: DetailStep[];
 };
 
 export default function CaseStudyUserFlow({
-    eyebrow,
-    title,
-    description,
-    steps,
+  eyebrow,
+  title,
+  description,
+  steps,
 }: Props) {
-    const sectionRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
-    const { scrollYProgress } = useScroll({
-        target: sectionRef,
-        offset: ["start start", "end end"],
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end end"],
+  });
+
+  const [activeStep, setActiveStep] = useState(0);
+
+  useEffect(() => {
+    return scrollYProgress.on("change", (value) => {
+      const index = Math.min(
+        Math.floor(value * steps.length),
+        steps.length - 1
+      );
+
+      setActiveStep(index);
     });
+  }, [scrollYProgress, steps.length]);
 
-    const [activeStep, setActiveStep] = useState(0);
+  const current = steps[activeStep];
 
-    useEffect(() => {
-        return scrollYProgress.on("change", (value) => {
-            const index = Math.min(
-                Math.floor(value * steps.length),
-                steps.length - 1
-            );
+  return (
+    <section className="mx-auto max-w-6xl px-5 sm:px-10 py-10 sm:py-25">
+      {/* ========================= */}
+      {/* INTRO */}
+      {/* ========================= */}
 
-            setActiveStep(index);
-        });
-    }, [scrollYProgress, steps.length]);
+      <div>
+        {eyebrow && (
+          <p className="text-base tracking-[0.2em] font-google font-bold text-zinc-500 uppercase">
+            {eyebrow}
+          </p>
+        )}
 
-    const current = steps[activeStep];
+        <h2 className="mt-4 text-3xl md:text-5xl font-google font-semibold text-zinc-50 leading-tight tracking-wide">
+          {title}
+        </h2>
 
+        <p className="mt-6 text-zinc-400 text-base md:text-lg leading-relaxed whitespace-pre-line">
+          {description}
+        </p>
+      </div>
 
+      {/* ========================================================= */}
+      {/* MOBILE VERSION */}
+      {/* ========================================================= */}
 
-    return (
-        <section className="mx-auto max-w-6xl px-5 sm:px-10 py-25">
-            {/* Intro */}
-            <div className="">
-                {eyebrow && (
-                    <p className="text-base tracking-[0.2em] font-google font-bold text-zinc-500 uppercase">
-                        {eyebrow}
-                    </p>
-                )}
+      <div className="mt-10 space-y-8 lg:hidden">
+        {steps.map((step, index) => (
+          <div
+            key={index}
+            className="overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-950"
+          >
+            {/* IMAGE */}
 
-                <h2 className="mt-4 text-3xl md:text-5xl font-google font-semibold text-zinc-50 leading-tight tracking-wide">
-                    {title}
-                </h2>
-
-                <p className="mt-6 text-zinc-400 text-base md:text-lg leading-relaxed whitespace-pre-line">
-                    {description}
-                </p>
+            <div className="border-b border-zinc-800 bg-zinc-900">
+              <img
+                src={step.image}
+                alt={step.label}
+                className="w-full h-auto object-cover"
+              />
             </div>
 
-            <div
-                ref={sectionRef}
-                className="relative mt-20"
+            {/* CONTENT */}
+
+            <div className="p-5">
+              <p
+                className="text-xs uppercase tracking-[0.2em] font-google font-bold leading-relaxed"
                 style={{
-                    height: `${steps.length * 100}vh`,
+                  color: step.labelColor || "#bef264",
                 }}
+              >
+                {step.label}
+              </p>
+
+              {/* SECTION 1 */}
+
+              <h3 className="mt-6 text-2xl font-google font-semibold text-zinc-50 leading-tight">
+                {step.title1}
+              </h3>
+
+              <p className="mt-3 text-base font-google text-zinc-400 leading-relaxed whitespace-pre-line">
+                {step.description1}
+              </p>
+
+              {/* SECTION 2 */}
+
+              {step.title2 && (
+                <>
+                  <h3 className="mt-6 text-2xl font-google font-semibold text-zinc-50 leading-tight">
+                    {step.title2}
+                  </h3>
+
+                  <p className="mt-3 text-base font-google text-zinc-400 leading-relaxed whitespace-pre-line">
+                    {step.description2}
+                  </p>
+                </>
+              )}
+
+              {/* SECTION 3 */}
+
+              {step.title3 && (
+                <>
+                  <h3 className="mt-6 text-2xl font-google font-semibold text-zinc-50 leading-tight">
+                    {step.title3}
+                  </h3>
+
+                  <p className="mt-3 text-base font-google text-zinc-400 leading-relaxed whitespace-pre-line">
+                    {step.description3}
+                  </p>
+                </>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* ========================================================= */}
+      {/* DESKTOP VERSION */}
+      {/* ========================================================= */}
+
+      <div className="hidden lg:block">
+        <div
+          ref={sectionRef}
+          className="relative mt-20"
+          style={{
+            height: `${steps.length * 100}vh`,
+          }}
+        >
+          <div className="sticky top-25 h-[calc(100vh-120px)] flex items-center">
+            <motion.div
+              key={activeStep}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.2 }}
+              className="grid lg:grid-cols-2 gap-6 items-center w-full"
             >
-                <div className="sticky top-25 h-[calc(100vh-120px)] flex items-center">
+              {/* LEFT CONTENT */}
 
-                    <div className="">
+              <div>
+                <p
+                  className="text-lg uppercase tracking-[0.2em] font-google font-bold leading-relaxed"
+                  style={{
+                    color: current.labelColor || "#bef264",
+                  }}
+                >
+                  {current.label}
+                </p>
 
-                        <motion.div
-                            key={activeStep}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ duration: 0.2 }}
-                            className="grid lg:grid-cols-2 gap-6 items-center"
-                        >
+                <h3 className="mt-12 text-2xl font-google font-semibold text-zinc-50 leading-tight">
+                  {current.title1}
+                </h3>
 
-                            {/* LEFT CONTENT */}
-                            <div>
-                                <p
-                                    className="text-lg uppercase tracking-[0.2em] font-google font-bold leading-relaxed"
-                                    style={{
-                                        color: current.labelColor || "#bef264",
-                                    }}
-                                >
-                                    {current.label}
-                                </p>
+                <p className="mt-3 text-zinc-400 font-google text-lg leading-relaxed max-w-xl whitespace-pre-line">
+                  {current.description1}
+                </p>
 
-                                {/* <p className="text-lg uppercase tracking-[0.2em] font-google font-bold text-lime-300 leading-relaxed">
-                                    {current.label}
-                                </p> */}
+                {current.title2 && (
+                  <>
+                    <h3 className="mt-6 text-2xl font-google font-semibold text-zinc-50 leading-tight">
+                      {current.title2}
+                    </h3>
 
-                                <h3 className="mt-12 text-4xl md:text-2xl font-google font-semibold text-zinc-50 leading-tight">
-                                    {current.title1}
-                                </h3>
+                    <p className="mt-3 text-zinc-400 font-google text-lg leading-relaxed max-w-xl whitespace-pre-line">
+                      {current.description2}
+                    </p>
+                  </>
+                )}
 
-                                <p className="mt-3 text-zinc-400 text-lg leading-relaxed max-w-xl whitespace-pre-line">
-                                    {current.description1}
-                                </p>
+                {current.title3 && (
+                  <>
+                    <h3 className="mt-6 text-2xl font-google font-semibold text-zinc-50 leading-tight">
+                      {current.title3}
+                    </h3>
 
-                                <h3 className="mt-6 text-4xl md:text-2xl font-google font-semibold text-zinc-50 leading-tight">
-                                    {current.title2}
-                                </h3>
+                    <p className="mt-3 text-zinc-400 font-google text-lg leading-relaxed max-w-xl whitespace-pre-line">
+                      {current.description3}
+                    </p>
+                  </>
+                )}
+              </div>
 
-                                <p className="mt-3 text-zinc-400 text-lg leading-relaxed max-w-xl whitespace-pre-line">
-                                    {current.description2}
-                                </p>
+              {/* RIGHT IMAGE */}
 
-                                <h3 className="mt-6 text-4xl md:text-2xl font-google font-semibold text-zinc-50 leading-tight">
-                                    {current.title3}
-                                </h3>
+              <div className="flex justify-center">
+                <div className="relative rounded-3xl overflow-hidden border border-zinc-800 bg-zinc-900">
+                  <img
+                    src={current.image}
+                    alt={current.label}
+                    className="min-h-[600px] aspect-video object-contain"
+                  />
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
-                                <p className="mt-3 text-zinc-400 text-lg leading-relaxed max-w-xl whitespace-pre-line">
-                                    {current.description3}
-                                </p>
 
-                            </div>
+
+
+
+
+
+
+
+// "use client";
+
+// import {
+//     motion,
+//     useScroll,
+//     useTransform,
+// } from "framer-motion";
+// import {
+//     useRef,
+//     useEffect,
+//     useState,
+// } from "react";
+
+// type DetailStep = {
+//     label: string;
+//     labelColor?: string;
+//     title1: string;
+//     description1: string;
+//     title2?: string;
+//     description2?: string;
+//     title3?: string;
+//     description3?: string;
+//     image: string;
+// };
+
+// type Props = {
+//     eyebrow?: string;
+//     title: string;
+//     description: string;
+//     steps: DetailStep[];
+// };
+
+// export default function CaseStudyUserFlow({
+//     eyebrow,
+//     title,
+//     description,
+//     steps,
+// }: Props) {
+//     const sectionRef = useRef<HTMLDivElement>(null);
+
+//     const { scrollYProgress } = useScroll({
+//         target: sectionRef,
+//         offset: ["start start", "end end"],
+//     });
+
+//     const [activeStep, setActiveStep] = useState(0);
+
+//     useEffect(() => {
+//         return scrollYProgress.on("change", (value) => {
+//             const index = Math.min(
+//                 Math.floor(value * steps.length),
+//                 steps.length - 1
+//             );
+
+//             setActiveStep(index);
+//         });
+//     }, [scrollYProgress, steps.length]);
+
+//     const current = steps[activeStep];
+
+
+
+//     return (
+//         <section className="mx-auto max-w-6xl px-5 sm:px-10 py-10 sm:py-25">
+//             {/* Intro */}
+//             <div className="">
+//                 {eyebrow && (
+//                     <p className="text-base tracking-[0.2em] font-google font-bold text-zinc-500 uppercase">
+//                         {eyebrow}
+//                     </p>
+//                 )}
+
+//                 <h2 className="mt-4 text-3xl md:text-5xl font-google font-semibold text-zinc-50 leading-tight tracking-wide">
+//                     {title}
+//                 </h2>
+
+//                 <p className="mt-6 text-zinc-400 text-base md:text-lg leading-relaxed whitespace-pre-line">
+//                     {description}
+//                 </p>
+//             </div>
+
+//             <div
+//                 ref={sectionRef}
+//                 className="relative sm:mt-20"
+//                 style={{
+//                     height: `${steps.length * 100}vh`,
+//                 }}
+//             >
+//                 <div className="sticky top-25 h-[calc(100vh-120px)] flex items-center">
+
+//                     <div className="">
+
+//                         <motion.div
+//                             key={activeStep}
+//                             initial={{ opacity: 0 }}
+//                             animate={{ opacity: 1 }}
+//                             transition={{ duration: 0.2 }}
+//                             className="grid lg:grid-cols-2 gap-6 items-center"
+//                         >
+
+//                             {/* LEFT CONTENT */}
+//                             <div>
+//                                 <p
+//                                     className="text-lg uppercase tracking-[0.2em] font-google font-bold leading-relaxed"
+//                                     style={{
+//                                         color: current.labelColor || "#bef264",
+//                                     }}
+//                                 >
+//                                     {current.label}
+//                                 </p>
+
+//                                 {/* <p className="text-lg uppercase tracking-[0.2em] font-google font-bold text-lime-300 leading-relaxed">
+//                                     {current.label}
+//                                 </p> */}
+
+//                                 <h3 className="mt-12 text-4xl md:text-2xl font-google font-semibold text-zinc-50 leading-tight">
+//                                     {current.title1}
+//                                 </h3>
+
+//                                 <p className="mt-3 text-zinc-400 text-lg leading-relaxed max-w-xl whitespace-pre-line">
+//                                     {current.description1}
+//                                 </p>
+
+//                                 <h3 className="mt-6 text-4xl md:text-2xl font-google font-semibold text-zinc-50 leading-tight">
+//                                     {current.title2}
+//                                 </h3>
+
+//                                 <p className="mt-3 text-zinc-400 text-lg leading-relaxed max-w-xl whitespace-pre-line">
+//                                     {current.description2}
+//                                 </p>
+
+//                                 <h3 className="mt-6 text-4xl md:text-2xl font-google font-semibold text-zinc-50 leading-tight">
+//                                     {current.title3}
+//                                 </h3>
+
+//                                 <p className="mt-3 text-zinc-400 text-lg leading-relaxed max-w-xl whitespace-pre-line">
+//                                     {current.description3}
+//                                 </p>
+
+//                             </div>
 
                             
 
-                            {/* RIGHT IMAGE */}
-                            <div className="flex justify-center">
+//                             {/* RIGHT IMAGE */}
+//                             <div className="flex justify-center">
 
-                                <div className="relative rounded-3xl overflow-hidden border border-zinc-800 bg-zinc-900">
+//                                 <div className="relative rounded-3xl overflow-hidden border border-zinc-800 bg-zinc-900">
 
-                                    <img
-                                        src={current.image}
-                                        alt={current.label}
-                                        className="min-h-[600px] aspect-video object-contain"
-                                    />
+//                                     <img
+//                                         src={current.image}
+//                                         alt={current.label}
+//                                         className="min-h-[600px] aspect-video object-contain"
+//                                     />
 
-                                </div>
+//                                 </div>
 
-                            </div>
+//                             </div>
 
-                        </motion.div>
+//                         </motion.div>
 
-                    </div>
+//                     </div>
 
-                </div>
-            </div>
-        </section>
-    );
-}
+//                 </div>
+//             </div>
+//         </section>
+//     );
+// }

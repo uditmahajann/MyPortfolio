@@ -89,13 +89,13 @@ const Services: React.FC = () => {
         <section
             id="services"
             ref={sectionRef}
-            className="relative mx-auto max-w-7xl px-5 lg:px-10 pb-15 my-15"
+            className="relative mx-auto max-w-7xl px-5 lg:px-10 pb-5 sm:pb-10 md:pb-15 sm:my-15"
         >
 
             {/* subtle divider from previous section */}
             {/* <div className="pointer-events-none absolute inset-x-5 top-0 h-px bg-linear-to-r from-transparent via-zinc-700/60 to-transparent lg:inset-x-10" /> */}
 
-            <div className="mb-25">
+            <div className="mb-15 sm:mb-20 xl:mb-25">
                 <SectionHeading
                     prefix="for teams who care about thoughtful design"
                     mainBefore=""

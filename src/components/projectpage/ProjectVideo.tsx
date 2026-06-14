@@ -21,9 +21,9 @@ const CaseStudyFinalFlow: React.FC<Props> = ({
   detail,
 }) => {
   return (
-    <section className="mx-auto max-w-6xl px-5 sm:px-10 py-25">
+    <section className="mx-auto max-w-6xl px-5 sm:px-10 py-10 sm:py-25">
 
-      <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-20 items-center">
+      <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-10 sm:gap-20 items-center">
 
         {/* LEFT CONTENT */}
         <motion.div

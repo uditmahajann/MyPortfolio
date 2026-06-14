@@ -113,10 +113,10 @@ const AboutExperienceSection: React.FC = () => {
   return (
     <section ref={sectionRef} className="relative my-10 py-10">
       {/* Container is taller to allow segmented scroll */}
-      <div style={{ height: `${sectionHeightVh}vh` }} className="relative mx-auto max-w-7xl px-5 sm:px-10">
+      <div style={{ height: `${sectionHeightVh}vh` }} className="relative mx-auto max-w-7xl px-6 sm:px-10">
 
 
-        <div className="my-25">
+        <div className="mb-15 sm:mb-20 xl:mb-25">
           <SectionHeading
             prefix="Short version: I grew a lot."
             mainBefore=""
@@ -135,17 +135,17 @@ const AboutExperienceSection: React.FC = () => {
             </div>
         </div> */}
 
-        <div className="flex flex-col mx-6 max-w-xl gap-6 items-start">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/60 px-5 py-2 text-sm font-medium uppercase tracking-[0.15em] text-zinc-300">
+        <div className="flex flex-col max-w-xl xl:mx-6 gap-5 sm:gap-6 items-start">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/60 px-5 py-2 text-xs md:text-sm font-medium uppercase tracking-[0.15em] text-zinc-300">
               <span className="h-2 w-2 rounded-full bg-lime-400 border-2 border-emerald-400"/> My Work Experience
           </div>
-        <p className="text-2xl font-google tracking-wide text-zinc-50">Hey, I'm <span className="text-lime-400"> Udit</span> 👋</p>
-        <p className="text-lg font-google tracking-wide leading-relaxed text-zinc-400">In <span className="bg-blue-500/50 p-1 rounded-md text-zinc-50">3 years of design,</span> working closely with Founders & engineers, I have focused on only one thing: <span className="bg-emerald-400/50 p-1 rounded-md text-zinc-50">Understanding the “why”</span> behind the product, clarifying problems, designing UI that feels intuitive, reducing friction and shaping flows that help users make confident decisions. <span className="text-zinc-50">Here's my journey:</span></p>
+        <p className="text-lg sm:text-2xl font-google tracking-wide text-zinc-50">Hey, I'm <span className="text-lime-400"> Udit</span> 👋</p>
+        <p className="text-base min-[540px]:text-lg font-google tracking-wide leading-relaxed text-zinc-400">In <span className="bg-blue-500/50 p-1 rounded-md text-zinc-50">3 years of design,</span> working closely with Founders & engineers, I have focused on only one thing: <span className="bg-emerald-400/50 p-1 rounded-md text-zinc-50">Understanding the “why”</span> behind the product, clarifying problems, designing UI that feels intuitive, reducing friction and shaping flows that help users make confident decisions. <span className="text-zinc-50">Here's my journey:</span></p>
         </div>
 
 
         {/* Sticky viewport area */}
-        <div className="sticky top-20 flex items-start justify-center">
+        <div className="sticky top-6 sm:top-20 flex items-start justify-center">
           <div className="w-full max-w-6xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 items-start">
               {/* Left: text column */}
@@ -154,26 +154,26 @@ const AboutExperienceSection: React.FC = () => {
                 <div className="mt-6 space-y-4">
                   {/* Hard-snap content: only current item is visible */}
                   <div>
-                    <p className="font-google font-semibold tracking-wide text-xl text-zinc-50">{experiences[currentIndex].year}:</p>
-                    <h4 className="my-6 text-3xl font-caveat font-semibold text-zinc-100 tracking-wide">
+                    <p className="font-google font-semibold tracking-wide text-lg sm:text-xl text-zinc-50">{experiences[currentIndex].year}:</p>
+                    <h4 className="my-5 min-[540px]:my-6 text-2xl sm:text-3xl font-caveat font-semibold text-zinc-100 tracking-wide">
                       "{experiences[currentIndex].role}"
                     </h4>
-                    <p className="mt-2 text-lg font-google tracking-wide leading-relaxed text-zinc-400">{experiences[currentIndex].line1} <span className="text-lg font-google tracking-wide leading-relaxed text-zinc-50 bg-yellow-400/50 p-1 rounded-md">
+                    <p className="mt-2 text-base sm:text-lg font-google tracking-wide leading-relaxed text-zinc-400">{experiences[currentIndex].line1} <span className="text-lg font-google tracking-wide leading-relaxed text-zinc-50 bg-yellow-400/50 p-1 rounded-md">
                       {experiences[currentIndex].text}
                     </span> {experiences[currentIndex].line2}</p>
-                    <p className="mt-5 text-lg font-google tracking-wide leading-relaxed text-zinc-50">{experiences[currentIndex].line3}:</p>
+                    <p className="mt-5 text-base sm:text-lg font-google tracking-wide leading-relaxed text-zinc-50">{experiences[currentIndex].line3}:</p>
                     
                   </div>
 
                   {/* small CTA or badges */}
-                  <div className="mt-4 flex flex-wrap gap-3">
-                    <span className="rounded-full bg-zinc-900 px-4 py-1 text-base text-zinc-300 border border-zinc-800 font-google">
+                  <div className="mt-4 min-[540px]:mt-6 md:mt-4 flex flex-wrap gap-3">
+                    <span className="rounded-full bg-zinc-900 px-4 py-1 text-sm min-[540px]:text-base text-zinc-300 border border-zinc-800 font-google">
                       {experiences[currentIndex].tag1}
                     </span>
-                    <span className="rounded-full bg-zinc-900 px-4 py-1 text-base text-zinc-300 border border-zinc-800 font-google">
+                    <span className="rounded-full bg-zinc-900 px-4 py-1 text-sm min-[540px]:text-base text-zinc-300 border border-zinc-800 font-google">
                       {experiences[currentIndex].tag2}
                     </span>
-                    <span className="rounded-full bg-zinc-900 px-4 py-1 text-base text-zinc-300 border border-zinc-800 font-google">
+                    <span className="rounded-full bg-zinc-900 px-4 py-1 text-sm min-[540px]:text-base text-zinc-300 border border-zinc-800 font-google">
                       {experiences[currentIndex].tag3}
                     </span>
                   </div>
@@ -192,7 +192,7 @@ const AboutExperienceSection: React.FC = () => {
 
               {/* Right: sticky badge (hanging) */}
               <div className="relative">
-                <div className="sticky flex justify-end">
+                <div className="hidden sticky md:flex justify-end">
                   <HangingIDBadge
                     imageSrc={experiences[currentIndex].image}
                     caption={experiences[currentIndex].role}

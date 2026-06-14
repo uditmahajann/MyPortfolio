@@ -22,7 +22,7 @@ const CaseStudyGraph: React.FC<Props> = ({
   
 }) => {
   return (
-    <section className="mx-auto max-w-6xl px-5 sm:px-10 pt-25 pb-15">
+    <section className="mx-auto max-w-6xl px-5 sm:px-10 pt-10 sm:pt-25 pb-15">
       
       {/* Top Content */}
       <motion.div
@@ -69,7 +69,7 @@ const CaseStudyGraph: React.FC<Props> = ({
 
           {/* Optional Note */}
           {note && (
-            <p className="mt-2 text-base font-google text-zinc-500 text-right">
+            <p className="mt-2 text-sm sm:text-base font-google text-zinc-500 text-right">
               {note}
             </p>
           )}

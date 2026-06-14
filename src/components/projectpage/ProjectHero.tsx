@@ -25,7 +25,7 @@ const CaseStudyHero: React.FC<Props> = ({ title, subtitle, image, gradientColor 
       </div>
 
       {/* Content */}
-      <div className="relative mx-auto flex min-h-screen top-45 max-w-7xl flex-col items-center justify-center px-5 lg:px-10 text-center">
+      <div className="relative mx-auto flex min-h-screen top-32 sm:top-45 max-w-7xl flex-col items-center justify-center px-5 lg:px-10 text-center">
         
         {/* Title */}
         <motion.h1
@@ -52,7 +52,7 @@ const CaseStudyHero: React.FC<Props> = ({ title, subtitle, image, gradientColor 
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.7 }}
-          className="mt-16"
+          className="mt-8 sm:mt-16"
         >
           <img
             src={image}

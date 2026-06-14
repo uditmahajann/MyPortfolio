@@ -3,7 +3,7 @@ import SectionHeading from "../../components/Interface/Heading";
 export default function WebsiteDesignShowcase() {
   return (
     <section className="mx-auto max-w-7xl px-5 lg:px-10 xl:px-0 py-25 mt-30">
-      <div className="mb-25">
+      <div className="mb-10 sm:mb-25">
                 <SectionHeading
                     prefix="conceptualized to guide attention and signal intent."
                     mainBefore=""
@@ -18,7 +18,7 @@ export default function WebsiteDesignShowcase() {
 
       {/* Grid */}
       <div className="flex items-center justify-center gap-4 mb-6">
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/60 px-5 py-2 text-sm font-medium uppercase tracking-[0.15em] text-zinc-300">
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/60 px-5 py-2 text-xs sm:text-sm font-medium uppercase tracking-[0.15em] text-zinc-300">
                     <span className="h-2 w-2 rounded-full bg-lime-400 border-2 border-emerald-400" /> Portfolio under construction. Motion Design Projects Coming Soon...
                 </div>
       </div>

@@ -31,7 +31,7 @@ const CaseStudyStrategy: React.FC<Props> = ({
     note,
 }) => {
     return (
-        <section className="mx-auto max-w-6xl px-5 sm:px-10 py-25">
+        <section className="mx-auto max-w-6xl px-5 sm:px-10 py-10 sm:py-25">
 
             {/* Top Content */}
             <motion.div
@@ -62,14 +62,14 @@ const CaseStudyStrategy: React.FC<Props> = ({
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.1 }}
-                    className="mt-20"
+                    className="mt-10 sm:mt-20"
                 >
                     {/* Persona Intro */}
                     {(strategyHeading || strategyDescription) && (
                         <div className="mb-10">
 
                             {strategyHeading && (
-                                <h3 className="text-xl md:text-4xl font-caveat font-medium text-lime-300">
+                                <h3 className="text-2xl md:text-4xl font-caveat font-medium text-lime-300">
                                     {strategyHeading}
                                 </h3>
                             )}
@@ -103,7 +103,7 @@ const CaseStudyStrategy: React.FC<Props> = ({
                     
                               {/* Optional Note */}
                               {note && (
-                                <p className="mt-3 text-base font-google text-zinc-500 text-right">
+                                <p className="mt-3 text-sm sm:text-base font-google text-zinc-500 text-right">
                                   {note}
                                 </p>
                               )}

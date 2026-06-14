@@ -59,7 +59,7 @@ const projects = [
 export default function WebsiteDesignShowcase() {
   return (
     <section className="mx-auto max-w-7xl px-5 lg:px-10 xl:px-0 py-25 mt-30">
-      <div className="mb-25">
+      <div className="mb-10 sm:mb-25">
                 <SectionHeading
                     prefix="balancing usability, aesthetics, & technical reality."
                     mainBefore=""

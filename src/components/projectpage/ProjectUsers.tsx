@@ -24,7 +24,7 @@ const CaseStudyPrologue: React.FC<Props> = ({
     personas = [],
 }) => {
     return (
-        <section className="mx-auto max-w-6xl px-5 sm:px-10 py-25">
+        <section className="mx-auto max-w-6xl px-5 sm:px-10 py-10 sm:py-25">
             {/* Persona Grid */}
             {personas.length > 0 && (
                 <motion.div
@@ -39,7 +39,7 @@ const CaseStudyPrologue: React.FC<Props> = ({
                         <div className="mb-10">
 
                             {personaHeading && (
-                                <h3 className="text-xl md:text-4xl font-caveat font-medium text-lime-300">
+                                <h3 className="text-2xl md:text-4xl font-caveat font-medium text-lime-300">
                                     {personaHeading}
                                 </h3>
                             )}
@@ -66,7 +66,7 @@ const CaseStudyPrologue: React.FC<Props> = ({
                                 className="group overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/80 backdrop-blur-sm hover:border-zinc-700 transition-all duration-300"
                             >
                                 {/* Image */}
-                                <div className="relative h-72 overflow-hidden">
+                                <div className="relative h-62 sm:h-72 overflow-hidden">
 
                                     <img
                                         src={persona.image}

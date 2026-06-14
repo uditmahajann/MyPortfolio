@@ -29,7 +29,7 @@ const WorkHero: React.FC = () => {
       </div>
 
       <div
-        className="relative mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-5 lg:px-10"
+        className="relative mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-8 lg:px-10 sm:mt-5 md:mt-0 lg:-mt-6 xl:-mt-9"
         onMouseMove={handleMouseMove}
       >
         {/* Small intro line */}
@@ -37,7 +37,7 @@ const WorkHero: React.FC = () => {
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-8 text-center font-caveat font-medium text-zinc-400 text-3xl"
+          className="mb-5 sm:mb-6 lg:mb-8 text-center font-caveat font-medium text-zinc-400 text-xl min-[540px]:text-2xl sm:text-3xl"
         >
           👋 Hey! I'm Udit — UX Designer &amp; Developer
         </motion.p>
@@ -47,11 +47,10 @@ const WorkHero: React.FC = () => {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.05 }}
-          className="text-center font-google font-bold text-zinc-50 text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight"
+          className="text-center font-google font-bold text-zinc-50 text-4xl min-[540px]:text-5xl lg:text-6xl xl:text-7xl leading-tight"
         >
           I <span className="text-sky-400/90"></span>design products
-          <br className="hidden sm:block" />
-          People{" "}
+          <br className="hidden sm:block" /> People{" "}
           <span className="inline-flex items-center align-middle">
             {/* <img
               src="/Images/heart.png"   // or /heart.png /heart.webp
@@ -61,7 +60,7 @@ const WorkHero: React.FC = () => {
             <motion.img
               src="/Images/heart.png"
               alt="love"
-              className="mx-0.5 inline-block h-8 w-8 sm:h-20 sm:w-20"
+              className="mx-0.5 inline-block h-12 w-12 min-[540px]:h-16 min-[540px]:w-16 md:h-20 md:w-20"
               animate={{
                 scale: [1, 1.15, 1],
               }}
@@ -75,7 +74,7 @@ const WorkHero: React.FC = () => {
           </span>{" "}
           using & that make
           <br className="hidden sm:block" />
-          <span className="text-sky-400/90">Business </span>sense.
+          <span className="text-sky-400/90"> Business </span>sense.
 
         </motion.h1>
 

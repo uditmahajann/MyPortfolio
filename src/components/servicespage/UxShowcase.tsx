@@ -38,7 +38,7 @@ const caseStudies: CaseStudy[] = [
     teaser:
       "Designed a unified IOMS workflow that mitigates human error and streamlines complex inventory reconciliation — making errors visible immediately and reducing manual cross-checking.",
     href: "/work/yelona",
-    image: "/Images/Soon.jpg",
+    image: "/Banners/csbanner2.png",
     tags: ["Accelerated data entry by 27%", "Cut update errors by 48%", "100% Elimination of composite bundle blindspots."],
     buttonText: "View Case Study",
     isLocked: false,
@@ -75,7 +75,7 @@ export default function UXDesignShowcase() {
   return (
     <section className="mx-auto max-w-7xl px-5 lg:px-10 xl:px-0 py-25 mt-30">
       {/* Heading */}
-      <div className="mb-25">
+      <div className="mb-10 sm:mb-25">
         <SectionHeading
           prefix="grounded in behaviour, clarity, and real-world use."
           mainBefore=""

@@ -18,7 +18,7 @@ export default function EpicFooter() {
   return (
     <section
       ref={ref}
-      className="relative h-[120vh] overflow-hidden"
+      className="relative h-[80vh] Min-[900px]:h-[115vh] lg:h-[125vh] xl:h-[120vh] overflow-hidden"
     >
       {/* ===== CLOUDS (FRONT LAYER) ===== */}
       <motion.img
@@ -46,7 +46,7 @@ export default function EpicFooter() {
       {/* ===== CONTENT BEHIND MOUNTAIN ===== */}
       <motion.div
         style={{ y: contentY, opacity: contentOpacity }}
-        className="relative z-10 mx-auto flex h-full max-w-5xl flex-col items-center justify-end pb-130 text-center text-white"
+        className="relative z-10 mx-auto flex h-full max-w-5xl flex-col items-center justify-end pb-50 md:pb-100 lg:pb-110 xl:pb-130 text-center text-white"
       >
         <h2 className="mb-4 text-4xl md:text-6xl font-serif leading-tight">
           Still scrolling?  
