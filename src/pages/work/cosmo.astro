@@ -82,6 +82,48 @@ const solutions = [
   },
 ];
 
+
+const finalflowSteps = [
+  {
+    image: "/Flows/flow1.png",
+    title: "Step-1: The Trigger",
+    description:
+      "A health-conscious user realizes that they are out of breakfast items or grocery or gets a sudden mid-day snack craving and reaches for their phone.",
+  },
+  {
+    image: "/Flows/flow2.png",
+    title: "Step-2: The Sensory Flood",
+    description:
+      "The user opens a q-commerce app, immediately flooded by generic categories, specifically engineered to trigger immediate, unhealthy impulse clicks.",
+  },
+  {
+    image: "/Flows/flow3.png",
+    title: "Step-3: The Deceptive Hope",
+    description:
+      "The user selects a category or searches for 'Museli' & is met with inconsistent tags across products, making it impossible to compare nutritional value. ",
+  },
+  {
+    image: "/Flows/flow4.png",
+    title: "Step-4: The Growing Friction",
+    description:
+      "The screen displays some basic & random metrics like '24g Protein' but provides zero context & lacks personalization, leaving the user uncertain.",
+  },
+  {
+    image: "/Flows/flow5.png",
+    title: "Step-5: The Mental Burnout",
+    description:
+      "To verify the truth, user opens the label details & is caught up with cognitive fatigue, manually calculating serving sizes & decoding chemical jargon.",
+  },
+  {
+    image: "/Flows/flow6.png",
+    title: "Step-6: The Guilty Compromise",
+    description:
+      "Run out of patience, forces a quick tap, leaving the health-conscious user with a subtle layer of post-purchase guilt, unsure if they actually bought healthy.",
+  },
+];
+
+
+
 const flowSteps = [
   {
     image: "/Flows/flow1.png",
@@ -573,6 +615,16 @@ Instead of an abstract shopping app, Cosmo is a comprehensive ecosystem powered 
       image: "/Designs/design11.png",
     },
   ]}
+  client:load
+/>
+
+<CaseStudyFlow
+  eyebrow="THE CORE EXPERIENCE"
+  title="Final Flows"
+  description={`These flows visualize the culmination of our design strategy, showing the seamless transition from intent-based search to confident purchase. This journey demonstrates how we orchestrated AI-driven insights into the user’s natural shopping rhythm, turning complex nutritional choices into a frictionless, one-tap reality.`}
+  flowHeading="1.The Intelligent Scanner Flow"
+  flowDescription="To hook users into the COSMO ecosystem, we turned the act of scanning into a value-generating event. Instead of just identifying a product, the scanner immediately delivers a personalized health score, positioning the app not just as a shopping tool, but as a proactive partner in the user's wellness journey from the very first scan:"
+  steps={finalflowSteps}
   client:load
 />
 

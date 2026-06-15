@@ -46,7 +46,7 @@ const CASE_STUDIES: CaseStudy[] = [
     title: "Balancing Speed & Scrutiny in Merchant Lifecycle Design",
     description:
       "Transformed a fragmented backend auditing process into a unified command center for managing high-volume leads and KYC verification, that empowers internal risk teams to audit profiles with zero cognitive drag.",
-    image: "/Images/Soon.jpg",
+    image: "/Banners/csbanner3.png",
     href: "#",
     metrics: ["Introduced field-level audit logs", "Automated field review loops", "Unified lead-to-merchant lifecycle"],
     buttonText: "Case Study: Coming Soon",

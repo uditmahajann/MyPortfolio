@@ -81,7 +81,7 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({
                 </a>
 
                 <a
-                  href="https://drive.google.com/file/d/1JoUMy_nRR7a-aZ2GlaL9WirM-n-KStpv/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1IMBSWOOf5nt3iCS0WdZhBYGQVCFTxJgN/view?usp=sharing"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-1 text-white"
@@ -177,7 +177,7 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({
             </a>
 
             <a
-              href="https://drive.google.com/file/d/1JoUMy_nRR7a-aZ2GlaL9WirM-n-KStpv/view?usp=sharing"
+              href="https://drive.google.com/file/d/1IMBSWOOf5nt3iCS0WdZhBYGQVCFTxJgN/view?usp=sharing"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 text-white hover:text-gray-300"

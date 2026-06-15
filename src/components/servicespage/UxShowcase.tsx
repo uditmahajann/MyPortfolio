@@ -19,7 +19,7 @@ type CaseStudy = {
 const caseStudies: CaseStudy[] = [
    {
     id: "cosmo",
-    label: "Cosmo AI- AI Health & Wellness Marketplace",
+    label: "COSMO AI · HEALTH & WELLNESS MARKETPLACE",
     title:
       "Reducing Friction in Personalized Health Shopping",
     teaser:
@@ -32,7 +32,7 @@ const caseStudies: CaseStudy[] = [
   },
   {
     id: "yelona",
-    label: "Yelona's Inventory Management Web App",
+    label: "YELONA · INVENTORY MANAGEMENT WEB APP",
     title:
       "Driving Operational Velocity in Inventory Management",
     teaser:
@@ -45,20 +45,33 @@ const caseStudies: CaseStudy[] = [
   },
   {
     id: "atmoon",
-    label: "AtMoon Pe's Fintech Admin Portal",
+    label: "ATMOON PE · FINTECH ADMIN PORTAL",
     title:
       "Balancing Speed & Scrutiny in Merchant Lifecycle Design",
     teaser:
       "Transformed a fragmented backend auditing process into a unified command center for managing high-volume leads and KYC verification, that empowers internal risk teams to audit profiles with zero cognitive drag.",
     href: "#",
-    image: "/Images/Soon.jpg",
+    image: "/Banners/csbanner3.png",
     tags: ["Introduced field-level audit logs", "Automated field review loops", "Unified lead-to-merchant lifecycle"],
     buttonText: "Case Study: Coming Soon",
     isLocked: true,
   },
   {
+    id: "medico",
+    label: "MEDICO · DIGITAL HEALTHCARE APP",
+    title:
+      "Solving Healthcare Fragmentation: A Unified Ecosystem",
+    teaser:
+      "I designed Medico to solve the pervasive challenges of poor service discoverability and disorganized medical information, providing patients with a comprehensive, low-friction platform.",
+    href: "https://www.behance.net/gallery/188921395/Medico-A-Healthcare-Mobile-App-(UX-Case-Study)",
+    image: "/Banners/csbanner5.png",
+    tags: ["Unified Patient Lifecycle", "Centralized Record Management", "Eliminated prolonged discoverability"],
+    buttonText: "View Case Study",
+    isLocked: false,
+  },
+  {
     id: "rise",
-    label: "RISE- Fitness & Activity Tracking",
+    label: "RISE · FITNESS & ACTIVITY TRACKING",
     title:
       "Boosted Monthly Active Runners with Loyalty Program",
     teaser:
@@ -116,7 +129,7 @@ export default function UXDesignShowcase() {
               {/* Bottom content */}
               <div className="relative z-1 flex flex-col justify-between gap-6">
                 <div className="space-y-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.15em] text-zinc-400">
+                  <p className="text-xs font-semibold font-google uppercase tracking-[0.15em] text-zinc-400">
                     {cs.label}
                   </p>
 

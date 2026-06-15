@@ -35,7 +35,7 @@ const PlayHero: React.FC = () => {
 
       {/* Content */}
       <div
-        className="relative flex flex-col items-center justify-center pl-40"
+        className="relative flex flex-col items-center justify-center pl-20 min-[540px]:pl-60 top-20 min-[540px]:top-10 md:-top-5"
         onMouseMove={handleMouseMove}
       >
         
@@ -44,7 +44,7 @@ const PlayHero: React.FC = () => {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="w-[220px] sm:w-[260px] md:w-[450px] lg:w-[850px]"
+          className="w-[600px] min-[540px]:w-[700px] md:w-[750px] lg:w-[800px] xl:w-[850px]"
         >
           <Lottie
             animationData={comingSoonAnimation}

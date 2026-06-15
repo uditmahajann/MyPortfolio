@@ -115,7 +115,7 @@ useEffect(() => {
   return (
     <section
       id="play-cards"
-      className="relative mx-auto max-w-8xl px-5 lg:px-10 -top-35 sm:-top-25 lg:-top-20 overflow-x-clip"
+      className="relative mx-auto max-w-8xl px-5 lg:px-10 -top-40 sm:-top-25 lg:-top-20 overflow-x-clip"
       // track mouse globally inside the section so the pill can follow
       onMouseMove={(e) =>
         setCursor((c) => ({

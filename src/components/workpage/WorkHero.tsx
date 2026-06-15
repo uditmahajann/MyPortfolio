@@ -29,7 +29,7 @@ const WorkHero: React.FC = () => {
       </div>
 
       <div
-        className="relative mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-8 lg:px-10 sm:mt-5 md:mt-0 lg:-mt-6 xl:-mt-9"
+        className="relative mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-8 lg:px-10 -mt-5 sm:mt-5 md:mt-0 lg:-mt-6 xl:-mt-9"
         onMouseMove={handleMouseMove}
       >
         {/* Small intro line */}
