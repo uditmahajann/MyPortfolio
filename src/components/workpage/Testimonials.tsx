@@ -22,25 +22,28 @@ export default function EpicFooter() {
     >
       {/* ===== CLOUDS (FRONT LAYER) ===== */}
       <motion.img
-        src="/Images/Clouds.png"
+        src="/Images/Clouds.webp"
         alt=""
         style={{ y: cloudsY }}
         className="pointer-events-none absolute inset-x-0 top-0 z-30 w-full"
+        loading="lazy"
       />
 
       {/* ===== FAR MOUNTAINS ===== */}
       <motion.img
-        src="/Images/MountainB.png"
+        src="/Images/MountainB.webp"
         alt=""
         style={{ y: farMountainsY }}
         className="pointer-events-none absolute inset-x-0 bottom-25 z-20 w-full"
+        loading="lazy"
       />
 
       {/* ===== MAIN MOUNTAIN ===== */}
       <img
-        src="/Images/MountainF.png"
+        src="/Images/MountainF.webp"
         alt=""
         className="pointer-events-none absolute inset-x-0 bottom-0 z-40 w-full"
+        loading="lazy"
       />
 
       {/* ===== CONTENT BEHIND MOUNTAIN ===== */}

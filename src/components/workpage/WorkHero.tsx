@@ -77,41 +77,6 @@ const WorkHero: React.FC = () => {
           <span className="text-sky-400/90"> Business </span>sense.
 
         </motion.h1>
-
-
-        {/* Minimal sub-hint */}
-        {/* <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.12 }}
-          className="mt-8 text-center text-xs text-zinc-400 font-google sm:text-xl"
-        >
-          Thought through, well built, and done for the long run.
-        </motion.p> */}
-
-        {/* CTA row */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.18 }}
-          className="mt-8 flex flex-wrap items-center justify-center gap-4"
-        >
-          <a
-            href="#case-studies"
-            className="group inline-flex items-center gap-2 rounded-full bg-sky-500 px-6 py-2.5 text-sm font-medium text-white shadow-lg shadow-sky-500/40 transition hover:bg-sky-400"
-          >
-            See the work
-            <ArrowDownRight className="h-4 w-4 transition-transform group-hover:translate-y-0.5 group-hover:translate-x-0.5" />
-          </a>
-
-          <a
-            href="mailto:uditmahajann@gmail.com?subject=Let%27s%20work%20together"
-            className="inline-flex items-center gap-2 text-sm text-zinc-300 hover:text-zinc-100"
-          >
-            Let&apos;s talk
-            <ArrowUpRight className="h-4 w-4" />
-          </a>
-        </motion.div> */}
       </div>
     </section>
   );

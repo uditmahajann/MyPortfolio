@@ -159,7 +159,7 @@ export default function CaseStudies() {
       className="relative mx-auto max-w-7xl px-5 lg:px-10"
     >
       {/* SECTION HEADING */}
-       <div className="-mt-10 sm:mt-0 mb-15 sm:my-20">
+       <div className="-mt-10 sm:mt-0 mb-15 sm:my-20 md:mt-30">
         <SectionHeading
           prefix="long before they looked good..."
           mainBefore=""

@@ -27,7 +27,7 @@ const experiences: Experience[] = [
     tag1: "Putting posters on my walls",
     tag2: "Building castle from cardboard",
     tag3: "Collecting Magzine cuttings for scrap book",
-    image: "/Images/Journey1.png",
+    image: "/Images/Journey1.webp",
   },
   {
     year: "Right After School (2020)",
@@ -39,7 +39,7 @@ const experiences: Experience[] = [
     tag1: "User Interface Design",
     tag2: "User behaviour & psychology",
     tag3: "Typography & Design Systems",
-    image: "/Images/Journey2.png",
+    image: "/Images/Journey2.webp",
   },
   {
     year: "In College years (2022)",
@@ -63,7 +63,7 @@ const experiences: Experience[] = [
     tag1: "Speed",
     tag2: "Ownership & accountability",
     tag3: "Trade-off's & Constraints",
-    image: "/Images/Journey4.png",
+    image: "/Images/Journey4.webp",
   },
   {
     year: "Where I Am Now (2025)",
@@ -75,7 +75,7 @@ const experiences: Experience[] = [
     tag1: "Still learning",
     tag2: "Want to switch back to core designing",
     tag3: "Looking for newer opportunities",
-    image: "/Images/Journey5.png",
+    image: "/Images/Journey5.webp",
   },
 ];
 
